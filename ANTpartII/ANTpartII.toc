@@ -1,0 +1,13 @@
+\contentsline {chapter}{\numberline {1}Half-integral Weight Modular Forms}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}The Quadratic Theta Function $\theta (z)$}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}\leavevmode {\color {red}\sf Todo: [The Quadratic Eisenstein Series]}}{11}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Multiple Dirichlet Series}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}\leavevmode {\color {red}\sf Todo: [Heuristics]}}{13}{section.2.1}%
+\contentsline {section}{\numberline {2.2}\leavevmode {\color {red}\sf Todo: [The Quadratic Multiple Dirichlet Series $Z(s,w)$]}}{13}{section.2.2}%
+\contentsline {section}{\numberline {2.3}\leavevmode {\color {red}\sf Todo: [The Analytic Continuation of $Z(s,w)$]}}{13}{section.2.3}%
+\contentsline {section}{\numberline {2.4}\leavevmode {\color {red}\sf Todo: [The Group of Vector Functional Equations]}}{13}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Trace Formulas}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Kloosterman Sums}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The Petersson Trace Formula}{15}{section.3.2}%
+\contentsline {section}{\numberline {3.3}The Kuznetsov Trace Formula}{20}{section.3.3}%
+\contentsline {section}{\numberline {3.4}\leavevmode {\color {red}\sf Todo: [Half-integral Weight Variants]}}{33}{section.3.4}%

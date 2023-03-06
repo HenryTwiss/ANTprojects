@@ -1,0 +1,1010 @@
+%============%
+%            %
+%  PREAMBLE  %
+%            %
+%============%
+\documentclass[12pt]{book}
+
+%===============================%
+%  Packages and basic settings  %
+%===============================%
+\usepackage[headheight=15pt,rmargin=0.5in,lmargin=0.5in,tmargin=0.75in,bmargin=0.75in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{imakeidx}
+\usepackage{framed}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
+\usepackage{appendix}
+\usepackage[hyperref,amsthm,amsmath,thref,framed,thmmarks]{ntheorem}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{xr}
+\usetikzlibrary{braids,arrows,decorations.markings}
+
+%====================================%
+%  Theores, environments & cleveref  %
+%====================================%
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{remark}{Remark}[section]
+\theoremstyle{definition}\newframedtheorem{method}{Method}
+\crefname{method}{Method}{Methods}
+
+\newenvironment{stabular}[2][1]
+  {\def\arraystretch{#1}\tabular{#2}}
+  {\endtabular}
+
+%==================================%
+%  Custom commands & environments  %
+%==================================%
+\newcommand{\psum}{\sideset{}{'}\sum}
+\newcommand{\asum}{\sideset{}{^{\ast}}\sum}
+\newcommand{\legendre}[2]{\genfrac{(}{)}{0.5pt}{0}{#1}{#2}}
+\newcommand{\tmod}[1]{\ \left(\text{mod }#1\right)}
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\xfrom}[1]{\xleftarrow{#1}}
+\newcommand{\normal}{\mathrel{\unlhd}}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\mc}{\mathcal}
+\newcommand{\ms}{\mathscr}
+
+\newcommand{\Mat}{\mathrm{Mat}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\PSL}{\mathrm{PSL}}
+\renewcommand{\O}{\mathrm{O}}
+\newcommand{\SO}{\mathrm{SO}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\renewcommand{\H}{\mathbb{H}}
+\renewcommand{\P}{\mathbb{P}}
+
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\newcommand{\g}{\gamma}
+\renewcommand{\d}{\delta}
+\newcommand{\z}{\zeta}
+\renewcommand{\t}{\theta}
+\renewcommand{\i}{\iota}
+\renewcommand{\k}{\kappa}
+\renewcommand{\l}{\lambda}
+\newcommand{\s}{\sigma}
+\newcommand{\w}{\omega}
+
+\newcommand{\G}{\Gamma}
+\newcommand{\D}{\Delta}
+\renewcommand{\L}{\Lambda}
+\newcommand{\W}{\Omega}
+
+\newcommand{\e}{\varepsilon}
+\newcommand{\vt}{\vartheta}
+\newcommand{\vphi}{\varphi}
+\newcommand{\emt}{\varnothing}
+
+\newcommand{\x}{\times}
+\newcommand{\ox}{\otimes}
+\newcommand{\op}{\oplus}
+\newcommand{\bigox}{\bigotimes}
+\newcommand{\bigop}{\bigoplus}
+\newcommand{\del}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\newcommand{\lf}{\lfloor}
+\newcommand{\rf}{\rfloor}
+\newcommand{\wtilde}{\widetilde}
+\newcommand{\what}{\widehat}
+\newcommand{\conj}{\overline}
+\newcommand{\cchi}{\conj{\chi}}
+
+\DeclareMathOperator{\id}{\textrm{id}}
+\DeclareMathOperator{\sgn}{\mathrm{sgn}}
+\DeclareMathOperator{\im}{\mathrm{im}}
+\DeclareMathOperator{\rk}{\mathrm{rk}}
+\DeclareMathOperator{\tr}{\mathrm{trace}}
+\DeclareMathOperator{\nm}{\mathrm{norm}}
+\DeclareMathOperator{\ord}{\mathrm{ord}}
+\DeclareMathOperator{\Hom}{\mathrm{Hom}}
+\DeclareMathOperator{\End}{\mathrm{End}}
+\DeclareMathOperator{\Aut}{\mathrm{Aut}}
+\DeclareMathOperator{\Tor}{\mathrm{Tor}}
+\DeclareMathOperator{\Ann}{\mathrm{Ann}}
+\DeclareMathOperator{\Gal}{\mathrm{Gal}}
+\DeclareMathOperator{\Trace}{\mathrm{Trace}}
+\DeclareMathOperator{\Norm}{\mathrm{Norm}}
+\DeclareMathOperator{\Span}{\mathrm{Span}}
+\DeclareMathOperator*{\Res}{\mathrm{Res}}
+\DeclareMathOperator{\Vol}{\mathrm{Vol}}
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\Im}{\mathrm{Im}}
+
+\newcommand{\GH}{\G\backslash\H}
+\newcommand{\GG}{\G_{\infty}\backslash\G}
+
+%============%
+%  Comments  %
+%============%
+\newcommand{\todo}[1]{\textcolor{red}{\sf Todo: [#1]}}
+
+%===================%
+%  Label reminders  %
+%===================%
+% [label=(\roman*)]
+% [label=(\alph*)]
+% [label=(\arabic{enumi})]
+
+%==========================%
+%  Page style & numbering  %
+%==========================%
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyfoot[R]{\thepage}
+
+%==================%
+%  Other settings  %
+%==================%
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+\setlength\parindent{0pt}
+\raggedbottom
+
+%=================%
+%  Title & Index  %
+%=================%
+\title{Analytic Number Theory: Part II \\  Multiple Dirichlet Series \& Trace Formulas}
+\author{Henry Twiss}
+\date{\today}
+\makeindex
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\newpage
+
+\section*{Prerequisites}
+  The purpose of this text is to serve as an introduction to important trace formula and the theory of multiple Dirichlet series in analytic number theory. We assume that the reader has a decent understanding of introductory analytic number theory. For reference, everything discussed in \textit{Analytic Number Theory: Part I An Introduction to $L$-series} is assumed but we will reference results when necessary. We recommend that the reader has this degree of familarity with the subject before embarking.
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\chapter{Half-integral Weight Modular Forms}
+  \todo{Introduction}
+  \section{The Quadratic Theta Function \texorpdfstring{$\t(z)$}{O(z)}}
+    We begin with a special modular form of half-integral weight. This requires working over at least the level $4$ congruence subgroup $\G_{0}(4)$. More generally, we could work over $\G_{0}(N)$ with $N \equiv 0 \pmod{4}$, but we will not need this level of generality. Our goal is to prove the existance of a modular form of half-integral weight on $\G_{0}(4)$. We first establish a generating set for $\G_{0}(N)$ which will simplify many calculations soon to come:
+
+    \begin{proposition}\label{prop:Hecke_congruence_generator}
+      \[
+        \G_{0}(N) = \left\<\begin{pmatrix} 1 & 0 \\ N & 1 \end{pmatrix},\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}\right\>.
+      \]
+    \end{proposition}
+    \begin{proof}
+      Set $R_{N}$ and $T$ to be the first and second generators respectively. It is clear that they both belong to $\G_{0}(N)$ so it suffices to show that for any $\g = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \G_{0}(4)$, we have $\g \in \<R_{N},T\>$. Observe
+      \[
+        \g R_{N} = \begin{pmatrix} a & b \\ c & d \end{pmatrix}R_{N} = \begin{pmatrix} a+Nb & b \\ c+Nd & d \end{pmatrix} \quad \text{and} \quad \g T^{n} = \begin{pmatrix} a & b \\ c & d \end{pmatrix}T^{n} = \begin{pmatrix} a & b+na \\ c & d+nc \end{pmatrix},
+      \]
+      where $n \in \Z$. Note that $R_{N}$ and $T^{n}$ are acting on the right. In particular, $R_{N}$ adds an $N$ multiple of the lower right entry to the lower right entry and $T^{n}$ adds an $n$ multiple of the lower left entry to the lower right entry. We will now prove $\g \in \<R_{N},T\>$ by showing that the inverse is in $\<R_{N},T\>$. If $|c| = 0$ then $\g$ is the identity since $\det(\g) = 1$ so suppose $|c| \neq 0$. By Euclidean division, $d = qc+r$ for some $q \in \Z$ and $|r| < |c|$. Then
+      \[
+        \g T^{-q} = \begin{pmatrix} a & b-qa \\ c & d-qc \end{pmatrix} = \begin{pmatrix} a & b-qa \\ c & r \end{pmatrix}.
+      \]
+      By Euclidean division again, write $c = q'Nr+r'$ with $|r'| < |Nr|$. Then
+      \[
+        \g T^{-q}R_{N}^{-q'} = \begin{pmatrix} a & b-qa \\ c & r \end{pmatrix}R_{N}^{-q'} = \begin{pmatrix} a-q'N(b-qa) & b-qa \\ c-q'Nr & r \end{pmatrix} =  \begin{pmatrix} a-q'N(b-qa) & b-qa \\ r' & r \end{pmatrix}.
+      \]
+      This is a matrix whose lower right entry is smaller than the lower left entry we began with in norm. Moreover, the lower left entry no larger than the lower left entry we began with in norm and at the same time is less than an $N$ multiple of the lower right entry in norm. In other words, the lower left entry is never increasing in norm, the lower right entry is always decreasing in norm, and up to an $N$ multiple the lower right entry bounds the size of the lower left entry. Therefore if we repeatedly apply this procedure, it must terminate with one of the lower entries vanishing. Since the lower left entry is always equivalent to $0$ modulo $4$, and $\det(\g) = 1$, we must have that the lower right entry is always equivaent to $1$ or $3$ modulo $4$. Therefore the lower left entry must vanish. But then we have reached the identity matrix and so we have show $\g$ has an inverse in $\<R_{N},T\>$.
+    \end{proof}
+
+    In particular,
+
+    \[
+      \G_{0}(4) = \left\<\begin{pmatrix} 1 & 0 \\ 4 & 1 \end{pmatrix},\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}\right\>.
+    \]
+
+    Now we are ready to investigate modular forms on $\G_{0}(4)\backslash\H$. The modular form we are interested in is the \textbf{quadratic theta function}\index{quadratic theta function} $\t(z)$ defined by
+    \[
+        \t(z) = \sum_{n \in \Z}e^{2\pi in^{2}z},
+    \]
+    for $z \in \H$. The relation to Jacobi's theta function is
+    \begin{equation}\label{equ:Jacobi_theta_relation}
+        \t\left(\frac{iz}{2}\right) = \vt(z),
+    \end{equation}
+    and thus $\t(z)$ converges absolutely uniformly on compacta because $\vt(z)$ does. In short, $\t(z)$ is holomorphic on $\H$. It turns out that $\t(z)$ is a modular form of weight $\frac{1}{2}$ and level $4$ on $\G_{0}(4)\backslash\H$ with nontrivial nebentypus. Our primary goal is to prove this. For $\g = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \G_{0}(4)$, the nebentypus will be
+    \[
+        \e(\g) = \legendre{c}{d}\e_{d}^{-1},
+    \]
+    where $\legendre{c}{d}$ is the Jacobi symbol ($d$ is necessarily odd since $\det(\g) = 1$ and $c \equiv 0 \tmod{4}$) with the stipulations $\legendre{c}{d} = \legendre{-c}{-d}$ (so that we may take $d > 0$), and $\legendre{0}{d} = 1$. This last requirement is really just that $\legendre{0}{1} = 1$ because if $c = 0$ then $\det(\g) = 1$ implies $d = \pm 1$. Also, we recall that $\e_{d} = 1,i$ depending on if $d \equiv 1,3 \tmod{4}$ as $d$ is odd. We have already noted that $\t(z)$ is holomorphic on $\H$. We now show that it is modular on $\G_{0}(4)\backslash\H$ of weight $\frac{1}{2}$ with factor of modularity, often referred to as the \textbf{theta multiplier}\index{theta multiplier}, defined by
+    \[
+        j(\g,z) = \e(\g)\sqrt{cz+d} = \legendre{c}{d}\e_{d}^{-1}\sqrt{cz+d},
+    \]
+    where we take the principal branch of the square root. This is quite a long and technical proof. It it not difficult to show that $\t(z)$ is a modular form on $\G_{0}(4)\backslash\H$. Actually, one can agument the first part of the following proof to show that the transformation law for Jacobi's theta function implies $\t(z)$ is modular on a larger matrix group than $\G_{0}(4)$ but the proof does not construct the factor of modularity explicitly as a function of the matrix $\g$. That is, one does not know what $j(\g,z)$ is for a general $\g$. The main difficultly in the following proof is showing that the factor of modularity is actually the theta multiplier as claimed.
+
+    \begin{proposition}
+      Let $\g = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \G_{0}(4)$. Then for $z \in \H$,
+      \[
+        \t(\g z) = \legendre{c}{d}\e_{d}^{-1}\sqrt{cz+d}\t(z),
+      \]
+      where we take the principal branch of the square root.
+    \end{proposition}
+    \begin{proof}
+      We first argue that
+      \[
+        \G_{0}(4) = \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}^{-1} \G(2) \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}.
+      \]
+      This is seen by using our generating set for $\G_{0}(4)$ and observing that the matrices
+      \[
+        \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 4 & 1 \end{pmatrix} \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}^{-1} = \begin{pmatrix} 1 & 0 \\ 2 & 1 \end{pmatrix} \quad \text{and} \quad \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}^{-1} = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix},
+      \]
+      generate $\G(2)$. Now define $\wtilde{\t}(z) = \theta\left(\frac{z}{2}\right)$. Since $\theta$ is $1$-periodic, $\wtilde{\t}$ is $2$-periodic. Moreover for any $\g \in \G_{0}(4)$, let $\eta = \begin{pmatrix} a & 2b \\ \frac{c}{2} & d\end{pmatrix} \in \G(2)$ so that
+      \[
+        \g = \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}^{-1} \eta \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}.
+      \]
+      Then we have
+      \[
+        \t(\g z) = \wtilde{\t}\left(2\begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}^{-1} \eta \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}z\right) = \wtilde{\t}(2\eta z).
+      \]
+      Therefore we are reduced to proving an analogous transformation law for $\wtilde{\t}(\eta z)$. Now let $w = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}z = -\frac{1}{z}$. Then by \cref{equ:Jacobi_theta_relation} and the transformation formula for Jacobi's theta function, we see that
+      \[
+        \wtilde{\t}(w) = \vt(-iw) = \frac{1}{\sqrt{-iw}}\vt\left(-\frac{1}{iw}\right) = \frac{1}{\sqrt{-iw}}\wtilde{\t}\left(\frac{-1}{w}\right) = \sqrt{\frac{z}{i}}\wtilde{\t}(z).
+      \]
+      Since $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}^{2} = I$, if we let $\eta' = \begin{pmatrix} a' & b' \\ c' & d' \end{pmatrix}$ where the entries are defined by
+      \[
+        \eta' = \eta\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} 2b & -a \\ d & -\frac{c}{2} \end{pmatrix},
+      \]
+      then
+      \[
+        \wtilde{\t}(\eta z) = \wtilde{\t}\left(\eta \begin{pmatrix} 0 & -1 \\ 0 & 1 \end{pmatrix}^{2} z\right) = \wtilde{\t}(\eta'w).
+      \]
+      So it further suffices to prove a transformation law for $\wtilde{\t}(\eta'w)$. First observe
+      \[
+        \eta' w = \frac{a'w+b'}{c'w+d'} = \frac{c'(a'w+b')}{c'(c'w+d')} = \frac{a'c'w+a'd'-1}{c'(c'w+d')} = \frac{a'(c'w+d')-1}{c'(c'w+d')} = \frac{a'}{c'}-\frac{1}{c'(c'w+d')},
+      \]
+      Thus
+      \begin{align*}
+        \wtilde{\t}(\eta'w) &= \sum_{n \in \Z}e^{\pi in^{2}\eta'w} \\
+        &= \sum_{n \in \Z}e^{\pi in^{2}\left(\frac{a'}{c'}-\frac{1}{c'(c'w+d')}\right)} \\
+        &= \sum_{n \in \Z}e^{\frac{2\pi in^{2}\frac{a'}{2}}{c'}}e^{-\frac{\pi in^{2}}{c'(c'w+d')}} \\
+        &= \sum_{\a \tmod{c'}}e^{\frac{2\pi in^{2}\frac{a'}{2}}{c'}}\sum_{m \in \Z}e^{-\frac{\pi i(c'm+\a)^{2}}{c'(c'w+d')}} \\
+        &= \sum_{\a \tmod{c'}}e^{\frac{2\pi i\a^{2}\frac{a'}{2}}{c'}}\sum_{m \in \Z}e^{-\frac{\pi ic'\left(m+\frac{\a}{c'}\right)^{2}}{c'w+d'}},
+      \end{align*}
+      where the second to last equality follows because $e^{\frac{2\pi in^{2}\frac{a'}{2}}{c'}}$ only depends on $n$ modulo $c'$. Indeed, $\frac{a'}{2} = b$ is an integer and writing $n = mc'+\a$ with $\a$ taken modulo $c'$ we have $(mc'+\a)^{2} \equiv \a^{2} \tmod{c'}$. By the identity theorem, it suffices to prove a transformation formula for $\wtilde{\t}(\eta w)$ on a set containing a limit point. We will prove this on a vertical line in $\H$ and we take $w = \frac{iy-d'}{c'}$ for $y$ real with $y > 0$. Now set $f(x) = e^{-\frac{\pi ic'\left(x+\frac{\a}{c'}\right)^{2}}{c'w+d'}}$. Then $f(x)$ is a Schwarz function. We compute its Fourier transform:
+      \[
+        \hat{f}(t) = \int_{-\infty}^{\infty}f(x)e^{-2\pi itx}\,dx = \int_{-\infty}^{\infty}e^{-\frac{\pi ic'\left(x+\frac{\a}{c'}\right)^{2}}{c'w+d'}}e^{-2\pi itx}\,dx = \int_{-\infty}^{\infty}e^{-\pi\left(\frac{ic'\left(x+\frac{\a}{c'}\right)^{2}}{c'w+d'}+2itx\right)}\,dx.
+      \]
+      Making the change of variables $x \to \sqrt{-\frac{i(c'w+d')}{c'}}x-\frac{\a}{c'}$, the last integral above becomes
+      \[
+        \sqrt{-\frac{i(c'w+d')}{c'}}e^{\frac{2\pi i t\a}{c'}}\int_{-\infty}^{\infty}e^{-\pi\left(x^{2}+2itx\sqrt{-\frac{i(c'w+d')}{c'}}\right)}\,dx = \sqrt{\frac{c'w+d'}{ic'}}e^{\frac{2\pi i t\a}{c'}}\int_{-\infty}^{\infty}e^{-\pi\left(x^{2}+2itx\sqrt{-\frac{i(c'w+d')}{c'}}\right)}\,dx.
+      \]
+      Complete the square in the exponent by observing
+      \[
+        -\pi\left(x^{2}+2itx\sqrt{-\frac{i(c'w+d')}{c'}}\right) = -\pi\left(\left(x+it\sqrt{-\frac{i(c'w+d')}{c'}}\right)^{2}-\frac{it^{2}(c'w+d')}{c'}\right),
+      \]
+      where we take the principal branch of the square root. Taking exponentials, this implies that the previous integral is equal to
+      \[
+        \sqrt{\frac{c'w+d'}{ic'}}e^{\frac{2\pi i t\a}{c'}}e^{\frac{\pi it^{2}(c'w+d')}{c'}}\int_{-\infty}^{\infty}e^{-\pi\left(x+it\sqrt{-\frac{i(c'w+d')}{c'}}\right)^{2}}\,dx.
+      \]
+      The change of variables $x \to x-it\sqrt{-\frac{i(c'w+d')}{c'}}$ is valid by viewing the integral as a complex integral, noting that the integrand is entire as a complex function, and shifting the line of integration. After the change of variables we get
+      \[
+        \sqrt{\frac{c'w+d'}{ic'}}e^{\frac{2\pi i t\a}{c'}}e^{\frac{\pi it^{2}(c'w+d')}{c'}}\int_{-\infty}^{\infty}e^{-\pi x^{2}}\,dx = \sqrt{\frac{c'w+d'}{ic'}}e^{\frac{2\pi i t\a}{c'}}e^{\frac{\pi it^{2}(c'w+d')}{c'}},
+      \]
+      where the last equality follows because the integral above is $1$ since it is the Gaussian integral. The Poisson summation formula then gives the second equality in the following chain:
+      \begin{align*}
+        \wtilde{\t}(\eta' w) &= \sum_{\a \tmod{c'}}e^{\frac{2\pi i\a^{2}\frac{a'}{2}}{c'}}\sum_{m \in \Z}f(m) \\
+        &= \sum_{\a \tmod{c'}}e^{\frac{2\pi i\a^{2}\frac{a'}{2}}{c'}}\sum_{t \in \Z}\hat{f}(t) \\
+        &= \sum_{\a \tmod{c'}}e^{\frac{2\pi i\a^{2}\frac{a'}{2}}{c'}}\sum_{t \in \Z}\sqrt{\frac{c'w+d'}{ic'}}e^{\frac{2\pi i t\a}{c'}}e^{\frac{\pi it^{2}(c'w+d')}{c'}} \\
+        &= \sqrt{\frac{c'w+d'}{ic'}}\sum_{\a \tmod{c'}}e^{\frac{2\pi i\a^{2}\frac{a'}{2}}{c'}}\sum_{t \in \Z}e^{\frac{2\pi i t\a}{c'}}e^{\frac{\pi it^{2}(c'w+d')}{c'}} \\
+        &= \sqrt{\frac{c'w+d'}{ic'}}\sum_{t \in \Z}e^{\frac{\pi it^{2}(c'w+d')}{c'}}\sum_{\a \tmod{c'}}e^{\frac{2\pi i\a^{2}\frac{a'}{2}}{c'}}e^{\frac{2\pi i t\a}{c'}} \\
+        &= \sqrt{\frac{c'w+d'}{ic'}}\sum_{t \in \Z}e^{\pi it^{2}w}\sum_{\a \tmod{c'}}e^{\frac{2\pi i\left(\a^{2}\frac{a'}{2}+t\a+t^{2}\frac{d'}{2}\right)}{c'}}.
+      \end{align*}
+      Now $\det(\eta') = 1$ implies $a'd' \equiv 1 \tmod{c'}$. In other words, $a'$ and $d'$ are inverses modulo $c'$. Then $\frac{a'}{2}(\a+td')^{2} \equiv \a^{2}\frac{a'}{2}+t\a+t^{2}\frac{d'}{2} \tmod{c'}$, so the double sum above is equivalent to
+      \[
+        \sqrt{\frac{c'w+d'}{ic'}}\sum_{t \in \Z}e^{\pi it^{2}w}\sum_{\a \tmod{c'}}e^{\frac{2\pi i\frac{a'}{2}(\a+td')^{2}}{c'}}.
+      \]
+      For fixed $t$, $\a \to \a-td'$ is a bijection on $\Z/c'\Z$ so we have
+      \[
+        \sum_{\a \tmod{c'}}e^{\frac{2\pi i\frac{a'}{2}(\a+td')^{2}}{c'}} = \sum_{\a \tmod{c'}}e^{\frac{2\pi i\frac{a'}{2}\a^{2}}{c'}} = \sum_{\a \tmod{c'}}e^{\frac{2\pi i\frac{a'}{2}(\a d')^{2}}{c'}} = \sum_{\a \tmod{c'}}e^{\frac{2\pi i\frac{d'}{2}\a^{2}}{c'}} = g\left(\frac{d'}{2},c'\right).
+      \]
+      where the second equality follows because $\det(\eta') = 1$ implies $(d',c') = 1$ so that $\a \to \a d'$ is a bijection on $\Z/c'\Z$, and the third equality holds because $a'd' \equiv 1 \tmod{c'}$. The quadratic Gauss sum evaluates to
+      \[
+        g\left(\frac{d'}{2},c'\right) = \legendre{\frac{d'}{2}}{c'}\e_{c'}\sqrt{c'}.
+      \]
+      Therefore
+      \[
+        \sqrt{\frac{c'w+d'}{ic'}}\sum_{t \in \Z}e^{\pi it^{2}w}\sum_{\a \tmod{c'}}e^{\frac{2\pi i\frac{a'}{2}(\a+td')^{2}}{c'}} = \legendre{\frac{d'}{2}}{c'}\e_{c'}\sqrt{c'}\sqrt{\frac{c'w+d'}{ic'}}\sum_{t \in \Z}e^{\pi it^{2}w} = \legendre{\frac{d'}{2}}{c'}\e_{c'}\sqrt{\frac{c'w+d'}{i}}\wtilde{\t}(w).
+      \]
+      So all together we have shown
+      \[
+        \wtilde{\t}(\eta' w) = \legendre{\frac{d'}{2}}{c'}\e_{c'}\sqrt{\frac{c'w+d'}{i}}\wtilde{\t}(w).
+      \]
+      Rewriting in terms of $\eta$, and noting that $\legendre{\frac{c}{4}}{d} = \legendre{c}{d}$ because $4$ is a square and $c \equiv 0 \tmod{4}$, gives
+      \[
+        \wtilde{\t}(\eta z) = \legendre{c}{d}\legendre{-1}{d}\e_{d}\sqrt{\frac{dz-\frac{c}{2}}{i}}\wtilde{\t}(z).
+      \]
+      By changing variables $z \to 2z$ and rewriting in terms of $\t(z)$, we find
+      \[
+        \t(\g z) = \legendre{c}{d}\legendre{-1}{d}\e_{d}\sqrt{\frac{-\left(\frac{d}{2z}+\frac{c}{2}\right)}{i}}\sqrt{\frac{2z}{i}}\t(z) = \legendre{c}{d}\e_{d}^{-1}\sqrt{cz+d}\t(z),
+      \]
+      where the last equality follows because $\legendre{-1}{d} = 1,-1$ depending on if $d \equiv 1,3 \tmod{4}$ so that $\legendre{-1}{d}\e_{d} = \e_{d}^{-1}$. This finishes the proof.
+    \end{proof}
+
+    To complete the verification that $\t(z)$ is a modular form is to check holomorphy at the cusps. There are three cusps of $\G_{0}(4)$ and they are $\infty$, $0$, and $\frac{1}{2}$ respectively. To see this, observe that the corresponding orbits are
+    \begin{align*}
+      \G_{0}(4)\infty &= \left\{\frac{a}{c}:(a,c) = 1, c \equiv 0 \tmod{4} \right\} \\
+      \G_{0}(4)0 &= \left\{\frac{b}{d}:(b,d) = 1, d \equiv 1,3 \tmod{4} \right\} \\
+      \G_{0}(4)\frac{1}{2} &= \left\{\frac{b}{d}:(b,d) = 1, d \equiv 2 \tmod{4} \right\},
+    \end{align*}
+    and every element of $\Q \cup \{\infty\}$ belongs to one of these three sets. We only need to verify holomorphy on a set of scaling matrices, so let us choose the scaling matrices $\s_{\infty} = I$, $\s_{0} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$, and $\s_{\frac{1}{2}} = \begin{pmatrix} 1 & 1 \\ 2 & 3 \end{pmatrix}$ for the three cusps respectively. For the cusp at $\infty$, just observe
+    \[
+      \lim_{\Im(z) \to \infty}|\t(z)| \le \lim_{z \to \infty}\sum_{n \in \Z}|e^{2\pi inz}| = \lim_{y \to \infty}\sum_{n \in \Z}e^{-2\pi ny} \le \sum_{n \in \Z}e^{-2\pi n} = \vt(2).
+    \]
+    For the cusps at $\infty$ and $\frac{1}{2}$, we have
+    \[
+      \t(\s_{0} z) = \sum_{n \in \Z}e^{-\frac{2\pi in}{z}} = \sum_{n \in \Z}e^{-\frac{2\pi in\conj{z}}{|z|^{2}}} \quad \text{and} \quad \t(\s_{\frac{1}{2}} z) = \sum_{n \in \Z}e^{\frac{2\pi in(z+1)}{2z+3}} = \sum_{n \in \Z}e^{\frac{2\pi in(2|z|+3z+2\conj{z}+1)}{|2z+3|^{2}}},
+    \]
+    and a completely analogous computation shows that these series are also bounded as $\Im(z) \to \infty$. Therefore $\t(z)$ is holomorphic at the cusps and all together is a modular form on $\G_{0}(4)\backslash\H$ of weight $\frac{1}{2}$. We package this into a theorem:
+
+    \begin{theorem}
+      The quadratic theta function
+      \[
+          \t(z) = \sum_{n \in \Z}e^{2\pi in^{2}z},
+      \]
+      is a modular form of of weight $\frac{1}{2}$ on $\G_{0}(4)\backslash\H$ with factor of modularity given by the theta multiplier:
+      \[
+        \t(\g z) = \legendre{c}{d}\e_{d}^{-1}\sqrt{cz+d}\t(z),
+      \]
+      where $\g = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \G_{0}(4)$.
+    \end{theorem}
+
+    $\t(z)$ is an example of a half-integral weight modular form. If we consider the squared quadratic theta function $\t^{2}(z)$, then we immediately see that this is a modular form of weight $1$ on $\G_{0}(4)$ where the modularity condition is
+    \[
+      \t^{2}(\g z) = \legendre{-1}{d}(cz+d)\t^{2}(z),
+    \]
+    with $\g = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$. This is an example of a modular form of odd integral weight. The most surprising fact about $\t(z)$ and $\t^{2}(z)$ is that their factors of modularity contain (modified) Jacobi symbols. The reason this is surprising is that these symbols have nothing to do with the congruence subgroup $\G_{0}(4)$, and so the modular forms are ``seeing more'' than what the congruence subgroup is controlling. We would then hope that additional interesting arithmetic information could be deduced from these theta functions. For example, as a consequence of the cocycle relation we get an interesting identity:
+
+    \begin{corollary}
+      Let $\g = \begin{pmatrix} a & b \\ c & d \end{pmatrix},\g' = \begin{pmatrix} a' & b' \\ c' & d' \end{pmatrix} \in \G_{0}(4)$. Then
+      \[
+        \legendre{c'a+d'c}{c'b+d'd}\e_{d'd}^{-1} = \legendre{c'}{d'}\legendre{c}{d}\e_{d'}^{-1}\e_{d}^{-1}
+      \]
+    \end{corollary}
+    \begin{proof}
+      The coycle relation for $\t(z)$ implies the nebentypus is a homomorphism so that
+      \[
+        \legendre{c'a+d'c}{c'b+d'd}\e_{c'b+d'd}^{-1} = \legendre{c'}{d'}\legendre{c}{d}\e_{d'}^{-1}\e_{d}^{-1}
+      \]
+      But $\e_{c'b+d'd}$ depends on $c'b+d'd$ modulo $4$ and we have $c'b+d'd \equiv d'd \tmod{4}$ because $c \equiv 0 \tmod{4}$.
+    \end{proof}
+  \section{\todo{The Quadratic Eisenstein Series}}
+
+\chapter{Multiple Dirichlet Series}
+  \todo{Introduction}
+  \section{\todo{Heuristics}}
+  \section{\todo{The Quadratic Multiple Dirichlet Series \texorpdfstring{$Z(s,w)$}{Z(s,w)}}}
+  \section{\todo{The Analytic Continuation of \texorpdfstring{$Z(s,w)$}{Z(s,w)}}}
+  \section{\todo{The Group of Vector Functional Equations}}
+
+\chapter{Trace Formulas}
+  We will discuss the Petersson and Kuznetsov trace formulas for the congruence subgroup $\G = \G_{0}(N)$ and their half-integral weight variants when $4 \mid N$. Let $\mc{F}_{\G}$ be a fundamental domain for $\GH$, and let $\G_{\infty}$ be the translation subgroup of $\G$.
+  \section{Kloosterman Sums}
+    The trace formulas involves a special type of arithmetic sum. For a positive integer $c$ and any integers $n$ and $m$, the \textbf{Kloosterman sum}\index{Kloosterman sum} $K(n,m;c)$ is defined by
+    \[
+      K(n,m;c) = \sum_{\substack{a \tmod{c} \\ (a,c) = 1}}e^{\frac{2\pi i(an+\conj{a}m)}{c}} = \psum_{a \tmod{c}}e^{\frac{2\pi i(an+\conj{a}m)}{c}},
+    \]
+    where the $'$ in the second sum indicates that the sum is over all $a \pmod{c}$ such that $(a,c) = 1$. Notice that if either $n = 0$ or $m = 0$ then the Kloosterman sum reduces to a Ramanujan sum. Kloosterman sums have similar properties to those of Ramanujan and Gauss sums, but we will not need them for the Petersson trace formula. We need Kloosterman sums because they appear in the Fourier expansion of cuspforms. The only result we will need is the famous bound proved by Weil (see \todo{cite} for a proof):
+
+    \begin{theorem}
+      Let $c$ be a positive integer and $n$ and $m$ be integers. Then
+      \[
+        |K(n,m;c)| \le d(c)\sqrt{(n,m,c)}\sqrt{c},
+      \]
+      where $d(c)$ is the divisor function.
+    \end{theorem}
+  \section{The Petersson Trace Formula}
+    \subsection*{Poincar\'e Series}
+      Note $\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \in \G$ so that every modular form $f$ on $\GH$ has a Fourier series at the $\infty$ cusp:
+      \[
+        f(z) = \sum_{n \ge 0}a_{\infty}(n)e^{2\pi inz}.
+      \]
+      Also
+      \[
+        \G_{0}(N) = \left\<\begin{pmatrix} 1 & 0 \\ N & 1 \end{pmatrix},\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}\right\>,
+      \]
+      is a generating set for $\G$ and a set of representatives for $\GG$ is
+      \[
+        \left\{\begin{pmatrix} \ast & \ast \\ c & d \end{pmatrix}:c \ge 0, (c,d) = 1 \right\}.
+      \]
+      Now recall that for every $m \ge 1$ and, necessarily even, weight $k \ge 4$, the $m$-th Poincar\'e series $P_{m,k}(z)$ of weight $k$ on $\GH$ is
+      \[
+        P_{m,k}(z) = \sum_{\g \in \GG}j(\g,z)^{-k}e^{2\pi in\g z},
+      \]
+      where $j(\g,z) = (cz+d)$ for $\g = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \G$. The Poincar\'e series are all cuspforms. Moreover they span $\mc{S}_{k}(\GH)$ and if $f \in \mc{S}_{k}(\GH)$ with Fourier series at the $\infty$ cusp given by
+      \[
+        f(z) = \sum_{n \ge 1}a_{\infty}(n,f)e^{2\pi inz},
+      \]
+      then
+      \[
+        \<f,P_{m,k}\> = \frac{\G(k-1)}{V_{\G}(4\pi m)^{k-1}}a_{\infty}(m).
+      \]
+    \subsection*{The Petersson Trace Formula}
+      The Petersson trace formula for the $\infty$ cusp is obtained by computing the inner product of two Poincar\'e series $P_{n,k}$ and $P_{m,k}$, with $n,m \neq 0$, in two different ways. One way is geometric in nature and uses the unfolding method while the other uses the spectral series of the inner product space $\mc{S}_{k}(\GH)$. Since Poincar\'e series extract the Fourier coefficients of cuspfroms (up to a scalar factor) via the Petersson inner product, our method amounts to computing the $m$-th Fourier coefficient of the Foruier seres of $P_{n,k}$ at the $\infty$ cusp in two different ways. However, it is better to think of the argument in a spectral sense because the idea generalizes directly to the Kuznetsov trace formula.
+
+      Before we begin we need the Fourier series of the Poincar\'e series $P_{n,k}$ at the $\infty$ cusp. This is obtaiend via the Poisson summation formula. Using the representatives of $\GG$, we have
+      \begin{align*}
+         P_{n,k}(z) &= \sum_{\substack{c \ge 0, d \neq 0 \\ (c,d) = 1 \\ c \equiv 0 \tmod{N}}}\frac{e^{2\pi in\left(\frac{az+b}{cz+d}\right)}}{(cz+d)^{k}} \\
+         &= e^{2\pi inz}+\sum_{\substack{c \ge 1, d \in \Z \\ (c,d) = 1 \\ c \equiv 0 \tmod{N}}}\frac{e^{2\pi in\left(\frac{az+b}{cz+d}\right)}}{(cz+d)^{k}} \\
+         &= e^{2\pi inz}+\sum_{\substack{c \ge 1, d \in \Z \\ (c,d) = 1 \\ c \equiv 0 \tmod{N}}}\frac{e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}z+cd}\right)}}{(cz+d)^{k}},
+      \end{align*}
+      where $a$ and $b$ are chosen such that $\det\left(\begin{pmatrix} a & b \\ c & d \end{pmatrix}\right) = 1$ and in the last equality we have used the fact that
+      \[
+        \frac{a}{c}-\frac{1}{c^{2}z+cd} = \frac{az+b}{cz+d}.
+      \]
+      Now summing over all pairs $(c,d) = 1$ such that $c \ge 1$ and $d \in \Z$ is the same as summing over all triples $(c,\ell,r)$ with $c \ge 1$, $\ell \in \Z$, and $r \tmod{c}$ such that $(r,c) = 1$. This is seen by writing $d = c\ell+r$. Moreover, note that since $ad-bc = 1$, we have $a(c\ell+r)-bc = 1$ which implies $ar \equiv 1 \pmod{c}$. So we may take $a$ to be the inverse for $r$ modulo $c$. Then
+      \[
+        \sum_{\substack{c \ge 1, d \in \Z \\ (c,d) = 1 \\ c \equiv 0 \tmod{N}}}\frac{e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}z+cd}\right)}}{(cz+d)^{k}} = \sum_{\substack{(c,\ell,r) \\ c \equiv 0 \tmod{N}}}\frac{e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}z+c^{2}\ell+cr}\right)}}{(cz+c\ell+r)^{k}} = \psum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N} \\ r \tmod{c}}}\sum_{\ell \in \Z}\frac{e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}z+c^{2}\ell+cr}\right)}}{(cz+c\ell+r)^{k}}.
+      \]
+      We will now apply the Poisson summation formula to the innermost sum. Set
+      \[
+        I_{c,r}(z) = \sum_{\ell \in \Z}\frac{e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}z+c^{2}\ell+cr}\right)}}{(cz+c\ell+r)^{k}}.
+      \]
+      This defines a holomorphic function on $\H$ (because $P_{n,k}(z)$ is holomorphic on $\H$), and so by the identity theorem we may verify a transformation law on a set containing a limit point. Therefore set $z = iy$ for $y > 1$, and define
+      \[
+        f(x) = \frac{e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}x+cr+ic^{2}y}\right)}}{(cx+r+icy)^{k}}.
+      \]
+      To see that $f(x)$ is Schwarz, first observe
+      \[
+        \Im\left(\frac{a}{c}-\frac{1}{c^{2}x+cr+ic^{2}y}\right) = \Im\left(-\frac{1}{c^{2}x+cr+ic^{2}y}\right) = \Im\left(-\frac{c^{2}x+cr-ic^{2}y}{|c^{2}x+cr+ic^{2}y|}\right) = \frac{c^{2}y}{|c^{2}x+cr+ic^{2}y|}.
+      \]
+      It follows that $\Im\left(\frac{a}{c}-\frac{1}{c^{2}x+cr+ic^{2}y}\right)$ tends to zero as $x \to \pm \infty$. Also, $|cx+r+icy| \ge |icy| \ge c$ so altogether,
+      \[
+        f(x) \ll \left|\frac{e^{2\pi in\left(\frac{b+iay}{cx+r+icy}\right)}}{(cx+r+icy)^{k}}\right| \ll \frac{e^{-2\pi n\Im\left(\frac{a}{c}-\frac{1}{c^{2}x+cr+ic^{2}y}\right)}}{c},
+      \]
+      as $x \to \pm\infty$. Since the latter most expression has exponential decay to zero, $f(x)$ is Schwarz. We now compute the Fourier transform:
+      \[
+        \hat{f}(t) = \int_{-\infty}^{\infty}f(x)e^{-2\pi itx}\,dx = \int_{-\infty}^{\infty}\frac{e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}x+cr+ic^{2}y}\right)}}{(cx+r+icy)^{k}}e^{-2\pi itx}\,dx.
+      \]
+      Complexify the integral to get
+      \[
+        \int_{\Im(z) = 0}\frac{e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}z+cr+ic^{2}y}\right)}}{(cz+r+icy)^{k}}e^{-2\pi itz}\,dz.
+      \]
+      Now make the change of variables $z \to z-\frac{r}{c}-iy$ to obtain
+      \[
+        e^{2\pi in\frac{a}{c}}\int_{\Im(z) = y}\frac{e^{-2\pi in\frac{1}{c^{2}z}}}{(cz)^{k}}e^{-2\pi it\left(z-\frac{r}{c}-iy\right)}\,dz.
+      \]
+      The integrand is meromorphic with a pole only at $z = 0$. Therefore by shifting the line of integration we may take the limit as $\Im(z) \to \infty$ without picking up additional residues. However
+      \[
+        \left|e^{-2\pi it\left(z-\frac{r}{c}-iy\right)}\right| = e^{2\pi t(\Im(z)-y)} \quad \text{and} \quad \left|e^{-2\pi in\frac{1}{c^{2}z}}\right| = e^{2\pi n\left(\frac{\Im(z)}{c^{2}|z|^{2}}\right)}.
+      \]
+      Taking the limit as $\Im(z) \to \infty$, the second expression above has exponential decay to zero because $c^{2}|z|^{2} \ge \Im(z)^{2}$. As for the first expression, it exhibits exponential decay to zero if and only if $t < 0$ and is bounded when $t = 0$. Altogether this means that the integral vanishes if $t \le 0$. So by Poisson summation,
+      \[
+        I_{c,r}(iy) = \sum_{\ell \in \Z}f(\ell) = \sum_{t \in \Z}\hat{f}(t) = \sum_{t > 0}\hat{f}(t) = \sum_{t > 0}e^{2\pi in\frac{a}{c}}\int_{\Im(z) = y}\frac{e^{-2\pi in\frac{1}{c^{2}z}}}{(cz)^{k}}e^{-2\pi it\left(z-\frac{r}{c}-iy\right)}\,dz.
+      \]
+      It remains to compute this latter integral for $t > 0$. First
+      \[
+        \int_{\Im(z) = y}\frac{e^{-2\pi in\frac{1}{c^{2}z}}}{(cz)^{k}}e^{-2\pi it\left(z-\frac{r}{c}-iy\right)}\,dz = e^{2\pi it\left(iy+\frac{r}{c}\right)}\int_{\Im(z) = y}\frac{e^{-2\pi in\frac{1}{c^{2}z}}}{(cz)^{k}}e^{-2\pi itz}\,dz.
+      \]
+      Now make the change of variables $z \to -\frac{z}{2\pi it}$ to the last integral to obtain
+      \begin{align*}
+        -\frac{1}{2\pi it}\int_{\Re(z) = 2\pi ty}\frac{e^{-4\pi^{2}nt\frac{1}{c^{2}z}}}{\left(-\frac{cz}{2\pi it}\right)^{k}}e^{z}\,dz &= -\frac{1}{2\pi it}\int_{\Re(z) = 2\pi ty}\left(-\frac{2\pi it}{cz}\right)^{k}e^{z-4\pi^{2}nt\frac{1}{c^{2}z}}\,dz \\
+        &= \frac{(-2\pi it)^{k-1}}{c^{k}}\int_{\Re(z) = 2\pi ty}z^{-k}e^{z-4\pi^{2}nt\frac{1}{c^{2}z}}\,dz \\
+        &= \frac{(-2\pi it)^{k-1}}{c^{k}}\int_{-\infty}^{(0^{+})}z^{-k}e^{z-4\pi^{2}nt\frac{1}{c^{2}z}}\,dz,
+      \end{align*}
+      where in the last line we have homotoped the line of integration to a Hankel contour about the negative real axis. We now use the Schl\"aflin integral representation of the $J$-Bessel function (see \todo{cite}):
+      \[
+        J_{\nu}(z) = \frac{1}{2\pi i}\left(\frac{z}{2}\right)^{\nu}\int_{-\infty}^{(0)}t^{-(\nu+1)}e^{t-\frac{z^{2}}{4t}}\,dt.
+      \]
+      With this representation, the entire term can be expressed as
+      \[
+        \frac{2\pi i^{-k}}{c}\left(\frac{\sqrt{t}}{\sqrt{n}}\right)^{k-1}J_{k-1}\left(\frac{4\pi\sqrt{nt}}{c}\right).
+      \]
+      Thus we conclude
+      \[
+        I_{c,r}(iy) = \sum_{t > 0}\frac{2\pi i^{-k}}{c}\left(\frac{\sqrt{t}}{\sqrt{n}}\right)^{k-1}J_{k-1}\left(\frac{4\pi\sqrt{nt}}{c}\right)e^{2\pi in\frac{a}{c}+2\pi it\left(iy+\frac{r}{c}\right)}.
+      \]
+      By the identity theorem this holds for all $z \in \H$ so that
+      \[
+        I_{c,r}(z) = \sum_{t > 0}\left(\frac{2\pi i^{-k}}{c}\left(\frac{\sqrt{t}}{\sqrt{n}}\right)^{k-1}J_{k-1}\left(\frac{4\pi\sqrt{nt}}{c}\right)e^{2\pi in\frac{a}{c}+2\pi it\frac{r}{c}}\right)e^{2\pi itz}.
+      \]
+      Plugging this back into the Poincar\'e series we get a form of the Fourier series at the $\infty$ cusp:
+      \begin{align*}
+        P_{n,k}(z) &= e^{2\pi inz}+\psum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N} \\ r \tmod{c}}}\sum_{t > 0}\left(\frac{2\pi i^{-k}}{c}\left(\frac{\sqrt{t}}{\sqrt{n}}\right)^{k-1}J_{k-1}\left(\frac{4\pi\sqrt{nt}}{c}\right)e^{2\pi in\frac{a}{c}+2\pi it\frac{r}{c}}\right)e^{2\pi itz} \\
+        &= \sum_{t > 0}\left(\d_{n,t}+\left(\frac{\sqrt{t}}{\sqrt{n}}\right)^{k-1}\psum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N} \\ r \tmod{c}}}\frac{2\pi i^{-k}}{c}J_{k-1}\left(\frac{4\pi\sqrt{nt}}{c}\right)e^{2\pi in\frac{a}{c}+2\pi it\frac{r}{c}}\right)e^{2\pi itz} \\
+        &= \sum_{t > 0}\left(\d_{n,t}+\left(\frac{\sqrt{t}}{\sqrt{n}}\right)^{k-1}\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{2\pi i^{-k}}{c}J_{k-1}\left(\frac{4\pi\sqrt{nt}}{c}\right)\psum_{r \tmod{c}}e^{2\pi in\frac{a}{c}+2\pi it\frac{r}{c}}\right)e^{2\pi itz}. \\
+      \end{align*}
+      We now simplify the innermost sum. Since $a$ is the inverse for $r$ modulo $c$, the innermost sum above becomes
+      \[
+        \psum_{r \tmod{c}}e^{2\pi in\frac{a}{c}+2\pi it\frac{r}{c}} = \psum_{r \tmod{c}}e^{2\pi in\frac{a}{c}+2\pi it\frac{\conj{a}}{c}} = \psum_{a \tmod{c}}e^{\frac{2\pi i(an+\conj{a}t)}{c}} = K(n,t;c).
+      \]
+      So at last we obtain the Fourier series of $P_{n,k}$ at the $\infty$ cusp:
+      \[
+        P_{n,k}(z) = \sum_{t > 0}\left(\d_{n,t}+\left(\frac{\sqrt{t}}{\sqrt{n}}\right)^{k-1}\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{2\pi i^{-k}}{c}J_{k-1}\left(\frac{4\pi\sqrt{nt}}{c}\right)K(n,t;c)\right)e^{2\pi itz}.
+      \]
+      Now we are ready to compute half of the Petersson trace formula. Recall that if $f \in \mc{S}_{k}(\GH)$, then we know (see \todo{cite})
+      \[
+        \<f,P_{m,k}\> = \frac{\G(k-1)}{V_{\G}(4\pi m)^{k-1}}a_{\infty}(m).
+      \]
+      Therefore from the Fourier series of $P_{n,k}$ at the $\infty$ cusp we get
+      \[
+        \<P_{n,k},P_{m,k}\> = \frac{\G(k-1)}{V_{\G}(4\pi m)^{k-1}}\left(\d_{n,m}+\left(\frac{\sqrt{m}}{\sqrt{n}}\right)^{k-1}\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{2\pi i^{-k}}{c}J_{k-1}\left(\frac{4\pi\sqrt{nm}}{c}\right)K(n,m;c)\right).
+      \]
+      This is half of the Petersson trace formula. For the other half, let $\{u_{j}\}_{1 \le j \le r}$ be an orthonormal basis for $\mc{S}_{k}(\GH)$ with respect to the Petersson inner product. Moreover, let
+      \[
+        u_{j}(z) = \sum_{t \ge 1}a_{j,\infty}(t)e^{2\pi itz},
+      \]
+      be the Fourier series of $u_{j}$ at the $\infty$ cusp. Because $\{u_{j}\}_{1 \le j \le r}$ is an orthonormal basis we can write the Poincar\'e series as
+      \begin{align*}
+        P_{n,k}(z) &= \sum_{1 \le j \le r}\<P_{n,k},u_{j}\>u_{j}(z) \\
+        &= \sum_{1 \le j \le r}\conj{\<u_{j},P_{n,k}\>}u_{j}(z) \\
+        &= \frac{\G(k-1)}{V_{\G}(4\pi m)^{k-1}}\sum_{1 \le j \le r}\conj{a_{j,\infty}(n)}u_{j}(z) \\
+        &= \frac{\G(k-1)}{V_{\G}(4\pi m)^{k-1}}\sum_{1 \le j \le r}\conj{a_{j,\infty}(n)}\sum_{t \ge 1}a_{j,\infty}(t)e^{2\pi itz} \\
+        &= \sum_{t \ge 1}\left(\frac{\G(k-1)}{V_{\G}(4\pi m)^{k-1}}\sum_{1 \le j \le r}\conj{a_{j,\infty}(n)}a_{j,\infty}(t)\right)e^{2\pi itz}.
+      \end{align*}
+      The expression above is an alternative representation of the Fourier series of $P_{n,k}$ at the $\infty$ cusp. Analogous to before, we see that
+      \[
+        \<P_{n,k},P_{m,k}\> = \left(\frac{\G(k-1)}{V_{\G}(4\pi m)^{k-1}}\right)^{2}\sum_{1 \le j \le r}\conj{a_{j,\infty}(n)}a_{j,\infty}(m).
+      \]
+      This is the other half of the Petersson trace formula. Equating the two sides gives
+      \[
+        \frac{\G(k-1)}{V_{\G}(4\pi m)^{k-1}}\sum_{1 \le j \le r}\conj{a_{j,\infty}(n)}a_{j,\infty}(m) = \d_{n,m}+\left(\frac{\sqrt{m}}{\sqrt{n}}\right)^{k-1}\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{2\pi i^{-k}}{c}J_{k-1}\left(\frac{4\pi\sqrt{nm}}{c}\right)K(n,m;c).
+      \]
+      When $n = m$, $\left(\frac{\sqrt{m}}{\sqrt{n}}\right)^{k-1} = 1$ so we can factor this term out of the entire right-hand side and divide by it resulting in the \textbf{Petersson trace formula}\index{Petersson trace formula}:
+      \[
+        \frac{\G(k-1)}{V_{\G}(4\pi\sqrt{nm})^{k-1}}\sum_{1 \le j \le r}\conj{a_{j,\infty}(n)}a_{j,\infty}(m) = \d_{n,m}+\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{2\pi i^{-k}}{c}J_{k-1}\left(\frac{4\pi\sqrt{nm}}{c}\right)K(n,m;c).
+      \]
+      The left-hand side is called the \textbf{spectral side}\index{spectral side} and the right-hand side is called the \textbf{geometric side}\index{geometric side}.
+  \section{The Kuznetsov Trace Formula}
+    \subsection*{The Laplace Operator}
+      Recall that the Laplace operator on $\H$ is given by
+      \[
+        \D = -y^{2}\left(\frac{\del^{2}}{\del x^{2}}+\frac{\del^{2}}{\del y^{2}}\right).
+      \]
+      The Kuznetsov trace formula requires a complete understanding of the spectral theory of the Laplace operator $\D$ on $\H$. Recall that a function $f:\H \to \C$ is said to be an automorphic form with respect to a congruence subgroup $\G$ if $f$ is $\G$-invariant:
+      \[
+        f(\g z) = f(z),
+      \]
+      for all $\g \in \G$. We call this invariance the automorphy condition. In particular, $f$ lives on $\GH$. Note that since $\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \in \G$, automorphoy of $f$ implies that if $\mf{a}$ is a cusp of $\GH$ and $\s_{\mf{a}}$ is a scaling matrix for $\mf{a}$, then $f$ has a Fourier series at the $\mf{a}$ cusp:
+      \[
+        f(\s_{\mf{a}}z) = \sum_{n \in \Z}a_{\mf{a}}(n,y)e^{2\pi inx}.
+      \]
+      Let $\mc{A}(\GH)$ denote the space of automorphic functions on $\GH$. We will restrict our interest to the space
+      \[
+        \mc{L}(\GH) = \{f \in \mc{A}(\GH):||f|| < \infty\},
+      \]
+      where the norm $||\cdot||$ is given by
+      \[
+        ||f|| = \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}|f(z)|^{2}\,d\mu,
+      \]
+      where $\mc{F}_{\G}$ is a fundamental doamin for $\GH$ and $V_{\G} = [\PSL_{2}(\Z):\G]$. Since $f$ is automorphic, the integral is independent of the choice of fundamental domain. This is actually an inner product space (\todo{why}) via the inner product
+      \[
+        \<f,g\> = \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}f(z)\conj{g(z)}\,d\mu,
+      \]
+      for any $f,g \in \mc{L}(\GH)$ so that $||\cdot|| = \sqrt{\<\cdot,\cdot\>}$. Note again that since $f$ and $g$ are automorphic, the integral is independent of the choice of fundamental domain. It can be further shown that $\mc{L}(\GH)$ is complete (\todo{why}) and hence a Hilbert space. Now consider the subspace
+      \[
+        \mc{D}(\GH) = \{f \in \mc{A}(\GH):\text{$f$ and $\D f$ are smooth and bounded}\}.
+      \]
+      Since boundedness on $\H$ implies square-integrability over $\mc{F}_{\G}$, we have the following chain of inclusions:
+      \[
+        \mc{D}(\GH) \subseteq \mc{L}(\GH) \subseteq \mc{A}(\GH).
+      \]
+      Moreover, $\mc{D}(\GH)$ is almost all of $\mc{L}(\GH)$ as the following proposition shows (see \todo{cite} for a proof):
+
+      \begin{proposition}\label{prop:dense_subspace_of_square-integrable_modular_functions}
+        $\mc{D}(\GH)$ is dense in $\mc{L}(\GH)$.
+      \end{proposition}
+
+      It can be shown that $\D$ is positive and symmetric on $\mc{D}(\GH)$ and hence admits a self-adjoint extension to $\mc{L}(\GH)$ (see \todo{cite} for a proof):
+
+      \begin{theorem}\label{thm:Laplace_semi-definite_self-adjoint}
+        On $\mc{L}(\GH)$, the Laplace operator $\D$ is positive semi-definite and self-adjoint.
+      \end{theorem}
+
+      If we suppose $f \in \mc{L}(\GH)$ is an eigenfunction for $\D$ with eigenvalue $\l$, then \cref{thm:Laplace_semi-definite_self-adjoint} implies that $\l$ is real and positive. Writing $\l = s(1-s)$, we see that $s$ and $1-s$ are the two roots of $z^{2}-z+\l$. As $\l$ is real, these roots are either conjugate symmetric or real. In the former case, $\conj{s} = 1-s$ so that if $s = \s+it$ we find
+      \[
+        \s = 1-\s \quad \text{and} \quad t = t,
+      \]
+      so that $s = \frac{1}{2}+it$ with $t$ real. In the later case, $s$ is real and the fact that $\l$ is positive implies $s \in (0,1)$. Therefore either $\l = \frac{1}{4}+t^{2}$ for some real $t$ or $\l \in (0,1)$.
+    \subsection*{Maass Forms \& Poincar\'e Series with Test Functions}
+      Maass forms are our first example of eigenfunctions for the Laplace operator. Recall that a real-analytic function $f:\H \to \C$ is a called a \textbf{(harmonic) Maass form}\index{(harmonic) Maass form} on $\GH$ if it is automorphic on $\GH$, an eigenfunction for $\D$, and has moderate growth at the cusps of $\GH$. Since the Laplace operator is elliptic (\todo{why?}), any Maass form is automatically real-analytic. The most well-known Maass forms are the real-analytic Eisenstein series at the $\mf{a}$ cusp:
+      \[
+        E_{\mf{a}}(z,s) = E(\s_{\mf{a}}^{-1}z,s) = \sum_{\g \in \GG}\Im(\s_{\mf{a}}^{-1}\g z)^{s},
+      \]
+      with eigenvalue $\l = s(1-s)$ and where $\s_{\mf{a}}$ is a scaling matrix for the cusp $\mf{a}$. We can generalize the construction of the real-analytic Eisenstein series by using test functions. Let $\psi:\R^{+} \to \C$ be a smooth function such that
+      \[
+        \psi(y) \ll \frac{y}{\log(y)^{2}},
+      \]
+      as $y \to 0$. We call $\psi$ a \textbf{test function}\index{test function}. For any integer $m \ge 0$ set
+      \[
+        p(z) = \psi(\Im(z))e^{2\pi imz}.
+      \]
+      Let $\s_{\mf{a}}$ be a scaling matrix for the $\mf{a}$ cusp and consider the \textbf{Poincar\'e series}\index{Poincar\'e series} at the $\mf{a}$ cusp with test function $\psi$:
+      \[
+        P_{\mf{a},m}(z,\psi) = \sum_{\g \in \GG}p(\s_{\mf{a}}^{-1}\g z) = \sum_{\g \in \GG}\psi(\Im(\s_{\mf{a}}^{-1}\g z))e^{2\pi im\s_{\mf{a}}^{-1}\g z}.
+      \]
+      This series converges absolutely uniformly on compacta (\todo{why?}). Note that if $m = 0$ and $\psi(y) = y^{s}$ we recover the real-analytic Eisenstein series at the $\mf{a}$ cusp. If $m = 0$ and $\psi$ is compactly supported we call $E_{\mf{a}}(z,\psi)$ an \textbf{incomplete Eisenstein series}\index{incomplete Eisenstein series}. The advantage of the incomplete Eisenstein series is that since $\psi$ is compactly supported $E_{\mf{a}}(z,\psi)$ is too and hence is bounded on $\H$ (\todo{why?}). As a consequence, $E_{\mf{a}}(z,\psi)$ is square-integrable and therefore belongs to $\mc{L}(\GH)$. Unfortunately, incomplete Eisenstein series fail to be Maass forms because they are not eigenfunctions for the Laplace operator. This is because compactly supported functions cannot be real-analytic.
+    \subsection*{Spectral Theory of the Laplace Operator}
+      We are now ready to discuss the spectral theory of the Laplace operator $\D$. What we need to do is decompose $\mc{L}(\GH)$ into subspaces invariant under the Laplace operator such that on each subspace the Laplace operator has either pure point spectrum, absolutely continuous spectrum, or residual spectrum. To this end, let $\mc{E}(\GH)$ denote the closure in $\mc{L}(\GH)$ of the span of the incomplete Eisenstein series. We will also let $\mc{E}_{s}(\GH)$ and $\mc{L}_{s}(\GH)$ denote the subspaces that are also eigenfunctions for $\D$ with eigenvalue $\l = s(1-s)$. Since $\l$ is invariant under $s \to 1-s$ we can replace the subscript with $1-s$ whenever necessary. We will decompose $\mc{L}(\GH)$ with respect to $\mc{E}(\GH)$. To do this, we examine the orthogonal complement to $\mc{E}(\GH)$ inside $\mc{L}(\GH)$ by computing the inner product of $f \in \mc{L}(\GH)$ against any $E_{\mf{a}}(\cdot|\psi) \in \mc{E}(\GH)$:
+      \begin{align*}
+        \<f,E_{\mf{a}}(\cdot|\psi)\> &= \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}f(z)\conj{E_{\mf{a}}(z,\psi)}\,d\mu \\
+        &= \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}\conj{E_{\mf{a}}(z,\psi)}f(z)\,d\mu \\
+        &= \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}\conj{\sum_{\g \in \GG}\psi(\Im(\s_{\mf{a}}^{-1}\g z))}f(z)\,d\mu \\
+        &= \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}\sum_{\g \in \GG}\conj{\psi(\Im(\s_{\mf{a}}^{-1}\g z))}f(z)\,d\mu \\
+        &= \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}\sum_{\g \in \GG}\conj{\psi(\Im(z))}f(\g^{-1}\s_{\mf{a}}z)\,d\mu && \text{$z \to \g^{-1}\s_{\mf{a}}z$} \\
+        &= \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}\sum_{\g \in \GG}\conj{\psi(\Im(z))}f(\s_{\mf{a}}z)\,d\mu  && \text{automorphy} \\
+        &= \int_{\G_{\infty}\backslash\H}\conj{\psi(\Im(z))}f(\s_{\mf{a}}z)\,d\mu && \text{unfolding} \\
+        &= \int_{\G_{\infty}\backslash\H}f(\s_{\mf{a}}z)\conj{\psi(\Im(z))}\,d\mu \\
+        &= \int_{0}^{\infty}\int_{0}^{1}f(\s_{\mf{a}}(x+iy))\conj{\psi(y)}\,\frac{dx\,dy}{y^{2}} \\
+        &= \int_{0}^{\infty}\left(\int_{0}^{1}f(\s_{\mf{a}}(x+iy))\,dx\right)\conj{\psi(y)}\,\frac{dy}{y^{2}}.
+      \end{align*}
+      The inner integral is precisely the constant term in the Fourier series of $f$ at the $\mf{a}$ cusp. It follows that $f$ is orthogonal to all of the incomplete Eisenstein series if and only if
+      \[
+        f(\s_{\mf{a}}z) = \sum_{n \neq 0}a_{\mf{a}}(n,y)e^{2\pi inx},
+      \]
+      for every cusp $\mf{a}$. Since $\mc{E}(\GH)$ is the closure of the subspace spanned by the incomplete Eisenstein series, $f$ if orthogonal to $\mc{E}(\GH)$ if and only if it has a series of the form above for every cusp $\mf{a}$. We call such an automorphic form a \textbf{cuspform}\index{cuspform} and we let $\mc{C}(\GH)$ denote the space of cuspforms (note that this space is already closed). Accordingly, let $\mc{C}_{s}(\GH)$ denote the subspace of cuspforms that are also eigenfunctions for $\D$ with eigenvalue $\l = s(1-s)$. The cuspforms exhibit exponential decay to zero at the cusps of $\GH$ (see \todo{cite} for a proof), and hence are Maass cuspforms. Although the proof is beyond the scope of this text, the spectral resolution of the Laplace operator on the space of cuspforms is as follows (see \todo{cite} for a proof):
+
+      \begin{theorem}\label{thm:cusp_form_spectrum}
+        The Laplace operator has pure point spectrum on $\mc{C}(\GH)$. The corresponding subspaces $\mc{C}_{s}(\GH)$ have finite dimension and are mutually orthogonal. Letting $\{u_{j}\}$ be any complete orthonormal basis of $\mc{C}(\GH)$, every $f \in \mc{C}(\GH)$ has a series of the form
+        \[
+          f(z) = \sum_{j}\<f,u_{j}\>u_{j}(z),
+        \]
+        which converges absolutely uniformly on compacta if $f \in \mc{D}(\GH)$ and in norm otherwise.
+      \end{theorem}
+
+       Note that by a complete orthonormal basis $\{u_{j}\}$ in \cref{thm:cusp_form_spectrum} we mean a choice of orthonormal basis for each eigenspace $\mc{C}_{s}(\GH)$. In particular, $\{u_{j}\}$ is an orthonormal basis of Maass cuspforms. We now discuss the spectrum of the Laplace operator on $\mc{E}(\GH)$. Essential is the meromorphic continuation of the Eisenstein series $E_{\mf{a}}(z,s)$ (see \todo{cite} for a complete argument):
+
+      \begin{theorem}\label{thm:meromorphic_continuation_of_Eisenstein_series}
+        Let $\mf{a}$ and $\mf{b}$ be not necessarily distinct cusps of $\GH$. The Eisenstein series $E_{\mf{a}}(z,s)$ admits meromorphic continuation to $\C$ in the $s$-plane, via a Fourier series at the $\mf{b}$ cusp given by:
+        \[
+          E_{\mf{a}}(\s_{\mf{b}}z,s) = \d_{\mf{a},\mf{b}}y^{s}+\tau_{\mf{a},\mf{b}}(s)y^{1-s}+\sum_{n \neq 0}\tau_{\mf{a},\mf{b}}(n,s)\sqrt{y}K_{s-\frac{1}{2}}(2\pi|n|y)e^{2\pi inx}.
+        \]
+        The meromorphically continued Eisenstein series remain orthogonal to the cuspforms. Moreover, the poles of $\tau_{\mf{a},\mf{b}}(s)$ are simple and belong to the segment $(\frac{1}{2},1]$. A pole of $\tau_{\mf{a},\mf{b}}(s)$ is also a pole of $\tau_{\mf{a},\mf{a}}(s)$, and the poles of $E_{\mf{a}}(z,s)$ are among the poles of $\tau_{\mf{a},\mf{a}}(s)$. Also, the residues at these poles are in $\mc{L}(\GH)$.
+      \end{theorem}
+
+      To begin decomposing the space $\mc{E}(\GH)$, consider the subspace $C_{0}^{\infty}(\R^{+})$ of $\mc{L}^{2}(\R^{+})$ with inner product
+      \[
+        \<f,g\> = \frac{1}{2\pi}\int_{0}^{\infty}f(r)\conj{g(r)}\,dr,
+      \]
+      for any $f,g \in C_{0}^{\infty}(\R^{+})$. To each cups $\mf{a}$ we associate the \textbf{Eisenstein transform}\index{Eisenstein transform} $E_{\mf{a}}:C_{0}^{\infty}(\R^{+}) \to \mc{A}(\GH)$ defined by
+      \[
+        (E_{\mf{a}}f)(z) = \frac{1}{4\pi}\int_{0}^{\infty}f(r)E_{\mf{a}}\left(z,\frac{1}{2}+ir\right)\,dr.
+      \]
+      It is not too hard to show the following (see \todo{cite} for a proof):
+
+      \begin{proposition}\label{prop:Eisenstein_transform_property}
+        If $f \in C_{0}^{\infty}(\R^{+})$, then $E_{\mf{a}}f$ is square-integrable over $\GH$. That is, $E_{\mf{a}}:C_{0}^{\infty}(\R^{+}) \to \mc{L}(\GH)$. Moreover,
+        \[
+          \<E_{\mf{a}}f,E_{\mf{b}}g\> = \d_{\mf{a},\mf{b}}\<f,g\>,
+        \]
+        for any $f,g \in C_{0}^{\infty}(\R^{+})$ and any two cusps $\mf{a}$ and $\mf{b}$.
+      \end{proposition}
+
+      We let $\mc{E}_{\mf{a}}(\GH)$ denote the image of the Eisenstein transform $E_{\mf{a}}$ and call it the \textbf{Eisenstein space}\index{Eisenstein space} of $E_{\mf{a}}(z,s)$. An immediate consequence of \cref{prop:Eisenstein_transform_property} is that the Eisenstein spaces for distinct cusps are orthogonal. Moreover, since $E_{\mf{a}}\left(z,\frac{1}{2}+ir\right)$ is an eigenfunction for the Laplace operator with eigenvalue $\l = \frac{1}{4}+r^{2}$, we find that
+      \[
+        \D E_{\mf{a}}= E_{\mf{a}}M,
+      \]
+      where $M:C_{0}^{\infty}(\R^{+}) \to C_{0}^{\infty}(\R^{+})$ is the multiplication operator given by
+      \[
+        (Mf)(r) = \left(\frac{1}{4}+r^{2}\right)f(r),
+      \]
+      for all $f \in C_{0}^{\infty}(\R^{+})$. Therefore $\mc{E}_{\a}(\GH)$ is invariant under the Laplace operator. Although the proof is beyond the scope of this text, the spectral resolution of the Laplace operator on the space of incomplete Eisenstein series is as follows (see \todo{cite} for a proof):
+
+      \begin{theorem}\label{thm:incomplete_Eisenstein_series_spectrum}
+        The Laplace operator has absolutely continuous spectrum on $\mc{E}(\GH)$. This space admits the orthogonal decomposition
+        \[
+          \mc{E}(\GH) = \bigop_{\mf{a}}\mc{E}_{\mf{a}}(\GH).
+        \]
+        On each Eisenstein space $\mc{E}_{\mf{a}}(\GH)$, the Laplace operator has absolutely continuous spectrum and it covers the segment $[\frac{1}{4},\infty)$ uniformly with multiplicity $1$. Moreover, every $f \in \mc{E}(\GH)$ has a series of the form
+        \[
+          f(z) = \sum_{\mf{a}}\frac{1}{4\pi}\int_{-\infty}^{\infty}\left\<f,E_{\mf{a}}\left(\cdot,\frac{1}{2}+ir\right)\right\>E_{\mf{a}}\left(z,\frac{1}{2}+ir\right)\,dr,
+        \]
+        which converges absolutely uniformly on compacta if $f \in \mc{D}(\GH)$ and in norm otherwise.
+      \end{theorem}
+
+      The collection $\{E_{\mf{a}}(\cdot,\frac{1}{2}+ir)\}_{\mf{a}}$ of Eisenstein series at $s = \frac{1}{2}+ir$ for real $r$ in \cref{thm:incomplete_Eisenstein_series_spectrum} is called the \textbf{eigenpacket}\index{eigenpacket}. We now discuss the residual spectrum. By \cref{thm:meromorphic_continuation_of_Eisenstein_series}, the residues of the Eisenstein series are in $\mc{L}(\GH)$. Let $\mc{R}(\GH)$ denote the subspace spanned by the residues of all the Eisenstein series. Let $\mc{R}_{s}(\GH)$ denote the subspace spanned by those residues taken at $s$. By \cref{thm:meromorphic_continuation_of_Eisenstein_series}, $\mc{R}(\GH)$ decomposes as
+      \[
+        \mc{R}(\GH) = \bigop_{\frac{1}{2} < s \le 1}\mc{R}_{s}(\GH).
+      \]
+      This decomposition is orthogonal (\todo{why}) and each subspace $\mc{R}_{s}(\GH)$ is invariant under the Laplace operator. Since there are finitely many cusps of $\GH$, each $\mc{R}_{s}(\GH)$ is finite dimensional. As the number of residues in $(\frac{1}{2},1]$ is finite by \cref{thm:meromorphic_continuation_of_Eisenstein_series}, it follows that $\mc{R}(\GH)$ is finite dimensional too. We call any element of $\mc{R}_{s}(\GH)$ a \textbf{(residual) Maass form}\index{(residual) Maass form}. Although the proof is beyond the scope of this text, the spectral resolution of the Laplace operator on this space is as follows (see \todo{cite} for a proof):
+
+      \begin{theorem}\label{thm:residual_spectrum}
+        The Laplace operator has residual spectrum on $\mc{R}(\GH)$ in $[0,\frac{1}{4})$. This space admits the orthogonal decomposition
+        \[
+          \mc{R}(\GH) = \bigop_{\frac{1}{2} < s \le 1}\mc{R}_{s}(\GH).
+        \]
+        Letting $\{u_{j}\}$ be any complete orthonormal basis of $\mc{R}(\GH)$, every $f \in \mc{R}(\GH)$ has a series of the form
+        \[
+          f(z) = \sum_{j}\<f,u_{j}\>u_{j}(z),
+        \]
+        which converges absolutely uniformly on compacta if $f \in \mc{D}(\GH)$ and in norm otherwise.
+      \end{theorem}
+
+      Note that by a complete orthonormal basis $\{u_{j}\}$ in \cref{thm:residual_spectrum} we mean a choice of orthonormal basis for each eigenspace $\mc{R}_{s}(\GH)$. Combining \cref{thm:cusp_form_spectrum,thm:incomplete_Eisenstein_series_spectrum,thm:residual_spectrum} gives the full spectral resolution of $\mc{L}(\GH)$.
+
+      \begin{theorem}\label{thm:the_full_spectral_resolution}
+        $\mc{L}(\GH)$ admits the orthogonal decomposition
+        \[
+          \mc{L}(\GH) = \mc{C}(\GH) \op \mc{R}(\GH) \op \mc{E}(\GH),
+        \]
+        where the Laplace operator has pure point spectrum on $\mc{C}(\GH)$, residual spectrum on $\mc{R}(\GH)$, and absolutely continuous spectrum on $\mc{E}(\GH)$. Letting $\{u_{j}\}$ be any complete orthonormal basis of the discrete spectrum, any $f \in \mc{L}(\GH)$ has a series of the form
+        \[
+          f(z) = \sum_{j}\<f,u_{j}\>u_{j}(z)+\sum_{\mf{a}}\frac{1}{4\pi}\int_{-\infty}^{\infty}\left\<f,E_{\mf{a}}\left(\cdot,\frac{1}{2}+ir\right)\right\>E_{\mf{a}}\left(z,\frac{1}{2}+ir\right)\,dr,
+        \]
+        which converges absolutely uniformly on compacta if $f \in \mc{D}(\GH)$ and in norm otherwise.
+      \end{theorem}
+      \begin{proof}
+        Combine \cref{thm:cusp_form_spectrum,thm:incomplete_Eisenstein_series_spectrum,thm:residual_spectrum}.
+      \end{proof}
+    \subsection*{The pre-Kuznetsov Trace Formula}
+      The pre-Kuznetsov trace formula, for the $\infty$ cusp, is obtained by computing the inner product of two Poincar\'e  series $P_{\infty,n}(\cdot,\psi)$ and $P_{\infty,m}(\cdot,\vphi)$, with $n,m \neq 0$, in two different ways. We first need the Fourier series at the $\infty$ cusp say for $P_{\infty,n}(\cdot,\psi)$. To do this we appeal to the Poisson summation formula. Using the representatives of $\GG$, we have
+      \begin{align*}
+        P_{\infty,n}(z,\psi) &= \sum_{\substack{c \ge 0, d \neq 0 \\ (c,d) = 1 \\ c \equiv 0 \tmod{N}}}\psi\left(\frac{\Im(z)}{|cz+d|^{2}}\right)e^{2\pi in\left(\frac{az+b}{cz+d}\right)} \\
+        &= \psi(\Im(z))e^{2\pi inz}+\sum_{\substack{c \ge 1, d \in \Z \\ (c,d) = 1 \\ c \equiv 0 \tmod{N}}}\psi\left(\frac{\Im(z)}{|cz+d|^{2}}\right)e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}z+cd}\right)},
+      \end{align*}
+      where $a$ and $b$ are chosen such that $\det\left(\begin{pmatrix} a & b \\ c & d \end{pmatrix}\right) = 1$ and in the last equality we have used the fact that
+      \[
+        \frac{a}{c}-\frac{1}{c^{2}z+cd} = \frac{az+b}{cz+d}.
+      \]
+      Now summing over all pairs $(c,d) = 1$ such that $c \ge 1$ and $d \in \Z$ is the same as summing over all triples $(c,\ell,r)$ with $c \ge 1$, $\ell \in \Z$, and $r \tmod{c}$ such that $(r,c) = 1$. This is seen by writing $d = c\ell+r$. Moreover, note that since $ad-bc = 1$, we have $a(c\ell+r)-bc = 1$ which implies $ar \equiv 1 \pmod{c}$. So we may take $a$ to be the inverse for $r$ modulo $c$. Then
+      \begin{align*}
+        \sum_{\substack{c \ge 1, d \in \Z \\ (c,d) = 1 \\ c \equiv 0 \tmod{N}}}\psi\left(\frac{\Im(z)}{|cz+d|^{2}}\right)e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}z+cd}\right)} &= \sum_{\substack{(c,\ell,r) \\ c \equiv 0 \tmod{N}}}\psi\left(\frac{\Im(z)}{|cz+c\ell+r|^{2}}\right)e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}z+c^{2}\ell+cr}\right)} \\
+        &= \psum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N} \\ r \tmod{c}}}\sum_{\ell \in \Z}\psi\left(\frac{\Im(z)}{|cz+c\ell+r|^{2}}\right)e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}z+c^{2}\ell+cr}\right)}.
+      \end{align*}
+      We will now apply the Poisson summation formula to the innermost sum. Set
+      \[
+        I_{c,r}(z) = \sum_{\ell \in \Z}\psi\left(\frac{\Im(z)}{|cz+c\ell+r|^{2}}\right)e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}z+c^{2}\ell+cr}\right)}.
+      \]
+      This defines a holomorphic function on $\H$ (because $P_{\infty,n}(z,\psi)$ is holomorphic on $\H$), and so by the identity theorem we may verify a transformation law on a set containing a limit point. Therefore set $z = iy$ for $y > 1$, and define
+      \[
+        f(x) = \psi\left(\frac{y}{|cx+r+icy|^{2}}\right)e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}x+cr+ic^{2}y}\right)}.
+      \]
+      To see that $f(x)$ is Schwarz, first recall that $\psi(y) \ll \frac{y}{\log(y)^{2}}$ where the latter expression tends to zero as $y \to 0$. Therefore $\psi\left(\frac{y}{|cx+r+icy|^{2}}\right)$ remains bounded as $x \to \pm\infty$. Now observe
+      \[
+        \Im\left(\frac{a}{c}-\frac{1}{c^{2}x+cr+ic^{2}y}\right) = \Im\left(-\frac{1}{c^{2}x+cr+ic^{2}y}\right) = \Im\left(-\frac{c^{2}x+cr-ic^{2}y}{|c^{2}x+cr+ic^{2}y|}\right) = \frac{c^{2}y}{|c^{2}x+cr+ic^{2}y|}.
+      \]
+      It follows that $\Im\left(\frac{a}{c}-\frac{1}{c^{2}x+cr+ic^{2}y}\right)$ tends to zero as $x \to \pm \infty$. Also, $|cx+r+icy| \ge |icy| \ge c$ so altogether,
+      \[
+        f(x) \ll \left|\psi\left(\frac{y}{|cx+r+icy|^{2}}\right)e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}x+cr+ic^{2}y}\right)}\right| \ll \frac{e^{-2\pi n\Im\left(\frac{a}{c}-\frac{1}{c^{2}x+cr+ic^{2}y}\right)}}{c},
+      \]
+      as $x \to \pm\infty$. Since the latter most expression has exponential decay to zero, $f(x)$ is Schwarz. We now compute the Fourier transform:
+      \[
+        \hat{f}(t) = \int_{-\infty}^{\infty}f(x)e^{-2\pi itx}\,dx = \int_{-\infty}^{\infty}\psi\left(\frac{y}{|cx+r+icy|^{2}}\right)e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}x+cr+ic^{2}y}\right)}e^{-2\pi itx}\,dx.
+      \]
+      Complexify the integral to get
+      \[
+        \int_{\Im(z) = 0}\psi\left(\frac{y}{|cz+r+icy|^{2}}\right)e^{2\pi in\left(\frac{a}{c}-\frac{1}{c^{2}z+cr+ic^{2}y}\right)}e^{-2\pi itz}\,dz.
+      \]
+      Now make the change of variables $z \to z-\frac{r}{c}-iy$ to obtain
+      \[
+        e^{2\pi in\frac{a}{c}}\int_{\Im(z) = y}\psi\left(\frac{y}{|cz|^{2}}\right)e^{-2\pi in\frac{1}{c^{2}z}}e^{-2\pi it\left(z-\frac{r}{c}-iy\right)}\,dz.
+      \]
+      The integrand is meromorphic with a pole only at $z = 0$ (\todo{why?}). Therefore by shifting the line of integration we may take the limit as $\Im(z) \to \infty$ without picking up additional residues. However
+      \[
+        \psi\left(\frac{y}{|cz|^{2}}\right) \ll \frac{y}{|cz|^{2}\log\left(\frac{y}{|cz|^{2}}\right)^{2}}, \quad \left|e^{-2\pi it\left(z-\frac{r}{c}-iy\right)}\right| = e^{2\pi t(\Im(z)-y)}, \quad \text{and} \quad \left|e^{-2\pi in\frac{1}{c^{2}z}}\right| = e^{2\pi n\left(\frac{\Im(z)}{c^{2}|z|^{2}}\right)}.
+      \]
+      Taking the limit as $\Im(z) \to \infty$, the last expression above has exponential decay to zero because $c^{2}|z|^{2} \ge \Im(z)^{2}$. As for the second expression, it exhibits exponential decay to zero if and only if $t < 0$ and is bounded when $t = 0$. The first expression has exponential decay to zero (using l'H\^opital's rule) (\todo{why?}). Altogether this means that the integral vanishes if $t \le 0$. So by Poisson summation,
+      \[
+        I_{c,r}(iy) = \sum_{\ell \in \Z}f(\ell) = \sum_{t \in \Z}\hat{f}(t) = \sum_{t > 0}\hat{f}(t) = \sum_{t > 0}e^{2\pi in\frac{a}{c}}\int_{\Im(z) = y}\psi\left(\frac{y}{|cz|^{2}}\right)e^{-2\pi in\frac{1}{c^{2}z}}e^{-2\pi it\left(z-\frac{r}{c}-iy\right)}\,dz.
+      \]
+      It remains to simplify this latter integral for $t > 0$. First
+      \[
+        \int_{\Im(z) = y}\psi\left(\frac{y}{|cz|^{2}}\right)e^{-2\pi in\frac{1}{c^{2}z}}e^{-2\pi it\left(z-\frac{r}{c}-iy\right)}\,dz = e^{2\pi it\left(iy+\frac{r}{c}\right)}\int_{\Im(z) = y}\psi\left(\frac{y}{|cz|^{2}}\right)e^{-2\pi in\frac{1}{c^{2}z}}e^{-2\pi itz}\,dz.
+      \]
+      Now make the change of variables $z \to -\frac{z}{2\pi it}$ to the last integral to obtain
+      \begin{align*}
+        -\frac{1}{2\pi it}\int_{\Re(z) = 2\pi ty}\psi\left(\frac{y}{|cz|^{2}}\right)e^{-4\pi^{2}nt\frac{1}{c^{2}z}}e^{z}\,dz &= -\frac{1}{2\pi it}\int_{\Re(z) = 2\pi ty}\psi\left(\frac{4\pi^{2}t^{2}y}{|cz|^{2}}\right)e^{z-4\pi^{2}nt\frac{1}{c^{2}z}}\,dz \\
+        &= -\frac{1}{2\pi itc}\int_{\Re(z) = 2\pi ty}c\psi\left(\frac{4\pi^{2}t^{2}y}{|cz|^{2}}\right)e^{z-4\pi^{2}nt\frac{1}{c^{2}z}}\,dz \\
+        &= -\frac{1}{2\pi itc}\int_{-\infty}^{(0^{+})}c\psi\left(\frac{4\pi^{2}t^{2}y}{|cz|^{2}}\right)e^{z-4\pi^{2}nt\frac{1}{c^{2}z}}\,dz, \\
+        &= \frac{i}{2\pi tc}\int_{-\infty}^{(0^{+})}c\psi\left(\frac{4\pi^{2}t^{2}y}{|cz|^{2}}\right)e^{z-4\pi^{2}nt\frac{1}{c^{2}z}}\,dz,
+      \end{align*}
+      where in the second to last line we have homotoped the line of integration to a Hankel contour about the negative real axis. Set
+      \[
+        F_{c}(y,n,t) = \int_{-\infty}^{(0^{+})}c\psi\left(\frac{4\pi^{2}t^{2}y}{|cz|^{2}}\right)e^{z-4\pi^{2}nt\frac{1}{c^{2}z}}\,dz.
+      \]
+      This integral cannot be computed in general. However, we conclude
+      \[
+        I_{c,r}(iy) = \sum_{t > 0}\frac{i}{2\pi tc}F_{c}(y,n,t)e^{2\pi in\frac{a}{c}+2\pi it\left(iy+\frac{r}{c}\right)}.
+      \]
+      By the identity theorem this holds for all $z \in \H$ so that
+      \[
+        I_{c,r}(z) = \sum_{t > 0}\left(\frac{i}{2\pi tc}F_{c}(\Im(z),n,t)e^{2\pi in\frac{a}{c}+2\pi it\frac{r}{c}}\right)e^{2\pi itz}.
+      \]
+      Plugging this back into the Poincar\'e series we get
+      \begin{align*}
+        P_{\infty,n}(z,\psi) &= \psi(\Im(z))e^{2\pi inz}+\psum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N} \\ r \tmod{c}}}\sum_{t > 0}\left(\frac{i}{2\pi tc}F_{c}(\Im(z),n,t)e^{2\pi in\frac{a}{c}+2\pi it\frac{r}{c}}\right)e^{2\pi itz} \\
+        &= \sum_{t > 0}\left(\psi(\Im(z))\d_{n,t}+\psum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N} \\ r \tmod{c}}}\frac{i}{2\pi tc}F_{c}(\Im(z),n,t)e^{2\pi in\frac{a}{c}+2\pi it\frac{r}{c}}\right)e^{2\pi itz} \\
+        &= \sum_{t > 0}\left(\psi(\Im(z))\d_{n,t}+\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{i}{2\pi tc}F_{c}(\Im(z),n,t)\psum_{r \tmod{c}}e^{2\pi in\frac{a}{c}+2\pi it\frac{r}{c}}\right)e^{2\pi itz}. \\
+      \end{align*}
+      Since $a$ is the inverse for $r$ modulo $c$, the innermost sum above becomes
+      \[
+        \psum_{r \tmod{c}}e^{2\pi in\frac{a}{c}+2\pi it\frac{r}{c}} = \psum_{r \tmod{c}}e^{2\pi in\frac{a}{c}+2\pi it\frac{\conj{a}}{c}} = \psum_{a \tmod{c}}e^{\frac{2\pi i(an+\conj{a}t)}{c}} = K(n,t;c).
+      \]
+      So at last
+      \[
+        P_{\infty,n}(z,\psi) = \sum_{t > 0}\left(\psi(\Im(z))\d_{n,t}+\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{i}{2\pi tc}F_{c}(\Im(z),n,t)K(n,t;c)\right)e^{2\pi itz}.
+      \]
+      which is the Fourier series of $P_{\infty,n}(\cdot,\psi)$ at the $\infty$ cusp. We are now ready to prove the pre-Kuznetsov trace formula. First, we compute $\<P_{\infty,n}(\cdot,\psi),P_{\infty,m}(\cdot,\vphi)\>$ by the unfolding method with respec to $P_{\infty,m}(\cdot,\vphi)$:
+      \begin{align*}
+        \<P_{\infty,n}(\cdot,\psi),P_{\infty,m}(\cdot,\vphi)\> &= \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}P_{\infty,n}(z,\psi)\conj{P_{\infty,m}(z,\vphi)}\,d\mu \\
+        &= \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}P_{\infty,n}(z,\psi)\conj{\sum_{\g \in \GG}\vphi(\Im(\g z))e^{2\pi im\g z}}\,d\mu \\
+        &= \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}P_{\infty,n}(z,\psi)\sum_{\g \in \GG}\conj{\vphi(\Im(\g z))e^{2\pi im\g z}}\,d\mu \\
+        &= \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}P_{\infty,n}(z,\psi)\sum_{\g \in \GG}\conj{\vphi(\Im(\g z))}e^{-2\pi im\conj{\g z}}\,d\mu \\
+        &= \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}\sum_{\g \in \GG}P_{\infty,n}(z,\psi)\conj{\vphi(\Im(\g z))}e^{-2\pi im\conj{\g z}}\,d\mu \\
+        &= \frac{1}{V_{\G}}\int_{\mc{F}_{\G}}\sum_{\g \in \GG}P_{\infty,n}(\g z,\psi)\conj{\vphi(\Im(\g z))}e^{-2\pi im\conj{\g z}}\,d\mu && \text{automorphy} \\
+        &= \frac{1}{V_{\G}}\int_{\G_{\infty}\backslash\H}P_{\infty,n}(z,\psi)\conj{\vphi(\Im(z))}e^{-2\pi im\conj{z}}\,d\mu && \text{unfolding}.
+      \end{align*}
+      Now we substitute the Fourier series of $P_{\infty,n}(\cdot,\psi)$ to obtain:
+      \[
+        \frac{1}{V_{\G}}\int_{\G_{\infty}\backslash\H}\sum_{t > 0}\left(\psi(\Im(z))\d_{n,t}+\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{i}{2\pi tc}F_{c}(\Im(z),n,t)K(n,t;c)\right)\conj{\vphi(\Im(z))}e^{2\pi itz}e^{-2\pi im\conj{z}}\,d\mu,
+      \]
+      which is equivalent to
+      \[
+        \frac{1}{V_{\G}}\int_{0}^{\infty}\int_{0}^{1}\sum_{t > 0}\left(\psi(y)\d_{t,n}+\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{i}{2\pi tc}F_{c}(y,n,t)K(n,t;c)\right)\conj{\vphi(y)}e^{2\pi i(t-m)x}e^{-2\pi i(t+m)y}\,\frac{dx\,dy}{y^{2}}.
+      \]
+      Since the only part of the integrand dependent upon $x$ is $e^{2\pi i(t-m)x}$, the inner integral is $\d_{m,t}$. So this cuts off everything except the diagional term leaving
+      \[
+        \frac{1}{V_{\G}}\int_{0}^{\infty}\left(\psi(y)\d_{n,m}+\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{i}{2\pi mc}F_{c}(y,n,m)K(n,m;c)\right)\conj{\vphi(y)}e^{-4\pi imy}\,\frac{dy}{y^{2}}.
+      \]
+      Interchanging the integral and sum by the dominated convergence theorem, we write this expression as
+      \[
+        \d_{n,m}(\psi,\vphi)+\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{1}{c}K(n,m;c)V_{\psi,\vphi}\left(\frac{4\pi\sqrt{nm}}{c}\right),
+      \]
+      where we set
+      \[
+        (\psi,\vphi) = \frac{1}{V_{\G}}\int_{0}^{\infty}\psi(y)\conj{\vphi(y)}e^{-4\pi imy}\,\frac{dy}{y^{2}},
+      \]
+      and
+      \[
+        V_{\psi,\vphi}\left(\frac{4\pi\sqrt{nm}}{c}\right) = \frac{i}{2\pi mV_{\G}}\int_{0}^{\infty}F_{c}(y,n,m)\psi(y)\conj{\vphi(y)}e^{-4\pi imy}\frac{dy}{y^{2}}.
+      \]
+      This is half of the pre-Kuznetsov trace formula. For the other half, we note that both $P_{\infty,n}(\cdot,\psi)$ and $P_{\infty,m}(\cdot,\vphi)$ are in $\mc{L}(\GH)$ (\todo{why?}). So letting $\{u_{j}\}$ be a complete orthonormal basis for the discrete spectrum, \cref{thm:the_full_spectral_resolution} implies that we have series
+      \[
+        P_{\infty,n}(\cdot,\psi) = \sum_{j}\<P_{\infty,n}(\cdot,\psi),u_{j}\>u_{j}(z)+\sum_{\mf{a}}\frac{1}{4\pi}\int_{-\infty}^{\infty}\left\<P_{\infty,n}(\cdot,\psi),E_{\mf{a}}\left(\cdot,\frac{1}{2}+ir\right)\right\>E_{\mf{a}}\left(z,\frac{1}{2}+ir\right)\,dr,
+      \]
+      and
+      \[
+        P_{\infty,m}(\cdot,\vphi) = \sum_{j}\<P_{\infty,m}(\cdot,\vphi),u_{j}\>u_{j}(z)+\sum_{\mf{a}}\frac{1}{4\pi}\int_{-\infty}^{\infty}\left\<P_{\infty,m}(\cdot,\vphi),E_{\mf{a}}\left(\cdot,\frac{1}{2}+ir\right)\right\>E_{\mf{a}}\left(z,\frac{1}{2}+ir\right)\,dr.
+      \]
+      By orthonormality, it follows that
+      \begin{align*}
+        \<P_{\infty,n}(\cdot,\psi),P_{\infty,m}(\cdot,\vphi)\> &= \sum_{j}\<P_{\infty,n}(\cdot,\psi),u_{j}\>\conj{\<P_{\infty,m}(\cdot,\vphi),u_{j}\>} \\
+        &+\sum_{\mf{a}}\frac{1}{4\pi}\int_{-\infty}^{\infty}\left\<P_{\infty,n}(\cdot,\psi),E_{\mf{a}}\left(\cdot,\frac{1}{2}+ir\right)\right\>\conj{\left\<P_{\infty,m}(\cdot,\vphi),E_{\mf{a}}\left(\cdot,\frac{1}{2}+ir\right)\right\>}\,dr.
+      \end{align*}
+      This is the other half of the pre-Kuznetsov trace formula. Equating the two sides results in the \textbf{pre-Kuznetsov trace formula}\index{pre-Kuznetsov trace formula}:
+      \begin{align*}
+        \sum_{j}\<P_{\infty,n}(\cdot,\psi),u_{j}\>\conj{\<P_{\infty,m}(\cdot,\vphi),u_{j}\>}&+\sum_{\mf{a}}\frac{1}{4\pi}\int_{-\infty}^{\infty}\left\<P_{\infty,n}(\cdot,\psi),E_{\mf{a}}\left(\cdot,\frac{1}{2}+ir\right)\right\>\conj{\left\<P_{\infty,m}(\cdot,\vphi),E_{\mf{a}}\left(\cdot,\frac{1}{2}+ir\right)\right\>}\,dr \\
+        &= \d_{n,m}(\psi,\vphi)+\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{1}{c}K(n,m;c)V_{\psi,\vphi}\left(\frac{4\pi\sqrt{nm}}{c}\right).
+      \end{align*}
+      The left-hand side is called the \textbf{spectral side}\index{spectral side} and the right-hand side is called the \textbf{geometric side}\index{geometric side}. To finish the trace formula, we need to compute the remaning inner products on the spectral side. This amounts to knowing the Fourier series of the $u_{j}$ and $E_{\mf{a}}(\cdot,s)$ at the $\infty$ cusp so we first find these seriess and then will use them to prove the Kuznetsov trace formula.
+    \subsection*{Fourier Series for a Basis for the Spectral Resolution}
+      We now discuss the Fourier series for Maass cuspforms, residual forms, and the eigenpacket. We first deal with the Fourier series of a general Maass forms. If $f$ is a Maass form on $\GH$ with eigenvalue $\l = s(1-s)$, then the Fourier coefficients are mostly determined $\D$. To see this first note that the Fourier series
+      \[
+        f(\s_{\mf{a}}z) = \sum_{n \in \Z}a_{\mf{a}}(n,y)e^{2\pi inx}.
+      \]
+      for $f$ at the $\mf{a}$ cusp converges absolutely so we may differentiate termwise. Then the fact that $f$ is an eigenfunction for $\D$ with eigenvalue $\l$ gives the ODE
+      \[
+        -y^{2}a''_{\mf{a}}(n,y)+4\pi^{2}n^{2}y^{2}a_{\mf{a}}(n,y) = \l a_{\mf{a}}(n,y),
+      \]
+      upon differentiating terwise. In the ODE the $'$ indicates differentiation with respect to $y$. If $n \neq 0$, this is a modified Bessel equation. To see this, first we put the ODE in homogenous form
+      \[
+        y^{2}a''_{\mf{a}}(n,y)-(4\pi^{2}n^{2}y^{2}-\l)a_{\mf{a}}(n,y) = 0.
+      \]
+      Make the change of variables $y \to \frac{y}{2\pi n}$ with $a_{\mf{a}}(n,y) \to a_{\mf{a}}(n,2\pi ny)$ to get
+      \[
+        y^{2}a''_{\mf{a}}(n,y)-(y^{2}-\l)a_{\mf{a}}(n,y) = 0.
+      \]
+      Again, change variables $a_{\mf{a}}(n,y) \to \sqrt{y}a_{\mf{a}}(n,y)$ and divide by $\sqrt{y}$ to obtain
+      \[
+        y^{2}a''_{\mf{a}}(n,y)+ya'_{\mf{a}}(n,y)-\left(y^{2}-\left(\l-\frac{1}{4}\right)\right)a_{\mf{a}}(n,y) = 0.
+      \]
+      Upon setting $\nu = \sqrt{\l-\frac{1}{4}}$, the above equation becomes
+      \[
+        y^{2}a''_{\mf{a}}(n,y)+ya'_{\mf{a}}(n,y)-(y^{2}+(i\nu)^{2})a_{\mf{a}}(n,y) = 0,
+      \]
+      which is a modified Bessel equation. Lastly, since
+      \[
+        i\nu = \sqrt{\frac{1}{4}-\l} = \sqrt{\frac{1}{4}-s(1-s)} = \sqrt{s^{2}-s+\frac{1}{4}} = \sqrt{\left(s-\frac{1}{2}\right)^{2}} = s-\frac{1}{2},
+      \]
+      the general solution takes the form
+      \[
+        a_{\mf{a}}(n,y) = a_{\mf{a}}(n)\sqrt{y}K_{s-\frac{1}{2}}(2\pi|n|y)+b_{\mf{a}}(n)I_{s-\frac{1}{2}}(2\pi|n|y),
+      \]
+      for some coefficients $a_{\mf{a}}(n)$ and $b_{\mf{a}}(n)$ possibly depending upon $s$. But $I_{s-\frac{1}{2}}(2\pi|n|y)$ grows exponentially in $y$ (see \todo{cite}) and since $f$ has moderate growth at the cusps we must have $b_{\mf{a}}(n) = 0$ for all $n \neq 0$. If $n = 0$, then the differential equation is a second order linear ODE which in homogenous form is
+      \[
+        y^{2}a''_{\mf{a}}(y)+\l a_{\mf{a}}(y) = 0,
+      \]
+      where we have supressed the dependence on $n$. This is a Cauchy-Euler equation, and $s$ and $1-s$ are the two roots of $z^{2}-z+\l$, the general solution is
+      \[
+        a_{\mf{a}}(y) = a_{\mf{a}}y^{s}+b_{\mf{a}}y^{1-s},
+      \]
+      for some coefficients $a_{\mf{a}}$ and $b_{\mf{a}}$ possibly depending upon $s$. Altogether, the Fourier series at $\mf{a}$ is of the form
+      \[
+        f(\s_{\mf{a}}z) = a_{\mf{a}}y^{s}+b_{\mf{a}}y^{1-s}+\sum_{n \neq 0}a_{\mf{a}}(n)\sqrt{y}K_{s-\frac{1}{2}}(2\pi|n|y)e^{2\pi inx}.
+      \]
+      The coefficients $a_{\mf{a}}$, $b_{\mf{a}}$, and $a_{\mf{a}}(n)$ are the only part of the Fourier series that actually depend on the implicit congruence subgroup $\G$. We collect our result as a theorem:
+
+      \begin{theorem}\label{thm:Fourier_series_of_a_Maass_form}
+        Let $f$ be a harmonic Maass form on $\GH$ with eigenvalue $\l = s(1-s)$. Then the Fourier series of $f$ at any cusp $\mf{a}$ is of the form
+        \[
+          f(\s_{\mf{a}}z) = a_{\mf{a}}y^{s}+b_{\mf{a}}y^{1-s}+\sum_{n \neq 0}a_{\mf{a}}(n)\sqrt{y}K_{s-\frac{1}{2}}(2\pi|n|y)e^{2\pi inx},
+        \]
+        where the coefficients $a_{\mf{a}}$, $b_{\mf{a}}$, and $a_{\mf{a}}(n)$ may depend upon $s$.
+      \end{theorem}
+
+      We are now ready to discuss the necessary Fourier series at the $\infty$ cusp. From \cref{thm:meromorphic_continuation_of_Eisenstein_series}, we have the Fourier series at the $\infty$ cusp for the Eisenstein series $E_{\mf{a}}(\cdot,s)$:
+      \[
+        E_{\mf{a}}(z,s) = \d_{\mf{a},\infty}y^{s}+\tau_{\mf{a},\infty}(s)y^{1-s}+\sum_{n \neq 0}\tau_{\mf{a},\infty}(n,s)\sqrt{y}K_{s-\frac{1}{2}}(2\pi|n|y)e^{2\pi inx}.
+      \]
+      Note that this series agrees with that of \cref{thm:Fourier_series_of_a_Maass_form} for the cusp $\infty$ except we have explicit forms for the undetermined coefficients: $a_{\infty} = \d_{\mf{a},\infty}$, $b_{\infty} = \tau_{\mf{a},\infty}(s)$, and $a_{\infty}(n) = \sqrt{4|n|}\tau_{\mf{a},\infty}(n,s)$. We can exploit this Fourier series to get that of the residual forms. Let $u_{j}$ be a reisdual form given by the residue of $E_{\mf{a}}(\cdot,s)$ at $s = s_{j}$. Upon taking the residue at $s = s_{j}$ in the series above we get the Fourier series for $u_{j}$ at the $\infty$ cusp:
+      \[
+        u_{j}(z) = a_{j,\infty}y^{1-s_{j}}+\sum_{n \neq 0}a_{j,\infty}(n)\sqrt{y}K_{s_{j}-\frac{1}{2}}(2\pi|n|y)e^{2\pi inx},
+      \]
+      where $a_{j,\infty} = \Res_{s = s_{j}}\tau_{\mf{a},\infty}(s)$ and $a_{j,\infty}(n) = \Res_{s = s_{j}}\tau_{\mf{a},\infty}(n,s)$. Note that the first term in the Fourier series of the Eisenstein series is killed off because it is holomorphic. This is the desired Fourier series for the residual forms. Lastly, we need the Fourier series for the cuspforms. This is furnished by \cref{thm:Fourier_series_of_a_Maass_form}. Indeed, if $u_{j}$ is a cuspform with eigenvalue $\l = s(1-s)$, then it is a harmonic Maass form so that \cref{thm:Fourier_series_of_a_Maass_form} implies there is a Fourier series at the $\infty$ cusp given by
+      \[
+        u_{j}(z) = a_{j,\infty}y^{s}+b_{j,\infty}y^{1-s}+\sum_{n \neq 0}a_{j,\infty}(n)\sqrt{y}K_{s-\frac{1}{2}}(2\pi|n|y)e^{2\pi inx},
+      \]
+      where the coefficients $a_{j,\infty}$ and $a_{j,\infty}(n)$ are undetermined. We now have all the necessary Fourier series to continue with the Kuznetsov trace formula.
+    \subsection*{The Kuznetsov Trace Formula}
+      We can now compute the remaining inner products in the pre-Kuznetsov trace formula. Let $f$ be a generic automorphic form with Fourier expansion at the $\infty$ cusp given by
+      \[
+        f(z) = \sum_{n \in \Z}a_{\infty}(n,y)e^{2\pi inx}.
+      \]
+      Then by unfolding the integral as in the previous computation for two Poincar\'e series, we see that
+      \[
+        \<f,P_{\infty,m}(\cdot,\psi)\> = \frac{1}{V_{\G}}\int_{0}^{\infty}a_{\infty}(n,y)\conj{\psi(y)}e^{-4\pi imy}\frac{dy}{y^{2}}.
+      \]
+      Now define
+      \[
+        \w(n,\psi) = \frac{1}{V_{\G}}\int_{0}^{\infty}\sqrt{y}K_{s_{j}-\frac{1}{2}}(2\pi|n|y)\conj{\psi(y)}e^{-4\pi imy}\frac{dy}{y^{2}}.
+      \]
+      Then it follows from the Fourier series computations for the Eisenstein series, reidual forms, and cuspforms that
+      \[
+        \left\<P_{\infty,n}(\cdot,\psi),E_{\mf{a}}\left(\cdot,\frac{1}{2}+ir\right)\right\> = \conj{\left\<E_{\mf{a}}\left(\cdot,\frac{1}{2}+ir\right),P_{\infty,n}(\cdot,\psi)\right\>} = \conj{\tau_{\mf{a},\infty}\left(n,\frac{1}{2}+ir\right)}\conj{\w(n,\psi)},
+      \]
+      and
+      \[
+        \<P_{\infty,n}(\cdot,\psi),u_{j}\> = \conj{\<u_{j},P_{\infty,n}(\cdot,\psi)\>} = \conj{a_{j,\infty}(n)}\conj{\w(n,\psi)}.
+      \]
+      So computing the inner products in the pre-Kuznetsov trace formula, we obtain the \textbf{Kuznetsov trace formula}\index{Kuznetsov trace formula}:
+      \begin{align*}
+        \sum_{j}\conj{a_{j,\infty}(n)}a_{j,\infty}(m)\conj{\w(n,\psi)}\w(m,\vphi)&+\sum_{\mf{a}}\frac{1}{4\pi}\int_{-\infty}^{\infty}\conj{\tau_{\mf{a},\infty}\left(n,\frac{1}{2}+ir\right)}\tau_{\mf{a},\infty}\left(m,\frac{1}{2}+ir\right)\conj{\w(n,\psi)}\w(m,\vphi)\,dr \\
+        &= \d_{n,m}(\psi,\vphi)+\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{1}{c}K(n,m;c)V_{\psi,\vphi}\left(\frac{4\pi\sqrt{nm}}{c}\right).
+      \end{align*}
+      The left-hand side is called the \textbf{spectral side}\index{spectral side} and the right-hand side is called the \textbf{geometric side}\index{geometric side}.
+  \section{\todo{Half-integral Weight Variants}}
+    \subsection*{The Half-integral Weight Petersson Trace Formula}
+      There is a variant of the Petersson trace formula for half-integral weight modular forms. Let $\l = \frac{k}{2}$ be the weight and note that $k$ must be odd. For these forms to exist recall that we must assume $4 \mid N$. Moreover, the factor of modularity must be modified so that it is the theta multipler. We also define a modified \textbf{Kloosterman sum}\index{Kloosterman sum} $K_{\l}(b,c,m)$ given by
+      \[
+        K_{\l}(n,m;c) = \sum_{\substack{a \tmod{c} \\ (a,c) = 1}}\legendre{a}{c}\e_{c}^{2\l}e^{\frac{2\pi i(an+\conj{a}m)}{c}} = \psum_{a \tmod{c}}\legendre{a}{c}\e_{c}^{2\l}e^{\frac{2\pi i(an+\conj{a}m)}{c}}.
+      \]
+      Note that $\legendre{a}{c}\e_{c}^{-2\l}$ is the $2\l$-th power of the nebentypus of the theta multiplier (the modified Jacobi symbol has order $2$ and $k$ is odd). With these changes, a completely analgous argument gives the \textbf{half-integral weight Petersson trace formula}\index{half-integral weight Petersson trace formula}:
+      \[
+        \frac{\G\left(\l-1\right)}{V_{\G}(4\pi\sqrt{nm})^{\l-1}}\sum_{1 \le j \le r}\conj{a_{j,\infty}(n)}a_{j,\infty}(m) = \d_{n,m}+\sum_{\substack{c \ge 1 \\ c \equiv 0 \tmod{N}}}\frac{2\pi i^{-\l}}{c}J_{\l-1}\left(\frac{4\pi\sqrt{nm}}{c}\right)K_{\l}(n,m;c).
+      \]
+      The left-hand side is called the \textbf{spectral side}\index{spectral side} and the right-hand side is called the \textbf{geometric side}\index{geometric side}.
+    \subsection*{The Half-integral Weight Kuznetsov Trace Formula}
+
+\begin{appendix}
+
+\end{appendix}
+
+%========================%
+%  Index & Bibliography  %
+%========================%
+\printindex
+\bibliographystyle{plain}
+\bibliography{reference}
+
+\end{document}

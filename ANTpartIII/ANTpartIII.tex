@@ -1,0 +1,294 @@
+%============%
+%            %
+%  PREAMBLE  %
+%            %
+%============%
+\documentclass[12pt]{book}
+
+%===============================%
+%  Packages and basic settings  %
+%===============================%
+\usepackage[headheight=15pt,rmargin=0.5in,lmargin=0.5in,tmargin=0.75in,bmargin=0.75in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{imakeidx}
+\usepackage{framed}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
+\usepackage{appendix}
+\usepackage[hyperref,amsthm,amsmath,thref,framed,thmmarks]{ntheorem}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{xr}
+%\externaldocument{ANTpartI}
+\usetikzlibrary{braids,arrows,decorations.markings}
+
+%====================================%
+%  Theores, environments & cleveref  %
+%====================================%
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{remark}{Remark}[section]
+\theoremstyle{definition}\newframedtheorem{method}{Method}
+\crefname{method}{Method}{Methods}
+
+\newenvironment{stabular}[2][1]
+  {\def\arraystretch{#1}\tabular{#2}}
+  {\endtabular}
+
+%==================================%
+%  Custom commands & environments  %
+%==================================%
+\newcommand{\psum}{\sideset{}{'}\sum}
+\newcommand{\asum}{\sideset{}{^{\ast}}\sum}
+\newcommand{\legendre}[2]{\genfrac{(}{)}{0.5pt}{0}{#1}{#2}}
+\newcommand{\tmod}[1]{\ \left(\text{mod }#1\right)}
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\xfrom}[1]{\xleftarrow{#1}}
+\newcommand{\normal}{\mathrel{\unlhd}}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\mc}{\mathcal}
+\newcommand{\ms}{\mathscr}
+
+\newcommand{\Mat}{\mathrm{Mat}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\PSL}{\mathrm{PSL}}
+\renewcommand{\O}{\mathrm{O}}
+\newcommand{\SO}{\mathrm{SO}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\renewcommand{\H}{\mathbb{H}}
+\renewcommand{\P}{\mathbb{P}}
+
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\newcommand{\g}{\gamma}
+\renewcommand{\d}{\delta}
+\newcommand{\z}{\zeta}
+\renewcommand{\t}{\theta}
+\renewcommand{\i}{\iota}
+\renewcommand{\k}{\kappa}
+\renewcommand{\l}{\lambda}
+\newcommand{\s}{\sigma}
+\newcommand{\w}{\omega}
+
+\newcommand{\G}{\Gamma}
+\newcommand{\D}{\Delta}
+\renewcommand{\L}{\Lambda}
+\newcommand{\W}{\Omega}
+
+\newcommand{\e}{\varepsilon}
+\newcommand{\vt}{\vartheta}
+\newcommand{\vphi}{\varphi}
+\newcommand{\emt}{\varnothing}
+
+\newcommand{\x}{\times}
+\newcommand{\ox}{\otimes}
+\newcommand{\op}{\oplus}
+\newcommand{\bigox}{\bigotimes}
+\newcommand{\bigop}{\bigoplus}
+\newcommand{\del}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\newcommand{\lf}{\lfloor}
+\newcommand{\rf}{\rfloor}
+\newcommand{\wtilde}{\widetilde}
+\newcommand{\what}{\widehat}
+\newcommand{\conj}{\overline}
+\newcommand{\cchi}{\conj{\chi}}
+
+\DeclareMathOperator{\id}{\textrm{id}}
+\DeclareMathOperator{\sgn}{\mathrm{sgn}}
+\DeclareMathOperator{\im}{\mathrm{im}}
+\DeclareMathOperator{\rk}{\mathrm{rk}}
+\DeclareMathOperator{\tr}{\mathrm{trace}}
+\DeclareMathOperator{\nm}{\mathrm{norm}}
+\DeclareMathOperator{\ord}{\mathrm{ord}}
+\DeclareMathOperator{\Hom}{\mathrm{Hom}}
+\DeclareMathOperator{\End}{\mathrm{End}}
+\DeclareMathOperator{\Aut}{\mathrm{Aut}}
+\DeclareMathOperator{\Tor}{\mathrm{Tor}}
+\DeclareMathOperator{\Ann}{\mathrm{Ann}}
+\DeclareMathOperator{\Gal}{\mathrm{Gal}}
+\DeclareMathOperator{\Trace}{\mathrm{Trace}}
+\DeclareMathOperator{\Norm}{\mathrm{Norm}}
+\DeclareMathOperator{\Span}{\mathrm{Span}}
+\DeclareMathOperator*{\Res}{\mathrm{Res}}
+\DeclareMathOperator{\Vol}{\mathrm{Vol}}
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\Im}{\mathrm{Im}}
+
+\newcommand{\GH}{\G\backslash\H}
+\newcommand{\GG}{\G_{\infty}\backslash\G}
+
+%============%
+%  Comments  %
+%============%
+\newcommand{\todo}[1]{\textcolor{red}{\sf Todo: [#1]}}
+
+%===================%
+%  Label reminders  %
+%===================%
+% [label=(\roman*)]
+% [label=(\alph*)]
+% [label=(\arabic{enumi})]
+
+%==========================%
+%  Page style & numbering  %
+%==========================%
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyfoot[R]{\thepage}
+
+%==================%
+%  Other settings  %
+%==================%
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+\setlength\parindent{0pt}
+\raggedbottom
+
+%=================%
+%  Title & Index  %
+%=================%
+\title{Analytic Number Theory: Part III \\ Modern Knowledge}
+\author{Henry Twiss}
+\date{\today}
+\makeindex
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\newpage
+
+\section*{Prerequisites}
+  The purpose of this text is to serve as an overview to important techniques and major philosophes one should be familar with in analytic number theory. Accordingly, we assume that the reader has a decent understanding of the theory already. For reference, everything discussed in \textit{Analytic Number Theory: Part I An Introduction to $L$-series} and \textit{Analytic Number Theory: Part II Trace Formulas \& Multiple Dirichlet Series} will be assumed. Unlike the previous texts, the following is an overview of the subject and many proofs will be omitted.
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\chapter{Preliminaries}
+  There is quite a bit of additional material that readers should be familar with before atempting to understand the material. A good selection is the following:
+  \begin{itemize}
+    \item \todo{XXX}
+  \end{itemize}
+  Many of these topis are not directly mentioned in classical number theory, so in the interest of not being too overwhelming, this chapter is dedicated to the basics of these topics. Anyone well-versed in these topics is still encouraged to read through this chapter thoroughly. We will use the results presented here without reference in the following chapters unless it is a matter of clarity.
+  \section{\todo{XXX}}
+
+  \chapter{Important Techniques}
+    \subsection*{\todo{The Approximate Funcational Equation}}
+      If $L(s,f)$ is a Selberg class $L$-series then the \textbf{approximate functional equation}\index{approximate functional equation} is a compromise between the functional equation for $L(s,f)$ and expressing $L(s,f)$ as a Dirichlet series which is valid inside the cirital strip:
+
+      \begin{theorem}[The approximate functional equation]
+        Let $L(s)$ be a Selberg class $L$-series and $g(u)$ be any even holomorphic function bounded on the strip $|\Re(u)| < 4$ and such that $g(0) = 1$. Let $X > 0$. Then for $s$ in the critial strip,
+        \[
+          L(s,f) = \sum_{n \ge 1}\frac{a_{f}(n)}{n^{s}}V_{s}\left(\frac{n}{X\sqrt{q(f)}}\right)+\e(f,s)\sum_{n \ge 1}\frac{a_{\cong{f}}(n)}{n^{1-s}}V_{1-s}\left(\frac{nX}{\sqrt{q(f)}}\right)+R
+        \],
+        where $V_{s}(y)$ is a smooth function defined by
+        \[
+          V_{s}(y) = \frac{1}{2\pi i}\int_{\Re(u) = 3}y^{-u}g(u)\frac{\g(f,s+u)}{\g(f,s)}\frac{du}{u},
+        \]
+        and
+        \[
+          \e(f,s) = \e(f)q(f)^{\frac{1}{2}-s}\frac{\g(f,1-s)}{\g(f,s)}.
+        \]
+        Moreover, the remainder $R$ is zero if $\L(f,s)$ is entire and otherwise
+        \[
+          R = \left(\Res_{u = 1-s}+\Res_{u = -s}\right)\frac{\L(f,s+u)g(u)}{q^{\frac{s}{2}}\g(f,s)}X^{u}.
+        \]
+      \end{theorem}
+
+      The $g(u)$ is a test function which so that $V_{s}(y)$ has the effect of smoothing out the two sums on the right-hand side. Alternatively, it can be a cutoff function by choosing \todo{$g(u) = ...$}. This technique was first introduced by Hardy and Littlewood in \todo{year} (see \todo{cite}) to obtain asymptotics for the second moment of the zeta function.
+
+  \chapter{Important Philosophy}
+    \section{The Katz-Sarnak Philosophy}
+      The \textbf{Katz-Sarnak philosophy}\index{Katz-Sarnak philosophy} is the idea that stastics of various kinds of $L$-series should, in the limit, match stastics for random matrices coming from some particular classical compact group. One starts with some class of zeros to look at, say high zeros of an individal $L$-series or low zeros for some family (this notion of family will become more precise) of related $L$-series. Next, one normalizes the nontrivial zeros being inspected. For example, the high zeros of an individual $L$-series on the critial line tend to cluster so a normalization is chosen such that the average spacing is $1$. It is this rescaled zeros that one works with when estimating the stastics. Then some class of test functions are introduced in order to carry out the stastical calculations in order to reveal similarity with some class of random matrices.
+
+      For a more concrete case, suppose that the stastical information we are after is a moment of a family of related $L$-series. A classical argument would invoke the approxiate functional equation for these $L$-series and then average the Dirichlet coefficients over the family. This averaging process is not unlike a harmonic detection device. There are usually two pieces, a simple one and more complicated one. The simple piece is usually enough to obtain the main term (or first two main terms) of the asymptotic expansion. The terms in this piece are usually referred to as the \textbf{diagional terms}\index{diagional terms}. Unforuntely, with higher moments the harmonic detection devices becomes increasingly more complicated and more terms, even off diagional ones, are necessary in order to obtain the main term.
+      \section{The Characteristic Polynomial of Unitary Matrices}
+        As a first look into the Katz-Sarnak philosophy, the charactersitc polynomial of unitary matrices have strikingly similar resemblance to Selberg class $L$-series. Recall that a unitary matrix is a complex square matrix whose conjugate transpose is also its inverse:
+        \[
+          U^{\ast}U = UU^{\ast} = UU^{-1} = I,
+        \]
+        where $I$ is the identity matrix. If $U$ is $N \x N$, then $U$ is diagionalizable with the $N$ eigenvalues $e^{i\t_{n}}$ for some real $\t_{n}$ with $1 \le n \le N$. Now let
+        \[
+          \L_{U}(s) = A\det(I-sA) = \prod_{n \le N}(1-se^{i\t_{n}}),
+        \]
+        be the charactersitc polynomial of $U$. It turns out that $\L_{U}(s)$ has strikingly similar properties to a completed $L$-series. Indeed, if we exapand the product expression, we obtain
+        \[
+          \L_{U}(s) = \sum_{0 \le n \le N}a_{n}s^{n},
+        \]
+        for some coefficients $a_{n}$. This is the analogue to a the Dirichlet series representation of an $L$-series. Of course, as $\L_{U}(s)$ is a polynomial it admits analytic continuation to $\C$. It also has a functional equation of shape $s \to \frac{1}{s}$. To see this, the charactersitc polynomial of $U^{-1}$ is the conjugate reciprocial polynomial of $\L_{U}(s)$ up to the constant term so that
+        \[
+          \L_{U^{-1}}(s) = \frac{s^{N}}{\L_{U}(0)}\L_{U}\left(\frac{1}{s}\right).
+        \]
+        But since $\L_{U}(0) = (-1)^{N}\det(U)$ and $U$ is unitary so that $\L_{U^{-1}}(s) = \L_{U^{\ast}}(s) = \conj{\L_{U}}(s)$, then upon sending $s \to \frac{1}{s}$, we can write the previous expression by isolating the right-hand side as
+        \[
+          \L_{U}(s) = (-1)^{N}\det(U)s^{N}\conj{\L_{U}}\left(\frac{1}{s}\right).
+        \]
+        This is the functional equation for $\L_{U}(s)$ and it is of shape $s \to \frac{1}{s}$. We identify the root number as $(-1)^{n}\det(U)$ and the gamma factor as $s^{N}$. The invariant subspace is the unit circle and this plays the role of the critial strip for $\L_{U}(s)$ with the critial value being the symmetric point under $s \to \frac{1}{s}$ which is $s = 1$. Viewing the conductor the absolute value of the derivative of gamma factor evaulated at the critial value $s = 1$, we see that it is $N$. We also have an approxiate functional equation. By substiuting the polynomial representation of $\L_{U}(s)$ into the functional equation, we obtain
+        \[
+          \sum_{0 \le n \le N}a_{n}s^{n} = (-1)^{N}\det(U)s^{N}\sum_{0 \le n \le N}\conj{a_{n}}s^{-n} = (-1)^{N}\det(U)\sum_{0 \le n \le N}\conj{a_{n}}s^{N-n}.
+        \]
+        Comparing coefficients,
+        \[
+          a_{n} = (-1)^{N}\det(U)\conj{a_{N-n}}.
+        \]
+        So that for odd $N$,
+        \[
+          \L_{U}(s) = \sum_{0 \le n \le \frac{N-1}{2}}a_{n}s^{n}+(-1)^{N}\det(U)s^{N}\sum_{0 \le n \le \frac{N-1}{2}}\conj{a_{n}}s^{-n},
+        \]
+        and for even $N$,
+        \[
+          \L_{U}(s) = a_{\frac{N}{2}}s^{\frac{N}{2}}+\sum_{0 \le n \le \frac{N}{2}-1}a_{n}s^{n}+(-1)^{N}\det(U)s^{N}\sum_{0 \le n \le \frac{N}{2}-1}\conj{a_{n}}s^{-n},
+        \]
+        Now observe that the roots of $\L_{U}(s)$ all lie on the unit circle (that is the critical line) which is to say that the Riemann hypothesis is true for $\L_{U}(s)$. Moreover, the density of the zeros is $\frac{2\pi}{N}$ on average. We would like to model a family of $L$-series by an appropriate class of unitary matrices in order to predict stastics using the, far more simple, class of matrices. What tends to work out is that the appropriate family to choose is one whose conductor agrees with the conductor of the family of $L$-series. \textit{A priori}, a good family of $L$-series is one who share a conductor. This is done so that the family of $L$-series and unitray matrices have the same density of zeros near the critical value. We will do this by decomposing the unitary matrices into their symmetry type: unitary, symplectic, and orthogonal. Below are some uneful family classifications:
+
+        \begin{itemize}
+          \item[Unitary]
+            \begin{enumerate}[label=(\roman*)]
+              \item $\{L(s+iy):y \ge 0\}$ ordered by $y$ where $L(s)$ is any Selberg class $L$-series.
+              \item $\{L(s,\chi):\chi\}$ ordered by $q$ where $\chi$ is a Dirichlet character modulo $q \ge 1$.
+            \end{enumerate}
+          \item[Symplectic]
+            \begin{enumerate}[label=(\roman*)]
+              \item $\{L(s,\chi_{d}):\text{$d$ a fundamental discriminant}\}$ ordered by $|d|$ where $\chi_{d}(n) = \legendre{d}{n}$.
+              \item $\{L(s,\mathrm{sym}^{2}f):f \in \mc{S}_{k}(\G_{0}(1))\}$ ordered by $k$.
+            \end{enumerate}
+          \item[Orthogonal]
+            \begin{enumerate}[label=(\roman*)]
+              \item $\{L(s,f):f \in \mc{S}_{k}(\G_{0}(N)), k \ge 4\}$ ordered by $k$ where $N \ge 1$ is fixed.
+              \item $\{L(s,f):f \in \mc{S}_{k}(\G_{0}(N)), N \ge 1\}$ ordered by $N$ where $k \ge 4$ is fixed.
+            \end{enumerate}
+        \end{itemize}
+
+\begin{appendix}
+
+\end{appendix}
+
+%========================%
+%  Index & Bibliography  %
+%========================%
+\printindex
+\bibliographystyle{plain}
+\bibliography{reference}
+
+\end{document}

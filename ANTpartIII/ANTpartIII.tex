@@ -181,7 +181,7 @@
 \newpage
 
 \section*{Prerequisites}
-  The purpose of this text is to serve as an overview to important techniques and major philosophes one should be familar with in analytic number theory. Accordingly, we assume that the reader has a decent understanding of the theory already. For reference, everything discussed in \textit{Analytic Number Theory: Part I An Introduction to $L$-series} and \textit{Analytic Number Theory: Part II Trace Formulas \& Multiple Dirichlet Series} will be assumed. Unlike the previous texts, the following is an overview of the subject and many proofs will be omitted.
+  The purpose of this text is to serve as an overview to important techniques and major philosophes one should be familar with in analytic number theory. Accordingly, we assume that the reader has a decent understanding of the theory already. For reference, everything discussed in \textit{Analytic Number Theory: Part I An Introduction to $L$-functions} and \textit{Analytic Number Theory: Part II Trace Formulas \& Multiple Dirichlet Series} will be assumed. Unlike the previous texts, the following is an overview of the subject and many proofs will be omitted.
 
 \newpage
 
@@ -205,10 +205,10 @@
     \end{itemize}
 \chapter{Techniques}
   \section{\todo{The Approximate Funcational Equation}}
-    If $L(s,f)$ is a Selberg class $L$-series then the \textbf{approximate functional equation}\index{approximate functional equation} is a compromise between the functional equation for $L(s,f)$ and expressing $L(s,f)$ as a Dirichlet series which is valid inside the cirital strip:
+    If $L(s,f)$ is a Selberg class $L$-function then the \textbf{approximate functional equation}\index{approximate functional equation} is a compromise between the functional equation for $L(s,f)$ and expressing $L(s,f)$ as a Dirichlet series which is valid inside the cirital strip:
 
     \begin{theorem}[The approximate functional equation]
-      Let $L(s)$ be a Selberg class $L$-series and $g(u)$ be any even holomorphic function bounded on the strip $|\Re(u)| < 4$ and such that $g(0) = 1$. Let $X > 0$. Then for $s$ in the critial strip,
+      Let $L(s)$ be a Selberg class $L$-function and $g(u)$ be any even holomorphic function bounded on the strip $|\Re(u)| < 4$ and such that $g(0) = 1$. Let $X > 0$. Then for $s$ in the critial strip,
       \[
         L(s,f) = \sum_{n \ge 1}\frac{a_{f}(n)}{n^{s}}V_{s}\left(\frac{n}{X\sqrt{q(f)}}\right)+\e(f,s)\sum_{n \ge 1}\frac{a_{\cong{f}}(n)}{n^{1-s}}V_{1-s}\left(\frac{nX}{\sqrt{q(f)}}\right)+R
       \],
@@ -230,9 +230,9 @@
 
 \chapter{Philosophies}
   \section{The Katz-Sarnak Philosophy}
-    The \textbf{Katz-Sarnak philosophy}\index{Katz-Sarnak philosophy} is the idea that stastics of various kinds of $L$-series should, in the limit, match stastics for random matrices coming from some particular classical compact group. One starts with some class of zeros to look at, say high zeros of an individal $L$-series or low zeros for some family (this notion of family will become more precise) of related $L$-series. Next, one normalizes the nontrivial zeros being inspected. For example, the high zeros of an individual $L$-series on the critial line tend to cluster so a normalization is chosen such that the average spacing is $1$. It is this rescaled zeros that one works with when estimating the stastics. Then some class of test functions are introduced in order to carry out the stastical calculations in order to reveal similarity with some class of random matrices.
+    The \textbf{Katz-Sarnak philosophy}\index{Katz-Sarnak philosophy} is the idea that stastics of various kinds of $L$-functions should, in the limit, match stastics for random matrices coming from some particular classical compact group. One starts with some class of zeros to look at, say high zeros of an individal $L$-function or low zeros for some family (this notion of family will become more precise) of related $L$-functions. Next, one normalizes the nontrivial zeros being inspected. For example, the high zeros of an individual $L$-function on the critial line tend to cluster so a normalization is chosen such that the average spacing is $1$. It is this rescaled zeros that one works with when estimating the stastics. Then some class of test functions are introduced in order to carry out the stastical calculations in order to reveal similarity with some class of random matrices.
 
-    For a more concrete case, suppose that the stastical information we are after is a moment of a family of related $L$-series. A classical argument would invoke the approxiate functional equation for these $L$-series and then average the Dirichlet coefficients over the family. This averaging process is not unlike a harmonic detection device. There are usually two pieces, a simple one and more complicated one. The simple piece is usually enough to obtain the main term (or first two main terms) of the asymptotic expansion. The terms in this piece are usually referred to as the \textbf{diagional terms}\index{diagional terms}. Unforuntely, with higher moments the harmonic detection devices becomes increasingly more complicated and more terms, even off diagional ones, are necessary in order to obtain the main term.
+    For a more concrete case, suppose that the stastical information we are after is a moment of a family of related $L$-functions. A classical argument would invoke the approxiate functional equation for these $L$-functions and then average the Dirichlet coefficients over the family. This averaging process is not unlike a harmonic detection device. There are usually two pieces, a simple one and more complicated one. The simple piece is usually enough to obtain the main term (or first two main terms) of the asymptotic expansion. The terms in this piece are usually referred to as the \textbf{diagional terms}\index{diagional terms}. Unforuntely, with higher moments the harmonic detection devices becomes increasingly more complicated and more terms, even off diagional ones, are necessary in order to obtain the main term.
     \subsection*{The Work of Montgomery \& Dyson}
       The start of the connection between random matrix theory and analytic number theory was at Princeton in the 1907s via discussions between H.L. Montgomery and F.J. Dyson. In particular there were similarities between stastical information about the distribution of the zeros of $\z(s)$ and calculations in random matrix theory about unitary matrices (see \todo{cite}). More precisely if $\frac{1}{2}+it$ is a zero of $\z(s)$ on the critial line, then we define the \textbf{unfolded zero}\index{unfolded zero} to be
       \[
@@ -332,7 +332,7 @@
           \hline
           Symmetry Type & Family \\
           \hline
-          \multirow{2}{*}{Unitary} & $\{L(s+iy):y \ge 0\}$ ordered by $y$ where $L(s)$ is any Selberg class $L$-series \\& $\{L(s,\chi):\chi\}$ ordered by $q$ where $\chi$ is a Dirichlet character modulo $q \ge 1$ \\
+          \multirow{2}{*}{Unitary} & $\{L(s+iy):y \ge 0\}$ ordered by $y$ where $L(s)$ is any Selberg class $L$-function \\& $\{L(s,\chi):\chi\}$ ordered by $q$ where $\chi$ is a Dirichlet character modulo $q \ge 1$ \\
           \hline
           \multirow{2}{*}{Orthgonal} & $\{L(s,f):f \in \mc{S}_{k}(\G_{0}(N)), k \ge 4\}$ ordered by $k$ where $N \ge 1$ is fixed \\& $\{L(s,f):f \in \mc{S}_{k}(\G_{0}(N)), N \ge 1\}$ ordered by $N$ where $k \ge 4$ is fixed \\
           \hline

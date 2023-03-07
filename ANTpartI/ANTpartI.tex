@@ -3032,7 +3032,7 @@
         \]
         Taking the principal branch of the logarithm, we see that
         \[
-          \log(\z(s)) = -\sum_{p}\log(1-p^{-s}).
+          \log\z(s) = -\sum_{p}\log(1-p^{-s}).
         \]
         The Taylor series of the logarithm gives
         \[
@@ -3040,7 +3040,7 @@
         \]
         so that
         \[
-          \log(\z(s)) = -\sum_{p}\sum_{k \ge 1}(-1)^{2k-1}\frac{1}{kp^{ks}} = \sum_{p}\frac{1}{p^{s}}+\sum_{p}\sum_{k \ge 2}\frac{1}{kp^{ks}}.
+          \log\z(s) = -\sum_{p}\sum_{k \ge 1}(-1)^{2k-1}\frac{1}{kp^{ks}} = \sum_{p}\frac{1}{p^{s}}+\sum_{p}\sum_{k \ge 2}\frac{1}{kp^{ks}}.
         \]
         The last double sum is uniformly bounded for $\Re(s) > 1$. To see this, first observe that
         \[
@@ -3052,7 +3052,7 @@
         \]
         In particular,
         \[
-          \left|\log(\z(s))-\sum_{p}\frac{1}{p^{s}}\right| = \left|\sum_{p}\sum_{k \ge 2}\frac{1}{kp^{ks}}\right|,
+          \left|\log\z(s)-\sum_{p}\frac{1}{p^{s}}\right| = \left|\sum_{p}\sum_{k \ge 2}\frac{1}{kp^{ks}}\right|,
         \]
         remains bounded as $s \to 1$. The claim now follows since $\z(s)$ has a simple pole at $s = 1$.
       \end{proof}
@@ -3101,7 +3101,7 @@
           \]
           where the last equality follows because if $p \mid m$ we have $\chi(p) = 0$. Taking the principal branch of the logarithm gives
           \[
-            \log(L(s,\chi)) = -\sum_{p}\log(1-\chi(p)p^{-s}).
+            \log L(s,\chi) = -\sum_{p}\log(1-\chi(p)p^{-s}).
           \]
           The Taylor series of the logarithm implies
           \[
@@ -3109,7 +3109,7 @@
           \]
           so that
           \[
-            \log(L(s,\chi)) = -\sum_{p}\sum_{k \ge 1}(-1)^{2k-1}\frac{\chi(p)^{k}}{kp^{ks}} = \sum_{p}\frac{\chi(p)}{p^{s}}+\sum_{p}\sum_{k \ge 2}\frac{\chi(p)^{k}}{kp^{ks}}.
+            \log L(s,\chi) = -\sum_{p}\sum_{k \ge 1}(-1)^{2k-1}\frac{\chi(p)^{k}}{kp^{ks}} = \sum_{p}\frac{\chi(p)}{p^{s}}+\sum_{p}\sum_{k \ge 2}\frac{\chi(p)^{k}}{kp^{ks}}.
           \]
           The last double sum is uniformly bounded for $\Re(s) > 1$. Indeed, first observe
           \[
@@ -3121,7 +3121,7 @@
           \]
           as desired. Now consider the following sum over all Dirichlet characters modulo $m$:
           \[
-            \sum_{\chi}\conj{\chi(a)}\log(L(s,\chi)) = \sum_{\chi}\conj{\chi(a)}\left[\sum_{p}\frac{\chi(p)}{p^{s}}+\sum_{p}\sum_{k \ge 2}\frac{\chi(p)^{k}}{kp^{ks}}\right] = \sum_{\chi}\sum_{p}\frac{\conj{\chi(a)}\chi(p)}{p^{s}}+\sum_{\chi}\conj{\chi(a)}\sum_{p}\sum_{k \ge 2}\frac{\chi(p)^{k}}{kp^{ks}}.
+            \sum_{\chi}\conj{\chi(a)}\log L(s,\chi) = \sum_{\chi}\conj{\chi(a)}\left[\sum_{p}\frac{\chi(p)}{p^{s}}+\sum_{p}\sum_{k \ge 2}\frac{\chi(p)^{k}}{kp^{ks}}\right] = \sum_{\chi}\sum_{p}\frac{\conj{\chi(a)}\chi(p)}{p^{s}}+\sum_{\chi}\conj{\chi(a)}\sum_{p}\sum_{k \ge 2}\frac{\chi(p)^{k}}{kp^{ks}}.
           \]
           By the orthogonality relations (\cref{prop:Dirichlet_orthogonality_relations} (ii)), we find that
           \[
@@ -3129,7 +3129,7 @@
           \]
           and so
           \[
-            \sum_{\chi}\conj{\chi(a)}\log(L(s,\chi))-\sum_{\chi}\conj{\chi(a)}\sum_{p}\sum_{k \ge 2}\frac{\chi(p)^{k}}{kp^{ks}} = \phi(m)\sum_{p \equiv{a} \tmod{m}}\frac{1}{p^{s}}.
+            \sum_{\chi}\conj{\chi(a)}\log L(s,\chi)-\sum_{\chi}\conj{\chi(a)}\sum_{p}\sum_{k \ge 2}\frac{\chi(p)^{k}}{kp^{ks}} = \phi(m)\sum_{p \equiv{a} \tmod{m}}\frac{1}{p^{s}}.
           \]
           The latter sum on the left-hand side is uniformly bounded for $\Re(s) > 1$ because the inner double sum is and there are finitely many Dirichlet characters modulo $m$. Therefore it suffices to show that the first sum on the left-hand side diverges as $s \to 1$. For $\chi = \chi_{m,0}$,
           \[
@@ -3137,9 +3137,9 @@
           \]
           So the corresponding term in the sum is
           \[
-            \conj{\chi_{m,0}}(a)\log(L(s,\chi_{m,0})) = \log(L(s,\chi_{m,0})) = \log\left(\z(s)\prod_{p \mid m}(1-p^{-s})\right) = \log(\z(s))+\sum_{p \mid m}\log(1-p^{-s}),
+            \conj{\chi_{m,0}}(a)\log L(s,\chi_{m,0}) = \log L(s,\chi_{m,0}) = \log\left(\z(s)\prod_{p \mid m}(1-p^{-s})\right) = \log\z(s)+\sum_{p \mid m}\log(1-p^{-s}),
           \]
-          which diverges as $s \to 1$ because $\z(s)$ has a simple pole at $s = 1$. We will be done if $\log(L(s,\chi))$ remains bounded as $s \to 1$ for all $\chi \neq \chi_{m,0}$. So assume $\chi$ is not principal. Then if $\wtilde{\chi}$ is the character inducing $\chi$, we have
+          which diverges as $s \to 1$ because $\z(s)$ has a simple pole at $s = 1$. We will be done if $\log L(s,\chi)$ remains bounded as $s \to 1$ for all $\chi \neq \chi_{m,0}$. So assume $\chi$ is not principal. Then if $\wtilde{\chi}$ is the character inducing $\chi$, we have
           \[
             L(s,\chi) = L(s,\wtilde{\chi})\prod_{p \mid m}(1-\wtilde{\chi}(p)p^{-s}),
           \]
@@ -3173,11 +3173,11 @@
       \]
       We can interpret the integral as integrating the density $d\d_{p}$ over the volume $[1,x]$. Let's try and find a more explicit expression for the density $d\d_{p}$. Now Euler (see \cite{euler1737variae}), argued that
       \[
-        \sum_{p \le x}\frac{1}{p} \sim \log(\log(x)).
+        \sum_{p \le x}\frac{1}{p} \sim \log\log(x).
       \]
       But notice that
       \[
-        \log(\log(x)) = \int_{1}^{\log(x)}\frac{du}{u} = \int_{e}^{x}\frac{1}{u}\frac{du}{\log{u}},
+        \log\log(x) = \int_{1}^{\log(x)}\frac{du}{u} = \int_{e}^{x}\frac{1}{u}\frac{du}{\log{u}},
       \]
       where in the second equality we have made the change of variables $u \to \log(u)$. So all together,
       \[
@@ -3207,11 +3207,11 @@
         \]
         Taking the principal branch of the logarithm gives
         \[
-          \log(\z(s)) = -\sum_{p}\log(1-p^{-s}).
+          \log\z(s) = -\sum_{p}\log(1-p^{-s}).
         \]
         Therefore
         \[
-          \frac{\z'(s)}{\z(s)} = \frac{d}{ds}\log(\z(s)) = \frac{d}{ds}\bigg(-\sum_{p}\log(1-p^{-s})\bigg) = -\sum_{p}\frac{\log(p)p^{-s}}{1-p^{-s}} = -\sum_{p}\sum_{k \ge 1}\frac{\log(p)}{p^{ks}} = -\sum_{n \ge 1}\frac{\L(n)}{n^{s}},
+          \frac{\z'(s)}{\z(s)} = \frac{d}{ds}\log\z(s) = \frac{d}{ds}\bigg(-\sum_{p}\log(1-p^{-s})\bigg) = -\sum_{p}\frac{\log(p)p^{-s}}{1-p^{-s}} = -\sum_{p}\sum_{k \ge 1}\frac{\log(p)}{p^{ks}} = -\sum_{n \ge 1}\frac{\L(n)}{n^{s}},
         \]
         where $\L(n)$ is the Von Mangoldt function (see \cref{append:Arithmetic_Functions}). Now fix $s = \s+it$ with $\s > 1$ and observe
         \[
@@ -3235,7 +3235,7 @@
         \]
         Suppose $\z(1+it) = 0$. Then at $s = 1$, $\eta(s)$ would have a zero, either simple or of order $2$, depending on if $\z(s+2it)$ was zero or not since $\z(s)^{3}(s+it)^{4}$ has a simple zero at $s = 1$. Therefore it suffices to show $\eta(s)$ is nonzero at $s = 1$. We now make two observations. First,
         \[
-          \frac{\eta'(s)}{\eta(s)} = \frac{d}{ds}(\log(\eta(s))) = \frac{d}{ds}(\z(s)^{3}\z(s+it)^{4}\z(s+2it)) = 3\frac{\z'(s)}{\z(s)}+4\frac{\z'(s+it)}{\z(s+it)}+\frac{\z'(s+2it)}{\z(s+2it)}.
+          \frac{\eta'(s)}{\eta(s)} = \frac{d}{ds}(\log\eta(s)) = \frac{d}{ds}(\z(s)^{3}\z(s+it)^{4}\z(s+2it)) = 3\frac{\z'(s)}{\z(s)}+4\frac{\z'(s+it)}{\z(s+it)}+\frac{\z'(s+2it)}{\z(s+2it)}.
         \]
         Second, for $s = \s$ with $\s > 1$ our previous work implies
         \[
@@ -3247,7 +3247,7 @@
         \]
         Now let $d$ be the order of the zero of $\eta(s)$ at $s = 1$. Recall that $d \ge 1$. Then $\eta(s) = (s-1)^{d}\xi(s)$ with $\xi(s)$ holomorphic at $s = 1$ and such that $\xi(1) \neq 0$. Then
         \[
-          \frac{\eta'(\s)}{\eta(\s)} = \frac{d}{ds}\log(\eta(s)) = \frac{d}{ds}\log((s-1)^{d}\xi(s)) = \frac{d}{s-1}+\frac{\xi'(s)}{\xi(s)}.
+          \frac{\eta'(\s)}{\eta(\s)} = \frac{d}{ds}\log\eta(s) = \frac{d}{ds}\log((s-1)^{d}\xi(s)) = \frac{d}{s-1}+\frac{\xi'(s)}{\xi(s)}.
         \]
         It follows that
         \[
@@ -3407,11 +3407,11 @@
         \]
         Taking the principal branch of the logarithm gives
         \[
-          \log(\z(s)) = -\sum_{p}\log(1-p^{-s}).
+          \log\z(s) = -\sum_{p}\log(1-p^{-s}).
         \]
         Therefore
         \[
-          \frac{\z'(s)}{\z(s)} = \frac{d}{ds}\log(\z(s)) = \frac{d}{ds}\bigg(-\sum_{p}\log(1-p^{-s})\bigg) = -\sum_{p}\frac{\log(p)p^{-s}}{1-p^{-s}} = -\sum_{p}\sum_{k \ge 1}\frac{\log(p)}{p^{ks}} = -\sum_{n \ge 1}\frac{\L(n)}{n^{s}},
+          \frac{\z'(s)}{\z(s)} = \frac{d}{ds}\log\z(s) = \frac{d}{ds}\bigg(-\sum_{p}\log(1-p^{-s})\bigg) = -\sum_{p}\frac{\log(p)p^{-s}}{1-p^{-s}} = -\sum_{p}\sum_{k \ge 1}\frac{\log(p)}{p^{ks}} = -\sum_{n \ge 1}\frac{\L(n)}{n^{s}},
         \]
         where $\L(n)$ is the Von Mangoldt function. It follows that
         \[
@@ -3442,7 +3442,7 @@
         \]
         We claim that this function has analytic contunuation to a neighborhood of $\Re(s) = 1$. By the meromorphic continuation of $\z(s)$, $-\frac{\z'(s)}{\z(s)}-\frac{1}{s-1}$ is holomorphic everywhere except possibly at the points where $\z(s)$ has zeros or at the pole $s = 1$. By \cref{thm:nonvanishing_of_zeta_on_Re(s)=1}, $\frac{1}{\z(s)}$ is defined on $\Re(s) = 1$ and hence is holomorphic in a neighborhood of $\Re(s) = 1$ since $\z(s)$ is. Therefore $-\frac{\z'(s)}{\z(s)}-\frac{1}{s-1}$ is holomorphic except possibly at $s = 1$. In this case, the pole is simple so $\z(s) = (s-1)\xi(s)$ where $\xi(s)$ is holomorphic and such that $\xi(1) \neq 0$ and hence is nonzero is a neighborhood of $1$. Then
         \[
-          -\frac{\z'(s)}{\z(s)}-\frac{1}{s-1} = \frac{d}{ds}\log(\z(s))-\frac{1}{s-1} = \frac{d}{ds}\log((s-1)\xi(s))-\frac{1}{s-1} = \frac{\xi'(s)}{\xi(s)}.
+          -\frac{\z'(s)}{\z(s)}-\frac{1}{s-1} = \frac{d}{ds}\log\z(s)-\frac{1}{s-1} = \frac{d}{ds}\log((s-1)\xi(s))-\frac{1}{s-1} = \frac{\xi'(s)}{\xi(s)}.
         \]
         It follows that $-\frac{\z'(s)}{\z(s)}-\frac{1}{s-1}$ is holomorphic at $s = 1$ too. Thus $-\frac{\z'(s)}{\z(s)}-\frac{1}{s-1}$ is holomorphic on the line $\Re(s) = 1$ and therefore admits analytic continuation to a neighborhood of $\Re(s) = 1$. In particular,
         \[
@@ -3480,7 +3480,7 @@
       \end{proof}
 
       \begin{remark}
-        It's interesting to note that our use of nonvanishing results in the proofs of the prime number theorem and Dirichlet's theorem on primes in arithmetic progressions served different purposes. In the proof of the prime number theorem the nonvanishing result was used to establish analytic continuation of $\frac{\z'(s)}{\z(s)}$. On the other hand, in the proof of Dirichlet's theorem on primes in arithmetic progressions the nonvanishing result was used to conclude that $\log(L(s,\chi))$ was bounded provided the Dirichlet character $\chi$ was not principal.
+        It's interesting to note that our use of nonvanishing results in the proofs of the prime number theorem and Dirichlet's theorem on primes in arithmetic progressions served different purposes. In the proof of the prime number theorem the nonvanishing result was used to establish analytic continuation of $\frac{\z'(s)}{\z(s)}$. On the other hand, in the proof of Dirichlet's theorem on primes in arithmetic progressions the nonvanishing result was used to conclude that $\log L(s,\chi)$ was bounded provided the Dirichlet character $\chi$ was not principal.
       \end{remark}
 
       We will introduce one last function before we are done discussing the prime number theorem. That function is the \textbf{logarthmic integral}\index{logarthmic integral} $\Li(x)$ defined by

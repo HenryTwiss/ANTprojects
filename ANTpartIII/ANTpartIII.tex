@@ -281,7 +281,7 @@
       \]
       \end{theorem}
 
-      The right-hand side of \cref{thm:Dyson_unitary_distribution} is exactly Montgomery's prediction in \cref{conj:Montgomery_distribution_of_zeros_of_zeta} for the two-point correlation function for $\z(s)$. We can think of this as follows: the two-point correlation of the zeros of $\z(s)$ in the limit as we move up the critial line exactly match the two-point correlation of the eigenphases of unitary matrices in the limit of the size of the matrices. In short, stastical information about $\z(s)$ agrees with stastical information about the eigenvalues of unitary matrices.
+      The right-hand side of \cref{thm:Dyson_unitary_distribution} is exactly Montgomery's prediction in \cref{conj:Montgomery_distribution_of_zeros_of_zeta} for the two-point correlation function for $\z(s)$. We can think of this as follows: the two-point correlation of the zeros of $\z(s)$ in the limit as we move up the critical line exactly match the two-point correlation of the eigenphases of unitary matrices in the limit of the size of the matrices. In short, stastical information about $\z(s)$ agrees with stastical information about the eigenvalues of unitary matrices.
     \subsection*{Families of \texorpdfstring{$L$}{L}-functions}
       Katz and Sarnak generalized the connection between stastical information of the zeros of $\z(s)$ and random unitary matrices to other $L$-functions. Moreover, they established a connection between specific families of similar $L$-functions and other compact matrix groups. The following expands upon this relationship.
 
@@ -349,7 +349,19 @@
       
       As for the second question, the symmetry type can be determined but it is, in general, a difficult question. The method used by Katz and Sarnak is that for some families, one can define an analgous family over finite fields. The $L$-functions here are polynomials (in $q^{-s}$ with $q$ the order of the field), and the Grothendieck-Lefschetz trace formula implies that the $L$-functions are characteristic polynomials of matrices in the monodromy group of the family (see \todo{cite}). By the function field number field analogy, the symmetry type of this monodromy group is then assumed to by the symmetry type of the original family.
     \subsection*{Modeling $L$-functions by Characteristic Polynomials of Unitary Matrices}
-      The characteristic polynomial of unitary matrices have strikingly similar resemblance to $L$-function. If $A \in U(N)$, then $A$ is diagionalizable with eigenvalues $e^{i\t_{n}}$ and eigenphases $\t_{n}$ for $1 \le n \le N$. Let
+      Another example of important stastical information about $\z(s)$ is the following: at a given height $t$ up the critical line, how are the the real and imaginary parts of $\log\z(\frac{1}{2}+it)$ distributed? In the limit as we move up the critical line, this question is famously answered by \textbf{Selberg's central limit theorem}\index{Selberg's central limit theorem} (see \todo{cite}):
+
+      \begin{theorem}[Selberg's central limit theorem]
+        For any rectangle $B \in \C$,
+        \[
+          \lim_{T \to \infty}\frac{1}{T}\mu\left(\left\{t:t \in [T,2T],\frac{\log\z(\frac{1}{2}+it)}{\sqrt{\frac{1}{2}\log\log(T)}} \in B\right\}\right) = \frac{1}{2\pi}\iint_{B}e^{-\frac{1}{2}(x^{2}+y^{2})}\,dx\,dy,
+        \]
+        where $\mu$ is the Lebesgue measure.
+      \end{theorem}
+
+      We interpret the left-hand side in Selberg's central limit theorem as the limiting value distribution, and the right-hand side as two independent Gaussian distributions with unit variance and zero mean. So as we move up the critical line, the real and imagnary parts of $\frac{\log\z(\frac{1}{2}+it)}{\sqrt{\frac{1}{2}\log\log(T)}}$ both independently tend to normal distributions. Interestingly, numerical computations show that when $T \sim t_{10^{20}}$ the computed values are still quite far from the Gaussian distributions. So the convergence in Selberg's central limit theorem is very slow. This does, however, beg the question of how $\log\z(\frac{1}{2}+it)$ should be modeled by random matrices when $t$ is large but finite. The answer is quite natural. Since the zeros (unfolded) of $\z(s)$ are distributed like the eigenvalues (eigenphases) of a random unitary matrix, we might expect that $\z(s)$ is modeled by a function whose zeros are those eigenvalues. That is, $\z(s)$ should be modeled by the characteristic polynomial of a unitary matrix (see \todo{cite} for details). This should work for any single $L$-function since they all exhibit the same distribution of zeros in the limit as we move up the critical line.
+
+      As a first insight to the model, the characteristic polynomial of unitary matrices have strikingly similar resemblance to $L$-functions. If $A \in U(N)$, then $A$ is diagionalizable with eigenvalues $e^{i\t_{n}}$ and eigenphases $\t_{n}$ for $1 \le n \le N$. Let
       \[
         \L_{A}(s) = A\det(I-sA) = \prod_{n \le N}(1-se^{i\t_{n}}),
       \]
@@ -381,6 +393,15 @@
       \[
         \L_{A}(s) = a_{\frac{N}{2}}s^{\frac{N}{2}}+\sum_{0 \le n \le \frac{N}{2}-1}a_{n}s^{n}+(-1)^{N}\det(A)s^{N}\sum_{0 \le n \le \frac{N}{2}-1}\conj{a_{n}}s^{-n}.
       \]
+      Keating and Sanith were able to formulate and prove an analgous version of Selberg's central limit theorem for $\L_{A}(s)$ (see \todo{cite} for a proof):
+
+      \begin{theorem}
+        Let $|s| = 1$. For any rectangle $B \in \C$,
+        \[
+          \lim_{N \to \infty}\frac{1}{T}dA\left(\left\{A:A \in U(N),\frac{\log\L_{A}(s)}{\sqrt{\frac{1}{2}\log(N)}} \in B\right\}\right) = \frac{1}{2\pi}\iint_{B}e^{-\frac{1}{2}(x^{2}+y^{2})}\,dx\,dy,
+        \]
+        where $\mu$ is the Lebesgue measure.
+      \end{theorem}
 %============%
 %  Appendix  %
 %============%

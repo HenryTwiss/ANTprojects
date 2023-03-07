@@ -1,17 +1,17 @@
 # Fdb version 3
-["bibtex ANTpartII"] 1678158080 "ANTpartII.aux" "ANTpartII.bbl" "ANTpartII" 1678158080
+["bibtex ANTpartII"] 1678206220 "ANTpartII.aux" "ANTpartII.bbl" "ANTpartII" 1678206220
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
   "ANTpartII.aux" 1678158080 7193 815de87483b2ab9f8bf07a7afa1514aa "pdflatex"
   "reference.bib" 0 -1 0 ""
   (generated)
   "ANTpartII.bbl"
   "ANTpartII.blg"
-["makeindex ANTpartII.idx"] 1678073760 "ANTpartII.idx" "ANTpartII.ind" "ANTpartII" 1678158080
+["makeindex ANTpartII.idx"] 1678073760 "ANTpartII.idx" "ANTpartII.ind" "ANTpartII" 1678206220
   "ANTpartII.idx" 1678158079 1148 c92655a658d2a8aa659ed3f22f2977e3 "pdflatex"
   (generated)
   "ANTpartII.ilg"
   "ANTpartII.ind"
-["pdflatex"] 1678158078 "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartII/ANTpartII.tex" "ANTpartII.pdf" "ANTpartII" 1678158080
+["pdflatex"] 1678158078 "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartII/ANTpartII.tex" "ANTpartII.pdf" "ANTpartII" 1678206220
   "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartII/ANTpartII.tex" 1678158078 81916 84b972ac787e5547aff8e6783e7acf12 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""

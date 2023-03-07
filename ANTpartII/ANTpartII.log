@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.27)  5 MAR 2023 22:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.27)  6 MAR 2023 21:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/henrytwiss/Documents/LaTeX/ANTwritings/ANTpartII/ANTpartII.tex
-(/Users/henrytwiss/Documents/LaTeX/ANTwritings/ANTpartII/ANTpartII.tex
+**/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartII/ANTpartII.tex
+(/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartII/ANTpartII.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (/usr/local/texlive/2022/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
@@ -678,24 +678,24 @@ Writing index file ANTpartII.idx
 (./ANTpartII.aux)
 \openout1 = `ANTpartII.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -731,7 +731,7 @@ LaTeX Font Info:    ... okay on input line 171.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 171.
+Package hyperref Info: Link coloring OFF on input line 174.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -741,9 +741,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count356
 )
-LaTeX Info: Redefining \ref on input line 171.
-LaTeX Info: Redefining \pageref on input line 171.
-LaTeX Info: Redefining \nameref on input line 171.
+LaTeX Info: Redefining \ref on input line 174.
+LaTeX Info: Redefining \pageref on input line 174.
+LaTeX Info: Redefining \nameref on input line 174.
  (./ANTpartII.out) (./ANTpartII.out)
 \@outlinefile=\write5
 \openout5 = `ANTpartII.out'.
@@ -767,15 +767,15 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 174.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 177.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 174.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 177.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 174.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 177.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
@@ -791,12 +791,12 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 ]
 Chapter 1.
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 192.
-Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 198.
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 195.
+Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 201.
 [5] [6] [7] [8] [9]
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 362.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 365.
  [10]
-Package hyperref Info: bookmark level for unknown corollary defaults to 0 on input line 380.
+Package hyperref Info: bookmark level for unknown corollary defaults to 0 on input line 383.
  [11] [12
 
 ]
@@ -806,11 +806,11 @@ Chapter 2.
 ]
 Chapter 3.
 [15] [16] [17] [18] [19]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 579.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 582.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [20] [21] [22] [23] [24] [25] [26] [27] [28] [29]
-Overfull \hbox (15.63618pt too wide) detected at line 889
+Overfull \hbox (15.63618pt too wide) detected at line 892
 []
  []
 
@@ -831,10 +831,10 @@ Package rerunfilecheck Info: File `ANTpartII.out' has not changed.
 (rerunfilecheck)             Checksum: 795A0874600F05F9047B16CDAF1BEEEC;2892.
  ) 
 Here is how much of TeX's memory you used:
- 25888 strings out of 478268
- 509836 string characters out of 5846347
- 781630 words of memory out of 5000000
- 43567 multiletter control sequences out of 15000+600000
+ 25912 strings out of 478268
+ 510511 string characters out of 5846347
+ 782062 words of memory out of 5000000
+ 43591 multiletter control sequences out of 15000+600000
  483743 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  100i,18n,104p,1029b,457s stack positions out of 10000i,1000n,20000p,200000b,200000s

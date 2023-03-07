@@ -1,18 +1,18 @@
 # Fdb version 3
-["bibtex ANTpartIII"] 1678073949 "ANTpartIII.aux" "ANTpartIII.bbl" "ANTpartIII" 1678073952
+["bibtex ANTpartIII"] 1678157586 "ANTpartIII.aux" "ANTpartIII.bbl" "ANTpartIII" 1678157586
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "ANTpartIII.aux" 1678073952 1858 1ce26ce2db86fc03dce1c26a27ab73d4 "pdflatex"
+  "ANTpartIII.aux" 1678157585 3260 1c69bc81ce4758c880bbf06069cab5e8 "pdflatex"
   "reference.bib" 0 -1 0 ""
   (generated)
   "ANTpartIII.bbl"
   "ANTpartIII.blg"
-["makeindex ANTpartIII.idx"] 1678073949 "ANTpartIII.idx" "ANTpartIII.ind" "ANTpartIII" 1678073952
-  "ANTpartIII.idx" 1678073952 149 6383d1ad408a79e7b2eb5212031ffc34 "pdflatex"
+["makeindex ANTpartIII.idx"] 1678151513 "ANTpartIII.idx" "ANTpartIII.ind" "ANTpartIII" 1678157586
+  "ANTpartIII.idx" 1678157585 464 b072c7aab1390b68f278f80cdd38d59b "pdflatex"
   (generated)
   "ANTpartIII.ilg"
   "ANTpartIII.ind"
-["pdflatex"] 1678073951 "/Users/henrytwiss/Documents/LaTeX/ANTwritings/ANTpartIII/ANTpartIII.tex" "ANTpartIII.pdf" "ANTpartIII" 1678073952
-  "/Users/henrytwiss/Documents/LaTeX/ANTwritings/ANTpartIII/ANTpartIII.tex" 1678067855 14891 af277c10c0e248ea3fa9eb442cb7e435 ""
+["pdflatex"] 1678157584 "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartIII/ANTpartIII.tex" "ANTpartIII.pdf" "ANTpartIII" 1678157586
+  "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartIII/ANTpartIII.tex" 1678157584 23255 ae85749af021c8b7fe098dcde2585509 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -187,6 +187,7 @@
   "/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty" 1645736062 6107 e082261f9677386795d8bf6b6254fa9d ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg" 1279039959 678 4792914a8f45be57bb98413425e4c7af ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty" 1575499565 5766 13a9e8766c47f30327caf893ece86ac8 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/multirow/multirow.sty" 1615845910 6149 2398eec4faa1ee24ff761581e580ecf1 ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/ntheorem/ntheorem.sty" 1346969955 43120 799f06af91d8fb275749981ca21a5146 ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty" 1601326656 1090 bae35ef70b3168089ef166db3e66f5b2 ""
   "/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty" 1601326656 410 615550c46f918fcbee37641b02a862d9 ""
@@ -210,12 +211,12 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1651053080 2826447 333659af56a38286fbbf3f5177a8ca36 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "ANTpartIII.aux" 1678073952 1858 1ce26ce2db86fc03dce1c26a27ab73d4 "pdflatex"
+  "ANTpartIII.aux" 1678157585 3260 1c69bc81ce4758c880bbf06069cab5e8 "pdflatex"
   "ANTpartIII.bbl" 0 -1 0 "bibtex ANTpartIII"
-  "ANTpartIII.ind" 1678073952 206 30f1f0c0c3bb9c5713f106dc996249e4 "makeindex ANTpartIII.idx"
-  "ANTpartIII.out" 1678073952 1016 a2f79fc0b55910a035ba8ccab8365d10 "pdflatex"
-  "ANTpartIII.tex" 1678067855 14891 af277c10c0e248ea3fa9eb442cb7e435 ""
-  "ANTpartIII.toc" 1678073952 517 0dfdf417b48f0916368dea61be891988 "pdflatex"
+  "ANTpartIII.ind" 1678157585 612 bac4a98a60cdf28864f432522a451390 "makeindex ANTpartIII.idx"
+  "ANTpartIII.out" 1678157585 1257 e6583257a394d3f9ab2d0580ce8cb3c4 "pdflatex"
+  "ANTpartIII.tex" 1678157584 23255 ae85749af021c8b7fe098dcde2585509 ""
+  "ANTpartIII.toc" 1678157585 699 aa808193344af3ca2ac9aa7ee66652e3 "pdflatex"
   (generated)
   "ANTpartIII.aux"
   "ANTpartIII.idx"

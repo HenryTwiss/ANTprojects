@@ -23,6 +23,7 @@
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usepackage{xr}
+\usepackage{multirow}
 %\externaldocument{ANTpartI}
 \usetikzlibrary{braids,arrows,decorations.markings}
 
@@ -36,6 +37,7 @@
 \newtheorem{conjecture}{Conjecture}[section]
 \newtheorem{remark}{Remark}[section]
 \theoremstyle{definition}\newframedtheorem{method}{Method}
+\crefname{conjecture}{Conjecture}{Conjectures}
 \crefname{method}{Method}{Methods}
 
 \newenvironment{stabular}[2][1]
@@ -62,6 +64,8 @@
 \newcommand{\PSL}{\mathrm{PSL}}
 \renewcommand{\O}{\mathrm{O}}
 \newcommand{\SO}{\mathrm{SO}}
+\newcommand{\U}{\mathrm{U}}
+\newcommand{\Sp}{\mathrm{Sp}}
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -192,98 +196,195 @@
   \end{itemize}
   Many of these topis are not directly mentioned in classical number theory, so in the interest of not being too overwhelming, this chapter is dedicated to the basics of these topics. Anyone well-versed in these topics is still encouraged to read through this chapter thoroughly. We will use the results presented here without reference in the following chapters unless it is a matter of clarity.
   \section{\todo{XXX}}
+\chapter{Well-known Results}
+  \section{Stastical Information About \texorpdfstring{$\z(s)$}{z(s)}}
+    We collect some important stastical information about the Riemann zeta function $\z(s)$ with citations whenever possible:
+    \begin{itemize}
+      \item At least $40\%$ o the non-trivial zeros of $\z(s)$ lie on the critial line (see \todo{cite}).
+      \item The first $1.5 \x 10^{9}+1$ zeros of $\z(s)$ lie on the critial line (see \todo{cite}).
+    \end{itemize}
+\chapter{Techniques}
+  \section{\todo{The Approximate Funcational Equation}}
+    If $L(s,f)$ is a Selberg class $L$-series then the \textbf{approximate functional equation}\index{approximate functional equation} is a compromise between the functional equation for $L(s,f)$ and expressing $L(s,f)$ as a Dirichlet series which is valid inside the cirital strip:
 
-  \chapter{Important Techniques}
-    \subsection*{\todo{The Approximate Funcational Equation}}
-      If $L(s,f)$ is a Selberg class $L$-series then the \textbf{approximate functional equation}\index{approximate functional equation} is a compromise between the functional equation for $L(s,f)$ and expressing $L(s,f)$ as a Dirichlet series which is valid inside the cirital strip:
+    \begin{theorem}[The approximate functional equation]
+      Let $L(s)$ be a Selberg class $L$-series and $g(u)$ be any even holomorphic function bounded on the strip $|\Re(u)| < 4$ and such that $g(0) = 1$. Let $X > 0$. Then for $s$ in the critial strip,
+      \[
+        L(s,f) = \sum_{n \ge 1}\frac{a_{f}(n)}{n^{s}}V_{s}\left(\frac{n}{X\sqrt{q(f)}}\right)+\e(f,s)\sum_{n \ge 1}\frac{a_{\cong{f}}(n)}{n^{1-s}}V_{1-s}\left(\frac{nX}{\sqrt{q(f)}}\right)+R
+      \],
+      where $V_{s}(y)$ is a smooth function defined by
+      \[
+        V_{s}(y) = \frac{1}{2\pi i}\int_{\Re(u) = 3}y^{-u}g(u)\frac{\g(f,s+u)}{\g(f,s)}\frac{du}{u},
+      \]
+      and
+      \[
+        \e(f,s) = \e(f)q(f)^{\frac{1}{2}-s}\frac{\g(f,1-s)}{\g(f,s)}.
+      \]
+      Moreover, the remainder $R$ is zero if $\L(f,s)$ is entire and otherwise
+      \[
+        R = \left(\Res_{u = 1-s}+\Res_{u = -s}\right)\frac{\L(f,s+u)g(u)}{q^{\frac{s}{2}}\g(f,s)}X^{u}.
+      \]
+    \end{theorem}
 
-      \begin{theorem}[The approximate functional equation]
-        Let $L(s)$ be a Selberg class $L$-series and $g(u)$ be any even holomorphic function bounded on the strip $|\Re(u)| < 4$ and such that $g(0) = 1$. Let $X > 0$. Then for $s$ in the critial strip,
+    The $g(u)$ is a test function which so that $V_{s}(y)$ has the effect of smoothing out the two sums on the right-hand side. Alternatively, it can be a cutoff function by choosing \todo{$g(u) = ...$}. This technique was first introduced by Hardy and Littlewood in \todo{year} (see \todo{cite}) to obtain asymptotics for the second moment of the zeta function.
+
+\chapter{Philosophies}
+  \section{The Katz-Sarnak Philosophy}
+    The \textbf{Katz-Sarnak philosophy}\index{Katz-Sarnak philosophy} is the idea that stastics of various kinds of $L$-series should, in the limit, match stastics for random matrices coming from some particular classical compact group. One starts with some class of zeros to look at, say high zeros of an individal $L$-series or low zeros for some family (this notion of family will become more precise) of related $L$-series. Next, one normalizes the nontrivial zeros being inspected. For example, the high zeros of an individual $L$-series on the critial line tend to cluster so a normalization is chosen such that the average spacing is $1$. It is this rescaled zeros that one works with when estimating the stastics. Then some class of test functions are introduced in order to carry out the stastical calculations in order to reveal similarity with some class of random matrices.
+
+    For a more concrete case, suppose that the stastical information we are after is a moment of a family of related $L$-series. A classical argument would invoke the approxiate functional equation for these $L$-series and then average the Dirichlet coefficients over the family. This averaging process is not unlike a harmonic detection device. There are usually two pieces, a simple one and more complicated one. The simple piece is usually enough to obtain the main term (or first two main terms) of the asymptotic expansion. The terms in this piece are usually referred to as the \textbf{diagional terms}\index{diagional terms}. Unforuntely, with higher moments the harmonic detection devices becomes increasingly more complicated and more terms, even off diagional ones, are necessary in order to obtain the main term.
+    \subsection*{The Work of Montgomery \& Dyson}
+      The start of the connection between random matrix theory and analytic number theory was at Princeton in the 1907s via discussions between H.L. Montgomery and F.J. Dyson. In particular there were similarities between stastical information about the distribution of the zeros of $\z(s)$ and calculations in random matrix theory about unitary matrices (see \todo{cite}). More precisely if $\frac{1}{2}+it$ is a zero of $\z(s)$ on the critial line, then we define the \textbf{unfolded zero}\index{unfolded zero} to be
+      \[
+        w = t\frac{1}{2\pi}\log\left(\frac{t}{2\pi}\right).
+      \]
+      If we let $t_{n}$ denote the height of the $n$-th zero and similarly for $w_{n}$, then we can state the following well-known result (see \todo{cite} for a proof):
+
+      \begin{theorem}\label{thm:zeros_of_zeta_are_log_dense}
+      \phantom{ }
+      \[
+        \lim_{W \to \infty}\frac{1}{W}\#\left\{w_{n} \le W\right\} = 1.
+      \]
+      \end{theorem}
+
+      We interpret \cref{thm:zeros_of_zeta_are_log_dense} as saying that the zeros of $\z(s)$ are logarithmically dense on the critial line. That is, they tend to accumulate as one moves up the crtitical line. The purpose of using the unfolding the zeros is to dispense with this clustering. The effect is that the unfolded zeros have unit spacing between each other on average since the limit in the theorem is $1$. Now we can consider the \textbf{two-point correlation function}\index{two-point correlation function}
+      \[
+        F_{\z}(\a,\b;W) = \frac{1}{W}\#\{w_{n},w_{m} \in [0,W]:\a \le w_{n}-w_{m} \le \b\},
+      \]
+      for any real $\a < \b$ and $W > 0$. What this function measures is the probability of how close pairs of zeros tend to be with respect to some fixed distance ($\b-\a$) be up to some height ($W$). That is, the correlation be distances of zeros. We want to understand if the limiting distribution
+      \[
+        F_{\z}(\a,\b;) = \lim_{W \to \infty}F_{\z}(\a,\b;W),
+      \]
+      exists and what we can say about it. Now Montgomery conjectured the following (see \todo{cite}):
+
+      \begin{conjecture}\label{conj:Montgomery_distribution_of_zeros_of_zeta}
+      $F_{\z}(\a,\b;)$ exists and moreover,
+      \[
+        F_{\z}(\a,\b;) = \int_{\a}^{\b}1-\left(\frac{\sin(\pi x)}{\pi x}\right)^{2}+\d(x)\,dx,
+      \]
+      where $\d(x)$ is the Dirac delta distribution. 
+      \end{conjecture}        
+        Suprisingly, \cref{conj:Montgomery_distribution_of_zeros_of_zeta} mimics a similar situation in random matrix theory. One can consider and $N \x N$ unitary matrix $A \in U(N)$ with eigenvalues $e^{i\t_{n}}$ for $1 \le n \le N$ on the unit circle. The average density is cleary $\frac{N}{2\pi}$, but we can construct a two-point correlation function with resct to the eigenphases $\t_{n}$:
+      \[
+        F(\a,\b;A,N) = \frac{1}{N}\#\{\t_{n},\t_{m} \in [0,W]:\a \le \t_{n}-t_{m} \le \b\}.
+      \]
+      Since $U(N)$ has a natrual Haar measure $dA$ we can compute the average of $F(\a,\b;A,N)$ over the group:
+      \[
+        F_{U}(\a,\b;N) = \int_{U(N)}F(\a,\b;A,N)\,dA.
+      \]
+      If we take the limit as $N \to \infty$, F.J. Dyson showed the following:
+
+      \begin{theorem}\label{thm:Dyson_unitary_distribution}
+      \phantom{ }
+      \[
+        F_{U}(\a,b) = \int_{\a}^{\b}1-\left(\frac{\sin(\pi x)}{\pi x}\right)^{2}+\d(x)\,dx.
+      \]
+      \end{theorem}
+
+      The right-hand side of \cref{thm:Dyson_unitary_distribution} is exactly Montgomery's prediction in \cref{conj:Montgomery_distribution_of_zeros_of_zeta} for the two-point correlation function for $\z(s)$. We can think of this as follows: the two-point correlation of the zeros of $\z(s)$ in the limit as we move up the critial line exactly match the two-point correlation of the eigenphases of unitary matrices in the limit of the size of the matrices. In short, stastical information about $\z(s)$ agrees with stastical information about the eigenvalues of unitary matrices.
+    \subsection*{Families of \texorpdfstring{$L$}{L}-functions}
+      Katz and Sarnak generalized the connection between stastical information of the zeros of $\z(s)$ and random unitary matrices to other $L$-functions. Moreover, they established a connection between specific families of similar $L$-functions and other compact matrix groups. The following expands upon this relationship.
+
+      To each family of $L$-functions, yet to be explained, there is an associated \textbf{symmetry type}\index{symmetry type} coming from a group or quotient of matrices. In this setting, these groups (not the quotients) are refered to as \textbf{matrix ensembles}\index{matrix ensembles}:
+      \begin{center}
+        \begin{stabular}[1.5]{|c|c|c|}
+          \hline
+          Symmetry Type & Matrix Ensemble \\
+          \hline
+          Unitary & $U(N)$ the compact group of $N \x N$ unitary matrices \\
+          \hline
+          Orthgonal & $SO(N)$ the compact group of $N \x N$ special orthogonal matrices \\
+          \hline
+          Symplectic & $\mathrm{USp}(2N)$ the compact group of $2N \x 2N$ unitary symplectic matrices \\
+          \hline
+          $\mathrm{COE}$ & $\U(N)/\O(N)$ \\
+          \hline
+          $\mathrm{CSE}$ & $\U(2N)/\mathrm{USp}(2N)$ \\
+          \hline
+        \end{stabular}
+      \end{center}
+      Now let $G(N)$ be any of the first three compact matrix groups: $\U(N)$, $\SO(N)$, or $\mathrm{USp}(2N+1)$. Let $dA$ denote the Haar measure and for any $A \in G(N)$ lable the eigenphases as $\t_{n}$ for $1 \le n \le N$ in increasing order. One of the stastics that Katz and Sarnak investigated was the \textbf{$k$-th consecutive spacing}\index{$k$-th consecutive spacing}:
+      \[
+        \mu_{k}(A)[a,b] = \frac{1}{N}\#\left\{1 \le j \le N:\frac{N}{2\pi}(\t_{j+k}-\t_{j}) \in [a,b]\right\},
+      \]
+      for any $a < b$. They were able the prove the following result (see \todo{cite}):
+
+      \begin{theorem}
+        For any $a < b$ and $k \ge 1$,
         \[
-          L(s,f) = \sum_{n \ge 1}\frac{a_{f}(n)}{n^{s}}V_{s}\left(\frac{n}{X\sqrt{q(f)}}\right)+\e(f,s)\sum_{n \ge 1}\frac{a_{\cong{f}}(n)}{n^{1-s}}V_{1-s}\left(\frac{nX}{\sqrt{q(f)}}\right)+R
-        \],
-        where $V_{s}(y)$ is a smooth function defined by
-        \[
-          V_{s}(y) = \frac{1}{2\pi i}\int_{\Re(u) = 3}y^{-u}g(u)\frac{\g(f,s+u)}{\g(f,s)}\frac{du}{u},
-        \]
-        and
-        \[
-          \e(f,s) = \e(f)q(f)^{\frac{1}{2}-s}\frac{\g(f,1-s)}{\g(f,s)}.
-        \]
-        Moreover, the remainder $R$ is zero if $\L(f,s)$ is entire and otherwise
-        \[
-          R = \left(\Res_{u = 1-s}+\Res_{u = -s}\right)\frac{\L(f,s+u)g(u)}{q^{\frac{s}{2}}\g(f,s)}X^{u}.
+          \lim_{N \to \infty}\int_{G(N)}\mu_{k}(A)[a,b]\,dA = \mu_{k}(\mathrm{CUE})[a,b].
         \]
       \end{theorem}
 
-      The $g(u)$ is a test function which so that $V_{s}(y)$ has the effect of smoothing out the two sums on the right-hand side. Alternatively, it can be a cutoff function by choosing \todo{$g(u) = ...$}. This technique was first introduced by Hardy and Littlewood in \todo{year} (see \todo{cite}) to obtain asymptotics for the second moment of the zeta function.
+      That is, the average of $\mu_{k}(A)[a,b]$ for any of the matrix ensembles, in the limit of the size of the matrices, always resembles $\mu_{k}(\mathrm{CUE})[a,b]$ (it turns out that this is the same as $\mu_{k}(\mathrm{COE})[a,b]$ too so they all agree). On the other hand, there are stastics that depend on the particular ensemble chosen. For example we can define the distribution of the $k$-th eigenphase over $G(N)$ as follows:
+      \[
+        \nu_{k}(G(N))[a,b] = dA\left(\left\{A \in G(N):\frac{\t_{k}(A)N}{2\pi} \in [a,b]\right\}\right),
+      \]
+      where $\t_{k}(A)$ is the $k$-th eigenphase of $A$. Katz and Sarnak showed that
+      \[
+        \nu_{k}(G) = \lim_{N \to \infty}\nu_{k}(G(N))[a,b],
+      \]
+      exists for all $a < b$ but that $\nu_{k}$ depends upon the particular ensemble chosen (see \todo{cite}).
 
-  \chapter{Important Philosophy}
-    \section{The Katz-Sarnak Philosophy}
-      The \textbf{Katz-Sarnak philosophy}\index{Katz-Sarnak philosophy} is the idea that stastics of various kinds of $L$-series should, in the limit, match stastics for random matrices coming from some particular classical compact group. One starts with some class of zeros to look at, say high zeros of an individal $L$-series or low zeros for some family (this notion of family will become more precise) of related $L$-series. Next, one normalizes the nontrivial zeros being inspected. For example, the high zeros of an individual $L$-series on the critial line tend to cluster so a normalization is chosen such that the average spacing is $1$. It is this rescaled zeros that one works with when estimating the stastics. Then some class of test functions are introduced in order to carry out the stastical calculations in order to reveal similarity with some class of random matrices.
-
-      For a more concrete case, suppose that the stastical information we are after is a moment of a family of related $L$-series. A classical argument would invoke the approxiate functional equation for these $L$-series and then average the Dirichlet coefficients over the family. This averaging process is not unlike a harmonic detection device. There are usually two pieces, a simple one and more complicated one. The simple piece is usually enough to obtain the main term (or first two main terms) of the asymptotic expansion. The terms in this piece are usually referred to as the \textbf{diagional terms}\index{diagional terms}. Unforuntely, with higher moments the harmonic detection devices becomes increasingly more complicated and more terms, even off diagional ones, are necessary in order to obtain the main term.
-      \section{The Characteristic Polynomial of Unitary Matrices}
-        As a first look into the Katz-Sarnak philosophy, the charactersitc polynomial of unitary matrices have strikingly similar resemblance to Selberg class $L$-series. Recall that a unitary matrix is a complex square matrix whose conjugate transpose is also its inverse:
-        \[
-          U^{\ast}U = UU^{\ast} = UU^{-1} = I,
-        \]
-        where $I$ is the identity matrix. If $U$ is $N \x N$, then $U$ is diagionalizable with the $N$ eigenvalues $e^{i\t_{n}}$ for some real $\t_{n}$ with $1 \le n \le N$. Now let
-        \[
-          \L_{U}(s) = A\det(I-sA) = \prod_{n \le N}(1-se^{i\t_{n}}),
-        \]
-        be the charactersitc polynomial of $U$. It turns out that $\L_{U}(s)$ has strikingly similar properties to a completed $L$-series. Indeed, if we exapand the product expression, we obtain
-        \[
-          \L_{U}(s) = \sum_{0 \le n \le N}a_{n}s^{n},
-        \]
-        for some coefficients $a_{n}$. This is the analogue to a the Dirichlet series representation of an $L$-series. Of course, as $\L_{U}(s)$ is a polynomial it admits analytic continuation to $\C$. It also has a functional equation of shape $s \to \frac{1}{s}$. To see this, the charactersitc polynomial of $U^{-1}$ is the conjugate reciprocial polynomial of $\L_{U}(s)$ up to the constant term so that
-        \[
-          \L_{U^{-1}}(s) = \frac{s^{N}}{\L_{U}(0)}\L_{U}\left(\frac{1}{s}\right).
-        \]
-        But since $\L_{U}(0) = (-1)^{N}\det(U)$ and $U$ is unitary so that $\L_{U^{-1}}(s) = \L_{U^{\ast}}(s) = \conj{\L_{U}}(s)$, then upon sending $s \to \frac{1}{s}$, we can write the previous expression by isolating the right-hand side as
-        \[
-          \L_{U}(s) = (-1)^{N}\det(U)s^{N}\conj{\L_{U}}\left(\frac{1}{s}\right).
-        \]
-        This is the functional equation for $\L_{U}(s)$ and it is of shape $s \to \frac{1}{s}$. We identify the root number as $(-1)^{n}\det(U)$ and the gamma factor as $s^{N}$. The invariant subspace is the unit circle and this plays the role of the critial strip for $\L_{U}(s)$ with the critial value being the symmetric point under $s \to \frac{1}{s}$ which is $s = 1$. Viewing the conductor the absolute value of the derivative of gamma factor evaulated at the critial value $s = 1$, we see that it is $N$. We also have an approxiate functional equation. By substiuting the polynomial representation of $\L_{U}(s)$ into the functional equation, we obtain
-        \[
-          \sum_{0 \le n \le N}a_{n}s^{n} = (-1)^{N}\det(U)s^{N}\sum_{0 \le n \le N}\conj{a_{n}}s^{-n} = (-1)^{N}\det(U)\sum_{0 \le n \le N}\conj{a_{n}}s^{N-n}.
-        \]
-        Comparing coefficients,
-        \[
-          a_{n} = (-1)^{N}\det(U)\conj{a_{N-n}}.
-        \]
-        So that for odd $N$,
-        \[
-          \L_{U}(s) = \sum_{0 \le n \le \frac{N-1}{2}}a_{n}s^{n}+(-1)^{N}\det(U)s^{N}\sum_{0 \le n \le \frac{N-1}{2}}\conj{a_{n}}s^{-n},
-        \]
-        and for even $N$,
-        \[
-          \L_{U}(s) = a_{\frac{N}{2}}s^{\frac{N}{2}}+\sum_{0 \le n \le \frac{N}{2}-1}a_{n}s^{n}+(-1)^{N}\det(U)s^{N}\sum_{0 \le n \le \frac{N}{2}-1}\conj{a_{n}}s^{-n},
-        \]
-        Now observe that the roots of $\L_{U}(s)$ all lie on the unit circle (that is the critical line) which is to say that the Riemann hypothesis is true for $\L_{U}(s)$. Moreover, the density of the zeros is $\frac{2\pi}{N}$ on average. We would like to model a family of $L$-series by an appropriate class of unitary matrices in order to predict stastics using the, far more simple, class of matrices. What tends to work out is that the appropriate family to choose is one whose conductor agrees with the conductor of the family of $L$-series. \textit{A priori}, a good family of $L$-series is one who share a conductor. This is done so that the family of $L$-series and unitray matrices have the same density of zeros near the critical value. We will do this by decomposing the unitary matrices into their symmetry type: unitary, symplectic, and orthogonal. Below are some uneful family classifications:
-
-        \begin{itemize}
-          \item[Unitary]
-            \begin{enumerate}[label=(\roman*)]
-              \item $\{L(s+iy):y \ge 0\}$ ordered by $y$ where $L(s)$ is any Selberg class $L$-series.
-              \item $\{L(s,\chi):\chi\}$ ordered by $q$ where $\chi$ is a Dirichlet character modulo $q \ge 1$.
-            \end{enumerate}
-          \item[Symplectic]
-            \begin{enumerate}[label=(\roman*)]
-              \item $\{L(s,\chi_{d}):\text{$d$ a fundamental discriminant}\}$ ordered by $|d|$ where $\chi_{d}(n) = \legendre{d}{n}$.
-              \item $\{L(s,\mathrm{sym}^{2}f):f \in \mc{S}_{k}(\G_{0}(1))\}$ ordered by $k$.
-            \end{enumerate}
-          \item[Orthogonal]
-            \begin{enumerate}[label=(\roman*)]
-              \item $\{L(s,f):f \in \mc{S}_{k}(\G_{0}(N)), k \ge 4\}$ ordered by $k$ where $N \ge 1$ is fixed.
-              \item $\{L(s,f):f \in \mc{S}_{k}(\G_{0}(N)), N \ge 1\}$ ordered by $N$ where $k \ge 4$ is fixed.
-            \end{enumerate}
-        \end{itemize}
-
-\begin{appendix}
-
-\end{appendix}
-
+      Heuristically, the stastic $\mu_{k}(A)[a,b]$ is a generalization of the two-point correlation function and so should mimic stastics about the distribution of the zeros of a single $L$-function lying high up on the critial line. That is, the stastics of \textbf{high zeros}\index{high zeros}. On the other hand, the stastic $\nu_{k}(G(N))[a,b]$ is modeling the distribution of a single zero of a family of related $L$-functions. That is, the stastics of \textbf{low zeros}\index{low zeros}. Katz and Sarnak then proposed that stastics regarding the distribution of high zeros of and single $L$-function should mimic those of $U(N)$, while stastics regarding the distribution of low zeros for a family of $L$-functions should mimic one of the matrix ensembles. For example, below are some well-studied families and their symmetry type:
+      \begin{center}
+        \begin{stabular}[1.5]{|c|c|c|}
+          \hline
+          Symmetry Type & Family \\
+          \hline
+          \multirow{2}{*}{Unitary} & $\{L(s+iy):y \ge 0\}$ ordered by $y$ where $L(s)$ is any Selberg class $L$-series \\& $\{L(s,\chi):\chi\}$ ordered by $q$ where $\chi$ is a Dirichlet character modulo $q \ge 1$ \\
+          \hline
+          \multirow{2}{*}{Orthgonal} & $\{L(s,f):f \in \mc{S}_{k}(\G_{0}(N)), k \ge 4\}$ ordered by $k$ where $N \ge 1$ is fixed \\& $\{L(s,f):f \in \mc{S}_{k}(\G_{0}(N)), N \ge 1\}$ ordered by $N$ where $k \ge 4$ is fixed \\
+          \hline
+          \multirow{2}{*}{Symplectic} & $\{L(s,\chi_{d}):\text{$d$ a fundamental discriminant}\}$ ordered by $|d|$ where $\chi_{d}(n) = \legendre{d}{n}$ \\& $\{L(s,\mathrm{sym}^{2}f):f \in \mc{S}_{k}(\G_{0}(1))\}$ ordered by $k \ge 4$ \\
+          \hline
+        \end{stabular}
+      \end{center}
+      The following two questions we need to address:
+      \begin{enumerate}[label=(\arabic{enumi})]
+        \item What is the precisely meant by a family of $L$-functions?
+        \item Given a family how do we determine its symmetry type?
+      \end{enumerate}
+      The first question has an unfortunate answer. There is not yet a precise definition of a family of $L$-functions. Families are determined by if interesting stastical data arises from their study. However, it is generally believed that the family should be indexed by either a real parameter, such as $y > 0$ for the unitary family $\{L(s+iy):y \ge 0\}$, or partially ordered by the conductor of the $L$-function as is the case for every other family in the table above. 
+      
+      As for the second question, the symmetry type can be determined but it is, in general, a difficult question. The method used by Katz and Sarnak is that for some families, one can define an analgous family over finite fields. The $L$-functions here are polynomials (in $q^{-s}$ with $q$ the order of the field), and the Grothendieck-Lefschetz trace formula implies that the $L$-functions are characteristic polynomials of matrices in the monodromy group of the family (see \todo{cite}). By the function field number field analogy, the symmetry type of this monodromy group is then assumed to by the symmetry type of the original family.
+    \subsection*{Modeling $L$-functions by Characteristic Polynomials of Unitary Matrices}
+      The characteristic polynomial of unitary matrices have strikingly similar resemblance to $L$-function. If $A \in U(N)$, then $A$ is diagionalizable with eigenvalues $e^{i\t_{n}}$ and eigenphases $\t_{n}$ for $1 \le n \le N$. Let
+      \[
+        \L_{A}(s) = A\det(I-sA) = \prod_{n \le N}(1-se^{i\t_{n}}),
+      \]
+      be the characteristic polynomial of $A$. It turns out that $\L_{A}(s)$ has strikingly similar properties to an $L$-function. Indeed, if we exapand the product expression, we obtain
+      \[
+        \L_{A}(s) = \sum_{0 \le n \le N}a_{n}s^{n},
+      \]
+      for some coefficients $a_{n}$. This is the analogue to a the Dirichlet series representation of an $L$-function. Of course, as $\L_{A}(s)$ is a polynomial it admits analytic continuation to $\C$. It also has a functional equation of shape $s \to \frac{1}{s}$. To see this, the characteristic polynomial of $A^{-1}$ is the conjugate reciprocial polynomial of $\L_{A}(s)$ up to the constant term so that
+      \[
+        \L_{A^{-1}}(s) = \frac{s^{N}}{\L_{A}(0)}\L_{A}\left(\frac{1}{s}\right).
+      \]
+      But since $\L_{A}(0) = (-1)^{N}\det(A)$ and $A$ is unitary so that $\L_{A^{-1}}(s) = \L_{A^{\ast}}(s) = \conj{\L_{A}(s)}$, upon sending $s \to \frac{1}{s}$, we can write the previous expression by isolating the right-hand side as
+      \[
+        \L_{A}(s) = (-1)^{N}\det(A)s^{N}\conj{\L_{A}\left(\frac{1}{s}\right)}.
+      \]
+      This is the functional equation for $\L_{A}(s)$ and it is of shape $s \to \frac{1}{s}$. We identify the root number as $(-1)^{n}\det(A)$ and the gamma factor as $s^{N}$. The invariant subspace is the unit circle and this plays the role of the critial strip for $\L_{A}(s)$ with the critial value being the symmetric point under $s \to \frac{1}{s}$ which is $s = 1$. Viewing the conductor the absolute value of the derivative of gamma factor evaulated at the critial value $s = 1$, we see that it is $N$. We also have an approxiate functional equation. By substiuting the polynomial representation of $\L_{A}(s)$ into the functional equation, we obtain
+      \[
+        \sum_{0 \le n \le N}a_{n}s^{n} = (-1)^{N}\det(A)s^{N}\sum_{0 \le n \le N}\conj{a_{n}}s^{-n} = (-1)^{N}\det(A)\sum_{0 \le n \le N}\conj{a_{n}}s^{N-n}.
+      \]
+      Comparing coefficients,
+      \[
+        a_{n} = (-1)^{N}\det(A)\conj{a_{N-n}}.
+      \]
+      So that for odd $N$,
+      \[
+        \L_{A}(s) = \sum_{0 \le n \le \frac{N-1}{2}}a_{n}s^{n}+(-1)^{N}\det(A)s^{N}\sum_{0 \le n \le \frac{N-1}{2}}\conj{a_{n}}s^{-n},
+      \]
+      and for even $N$,
+      \[
+        \L_{A}(s) = a_{\frac{N}{2}}s^{\frac{N}{2}}+\sum_{0 \le n \le \frac{N}{2}-1}a_{n}s^{n}+(-1)^{N}\det(A)s^{N}\sum_{0 \le n \le \frac{N}{2}-1}\conj{a_{n}}s^{-n}.
+      \]
+%============%
+%  Appendix  %
+%============%
+\appendix
 %========================%
 %  Index & Bibliography  %
 %========================%

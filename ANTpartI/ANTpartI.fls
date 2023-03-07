@@ -1,8 +1,8 @@
-PWD /Users/henrytwiss/Documents/LaTeX/ANTwritings/ANTpartI
+PWD /Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartI
 INPUT /usr/local/texlive/2022/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/henrytwiss/Documents/LaTeX/ANTwritings/ANTpartI/ANTpartI.tex
+INPUT /Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartI/ANTpartI.tex
 OUTPUT ANTpartI.log
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/book.cls
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/book.cls

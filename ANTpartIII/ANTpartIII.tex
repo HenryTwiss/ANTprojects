@@ -377,7 +377,7 @@
       \[
         \L_{A}(s) = (-1)^{N}\det(A)s^{N}\conj{\L_{A}\left(\frac{1}{s}\right)}.
       \]
-      This is the functional equation for $\L_{A}(s)$ and it is of shape $s \to \frac{1}{s}$. We identify the root number as $(-1)^{n}\det(A)$ and the gamma factor as $s^{N}$. The invariant subspace is the unit circle and this plays the role of the critial strip for $\L_{A}(s)$ with the critial value being the symmetric point under $s \to \frac{1}{s}$ which is $s = 1$. Viewing the conductor the absolute value of the derivative of gamma factor evaulated at the critial value $s = 1$, we see that it is $N$. We also have an approxiate functional equation. By substiuting the polynomial representation of $\L_{A}(s)$ into the functional equation, we obtain
+      This is the functional equation for $\L_{A}(s)$ and it is of shape $s \to \frac{1}{s}$. We identify the root number as $(-1)^{n}\det(A)$ and the gamma factor as $s^{N}$. The invariant subspace is the unit circle and this plays the role of the critial line for $\L_{A}(s)$ with the critial value being the symmetric point under $s \to \frac{1}{s}$ which is $s = 1$. In fact, under the change of variables $s \to \frac{1}{s+1}$ the functional equation is of shape $s \to 1-s$, the unit circle is sent to the critical line, and $s = 1$ is sent to $s = \frac{1}{2}$. Viewing the conductor the absolute value of the derivative of gamma factor evaulated at the critial value $s = 1$, we see that it is $N$. We also have an approxiate functional equation. By substiuting the polynomial representation of $\L_{A}(s)$ into the functional equation, we obtain
       \[
         \sum_{0 \le n \le N}a_{n}s^{n} = (-1)^{N}\det(A)s^{N}\sum_{0 \le n \le N}\conj{a_{n}}s^{-n} = (-1)^{N}\det(A)\sum_{0 \le n \le N}\conj{a_{n}}s^{N-n}.
       \]
@@ -393,7 +393,9 @@
       \[
         \L_{A}(s) = a_{\frac{N}{2}}s^{\frac{N}{2}}+\sum_{0 \le n \le \frac{N}{2}-1}a_{n}s^{n}+(-1)^{N}\det(A)s^{N}\sum_{0 \le n \le \frac{N}{2}-1}\conj{a_{n}}s^{-n}.
       \]
-      Keating and Sanith were able to formulate and prove an analgous version of Selberg's central limit theorem for $\L_{A}(s)$ (see \todo{cite} for a proof):
+      These are the approximate functional equations for $\L_{A}(s)$.
+
+      All of this is suggestive of the fact that characteristic polynomials of unitary matrices model $L$-functions at a theoritical level. As for stastical modeling, we state one last result. This is due to Keating and Sanith and it's an analgous version of Selberg's central limit theorem for $\L_{A}(s)$ (see \todo{cite} for a proof):
 
       \begin{theorem}
         Let $|s| = 1$. For any rectangle $B \in \C$,

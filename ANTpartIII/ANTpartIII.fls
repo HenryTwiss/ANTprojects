@@ -1043,6 +1043,10 @@ INPUT ./ANTpartIII.ind
 INPUT ANTpartIII.ind
 INPUT ./ANTpartIII.ind
 INPUT ANTpartIII.ind
+INPUT ./ANTpartIII.bbl
+INPUT ANTpartIII.bbl
+INPUT ./ANTpartIII.bbl
+INPUT ANTpartIII.bbl
 OUTPUT ANTpartIII.thm
 INPUT ANTpartIII.aux
 INPUT ./ANTpartIII.out

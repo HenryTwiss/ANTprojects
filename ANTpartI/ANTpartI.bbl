@@ -1,0 +1,176 @@
+\begin{thebibliography}{10}
+
+\bibitem{apostol1998introduction}
+Tom~M Apostol.
+\newblock {\em Introduction to analytic number theory}.
+\newblock Springer Science \& Business Media, 1998.
+
+\bibitem{backlund1919beziehung}
+Ralph~Joseph Backlund.
+\newblock {\em {\"U}ber die Beziehung zwischen Anwachsen und Nullstellen der
+  Zetafunktion}.
+\newblock [sn]@, 1919.
+
+\bibitem{conrad2016modular}
+Keith Conrad.
+\newblock Modular forms (draft, ctnt 2016).
+\newblock Connecticut Summer School in Number Theory, 2016.
+
+\bibitem{debnath2016integral}
+Lokenath Debnath and Dambaru Bhatta.
+\newblock {\em Integral transforms and their applications}.
+\newblock Chapman and Hall/CRC, 2016.
+
+\bibitem{deligne1971formes}
+Pierre Deligne.
+\newblock Formes modulaires et representations e-adiques.
+\newblock In {\em S{\'e}minaire Bourbaki vol. 1968/69 Expos{\'e}s 347-363},
+  pages 139--172. Springer, 1971.
+
+\bibitem{deligne1974conjecture}
+Pierre Deligne.
+\newblock La conjecture de weil. i.
+\newblock {\em Publications Math{\'e}matiques de l'Institut des Hautes
+  {\'E}tudes Scientifiques}, 43(1):273--307, 1974.
+
+\bibitem{diamond2005first}
+Fred Diamond and Jerry~Michael Shurman.
+\newblock {\em A first course in modular forms}, volume 228.
+\newblock Springer, 2005.
+
+\bibitem{euler1737variae}
+Leonhard Euler.
+\newblock Variae observationes circa series infinitas.
+\newblock {\em Commentarii academiae scientiarum imperialis Petropolitanae},
+  9(1737):160--188, 1737.
+
+\bibitem{Gauss1808}
+Carl~Friedrich Gau\ss.
+\newblock {\em Summatio quarumdam serierum singularium}.
+\newblock Dieterich, 1808.
+
+\bibitem{gauss1872tafel}
+Carl~Friedrich Gauss.
+\newblock Tafel der frequenz der primzahlen.
+\newblock {\em Werke}, 2:436--442, 1872.
+
+\bibitem{goldfeld2006automorphic}
+Dorian Goldfeld.
+\newblock {\em Automorphic forms and L-functions for the group GL (n, R)},
+  volume~99.
+\newblock Cambridge University Press, 2006.
+
+\bibitem{hadamard1896distribution}
+Jacques Hadamard.
+\newblock Sur la distribution des z{\'e}ros de la fonction {$\z(s)$} et ses
+  cons{\'e}quences arithm{\'e}tiques.
+\newblock {\em Bulletin de la Societ{\'e} mathematique de France}, 24:199--220,
+  1896.
+
+\bibitem{kilford2015modular}
+Lloyd James~Peter Kilford.
+\newblock {\em Modular Forms: A classical and computational introduction}.
+\newblock World Scientific Publishing Company, 2015.
+
+\bibitem{lang2012introduction}
+Serge Lang.
+\newblock {\em Introduction to modular forms}, volume 222.
+\newblock Springer Science \& Business Media, 2012.
+
+\bibitem{lang2013algebraic}
+Serge Lang.
+\newblock {\em Algebraic number theory}, volume 110.
+\newblock Springer Science \& Business Media, 2013.
+
+\bibitem{legendreessai}
+Adrien-Marie Legendre.
+\newblock Essai sur la theorie de nombres.
+\newblock {\em Paris Book}, 1798.
+
+\bibitem{legendre1808essai}
+Adrien~Marie Legendre.
+\newblock {\em Essai sur la theorie des nombres; par AM Legendre, membre de
+  l'Institut et de la Legion d'Honneur..}
+\newblock chez Courcier, imprimeur-libraire pour les mathematiques, quai des
+  Augustins, 1808.
+
+\bibitem{lindelof1908quelques}
+Ernst Lindelof.
+\newblock {\em Quelques remarques sur la croissance de la fonction ${\z(s)}$}.
+\newblock Gauthier-Villars, 1908.
+
+\bibitem{littlewood1914distribution}
+John~E Littlewood.
+\newblock Sur la distribution des nombres premiers.
+\newblock {\em CR Acad. Sci. Paris}, 158(1914):1869--1872, 1914.
+
+\bibitem{montgomery2007multiplicative}
+Hugh~L Montgomery and Robert~C Vaughan.
+\newblock {\em Multiplicative number theory I: Classical theory}.
+\newblock Cambridge university press, 2007.
+
+\bibitem{mordell1917mr}
+Louis~Joel Mordell and On~Mr.
+\newblock On mr. ramanujan’s empirical expansions of modular functions.
+\newblock In {\em Proc. Cambridge Philos. Soc}, volume~19, pages 117--124,
+  1917.
+
+\bibitem{motohashi1997spectral}
+Yoichi Motohashi.
+\newblock {\em Spectral theory of the Riemann zeta-function}.
+\newblock Cambridge University Press, 1997.
+
+\bibitem{poussin1897recherches}
+Charles Jean de La~Vall{\'e}e Poussin.
+\newblock {\em Recherches analytiques sur la th{\'e}orie des nombres premiers},
+  volume~1.
+\newblock Hayez, 1897.
+
+\bibitem{poussin1899fonction}
+Charles Jean de La~Vall{\'e}e Poussin.
+\newblock {\em Sur la fonction [zeta](s) de Riemann et le nombre des nombres
+  premiers inferieurs {\`a} une limite donn{\'e}e}, volume~51.
+\newblock Hayez, 1899.
+
+\bibitem{ramanujan1916certain}
+Srinivasa Ramanujan.
+\newblock On certain arithmetical functions.
+\newblock {\em Trans. Cambridge Philos. Soc}, 22(9):159--184, 1916.
+
+\bibitem{remmert2013classical}
+Reinhold Remmert.
+\newblock {\em Classical topics in complex function theory}, volume 172.
+\newblock Springer Science \& Business Media, 2013.
+
+\bibitem{riemann1859ueber}
+Bernhard Riemann.
+\newblock Ueber die anzahl der primzahlen unter einer gegebenen grosse.
+\newblock {\em Ges. Math. Werke und Wissenschaftlicher Nachla{\ss}},
+  2(145-155):2, 1859.
+
+\bibitem{rosser1962approximate}
+J~Barkley Rosser and Lowell Schoenfeld.
+\newblock Approximate formulas for some functions of prime numbers.
+\newblock {\em Illinois Journal of Mathematics}, 6(1):64--94, 1962.
+
+\bibitem{snowden2016lectures}
+Andrew Snowden.
+\newblock Lectures 4 \& 5: Poincare series.
+\newblock Learning Seminar on Borcherds products, 2016.
+
+\bibitem{stein2010complex}
+Elias~M Stein and Rami Shakarchi.
+\newblock {\em Complex analysis}, volume~2.
+\newblock Princeton University Press, 2010.
+
+\bibitem{vatwani2015simple}
+Akshaa Vatwani.
+\newblock A simple proof of the wiener--ikehara tauberian theorem.
+\newblock {\em Math. Student}, 84(3-4):127--134, 2015.
+
+\bibitem{von1901distribution}
+Helge Von~Koch.
+\newblock Sur la distribution des nombres premiers.
+\newblock {\em Acta Mathematica}, 24(1):159--182, 1901.
+
+\end{thebibliography}

@@ -1039,6 +1039,10 @@ INPUT ./ANTpartII.ind
 INPUT ANTpartII.ind
 INPUT ./ANTpartII.ind
 INPUT ANTpartII.ind
+INPUT ./ANTpartII.bbl
+INPUT ANTpartII.bbl
+INPUT ./ANTpartII.bbl
+INPUT ANTpartII.bbl
 OUTPUT ANTpartII.thm
 INPUT ANTpartII.aux
 INPUT ./ANTpartII.out

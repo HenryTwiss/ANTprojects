@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: ANTpartI.aux
 The style file: plain.bst
 Database file #1: referenceANTpartI.bib
-You've used 32 entries,
+You've used 35 entries,
             2118 wiz_defined-function locations,
-            672 strings with 7845 characters,
-and the built_in function-call counts, 8286 in all, are:
-= -- 811
-> -- 260
-< -- 11
-+ -- 110
-- -- 76
-* -- 457
-:= -- 1412
-add.period$ -- 97
-call.type$ -- 32
-change.case$ -- 117
+            692 strings with 8306 characters,
+and the built_in function-call counts, 9265 in all, are:
+= -- 915
+> -- 281
+< -- 13
++ -- 120
+- -- 82
+* -- 519
+:= -- 1563
+add.period$ -- 106
+call.type$ -- 35
+change.case$ -- 129
 chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 383
-empty$ -- 758
-format.name$ -- 76
-if$ -- 1747
+cite$ -- 35
+duplicate$ -- 426
+empty$ -- 849
+format.name$ -- 82
+if$ -- 1959
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 47
-newline$ -- 163
-num.names$ -- 64
-pop$ -- 173
+int.to.str$ -- 35
+missing$ -- 50
+newline$ -- 178
+num.names$ -- 70
+pop$ -- 183
 preamble$ -- 1
-purify$ -- 102
+purify$ -- 111
 quote$ -- 0
-skip$ -- 241
+skip$ -- 273
 stack$ -- 0
-substring$ -- 454
-swap$ -- 58
-text.length$ -- 11
+substring$ -- 544
+swap$ -- 70
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 94
+type$ -- 106
 warning$ -- 0
-while$ -- 89
-width$ -- 34
-write$ -- 344
+while$ -- 102
+width$ -- 37
+write$ -- 378

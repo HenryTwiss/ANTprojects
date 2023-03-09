@@ -20,20 +20,20 @@
 \contentsline {section}{\numberline {4.1}The Lindel\"of Hypothesis \& Convexity Arguments}{89}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Nonvanishing Results}{91}{section.4.2}%
 \contentsline {section}{\numberline {4.3}The Riemann Hypothesis}{106}{section.4.3}%
-\contentsline {section}{\numberline {4.4}\leavevmode {\color {red}\sf Todo: [Zero-free Regions]}}{107}{section.4.4}%
-\contentsline {section}{\numberline {4.5}\leavevmode {\color {red}\sf Todo: [Additional Results]}}{107}{section.4.5}%
-\contentsline {chapter}{\numberline {A}Number Theory}{111}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Arithmetic Functions}{111}{section.A.1}%
-\contentsline {section}{\numberline {A.2}The M\"obius Function}{113}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Quadratic Reciprocity}{113}{section.A.3}%
-\contentsline {chapter}{\numberline {B}Analysis}{117}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Absolute Uniform Convergence on Compacta}{117}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Interchange of Integrals \& Sums}{118}{section.B.2}%
-\contentsline {section}{\numberline {B.3}Summation Formulas}{118}{section.B.3}%
-\contentsline {section}{\numberline {B.4}Fourier Series}{119}{section.B.4}%
-\contentsline {section}{\numberline {B.5}Factorizations \& Finite Order}{120}{section.B.5}%
-\contentsline {section}{\numberline {B.6}The Phragmen-Lindel\"of Convexity principal for a Strip}{120}{section.B.6}%
-\contentsline {chapter}{\numberline {C}Special Functions, Sums, \& Integrals}{121}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Bessel Functions}{121}{section.C.1}%
-\contentsline {section}{\numberline {C.2}Sums Over Lattices}{122}{section.C.2}%
-\contentsline {section}{\numberline {C.3}Special Integrals}{123}{section.C.3}%
+\contentsline {section}{\numberline {4.4}Zero-free Regions \& Siegel Zeros}{107}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Additional Results}{109}{section.4.5}%
+\contentsline {chapter}{\numberline {A}Number Theory}{113}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Arithmetic Functions}{113}{section.A.1}%
+\contentsline {section}{\numberline {A.2}The M\"obius Function}{115}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Quadratic Reciprocity}{115}{section.A.3}%
+\contentsline {chapter}{\numberline {B}Analysis}{119}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Absolute Uniform Convergence on Compacta}{119}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Interchange of Integrals \& Sums}{120}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Summation Formulas}{120}{section.B.3}%
+\contentsline {section}{\numberline {B.4}Fourier Series}{121}{section.B.4}%
+\contentsline {section}{\numberline {B.5}Factorizations \& Finite Order}{122}{section.B.5}%
+\contentsline {section}{\numberline {B.6}The Phragmen-Lindel\"of Convexity principal for a Strip}{122}{section.B.6}%
+\contentsline {chapter}{\numberline {C}Special Functions, Sums, \& Integrals}{123}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Bessel Functions}{123}{section.C.1}%
+\contentsline {section}{\numberline {C.2}Sums Over Lattices}{124}{section.C.2}%
+\contentsline {section}{\numberline {C.3}Special Integrals}{125}{section.C.3}%

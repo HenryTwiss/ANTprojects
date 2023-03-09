@@ -1047,11 +1047,11 @@
           \node at (0.7,0.5) {\tiny{$TST\mc{F}$}};
 
           \begin{scope}
-              \path[clip] (0.5,\ymax) -- (0.5,{sqrt(3)/2}) arc (60:120:1) -- (-0.5,\ymax) -- cycle;
-              \fill[gray,opacity=0.3] (-0.5,0) rectangle (0.5,\ymax);
+            \path[clip] (0.5,\ymax) -- (0.5,{sqrt(3)/2}) arc (60:120:1) -- (-0.5,\ymax) -- cycle;
+            \fill[gray,opacity=0.3] (-0.5,0) rectangle (0.5,\ymax);
           \end{scope}
         \end{tikzpicture}
-        \caption{The fundamental domain of $\PSL_{2}(\Z)\backslash\H$} \label{fig:fundamental_domain_modular_group}
+        \caption{The standard fundamental domain for $\PSL_{2}(\Z)\backslash\H$.} \label{fig:fundamental_domain_modular_group}
       \end{figure}
 
       The shaded region in \cref{fig:fundamental_domain_modular_group} is the fundamental domain in \cref{prop:fundamental_domain_modular_group} and we call it the \textbf{standard fundamental domain}\index{standard fundamental domain}. \cref{fig:fundamental_domain_modular_group} also displays how this fundamental domain changes under the actions of the generators of $\PSL_{2}(\Z)$ as in \cref{prop:PSL_generator}. A fundamental domain for any other modular curve can be built from the standard fundamental domain as the following proposition shows (see \cite{kilford2015modular} for a proof):
@@ -1892,11 +1892,11 @@
           \node at (2,0) [below left] {\tiny{$1$}};
 
           \begin{scope}
-              \path[clip] (0,\ymin) -- (0,\ymax) -- (2,\ymax) -- (2,\ymin) -- cycle;
-              \fill[gray,opacity=0.3] (0,\ymin) rectangle (2,\ymax);
+            \path[clip] (0,\ymin) -- (0,\ymax) -- (2,\ymax) -- (2,\ymin) -- cycle;
+            \fill[gray,opacity=0.3] (0,\ymin) rectangle (2,\ymax);
           \end{scope}
         \end{tikzpicture}
-        \caption{The critical strip and line of Selberg class $L$-functions}
+        \caption{The critical strip and critical line of Selberg class $L$-functions.}
         \label{fig:critical_strip}
       \end{figure}
   \section{The Riemann Zeta Function}\label{sec:The_Riemann_Zeta_Function}
@@ -2933,7 +2933,7 @@
 \chapter{Selected Topics in \texorpdfstring{$L$}{L}-functions}
   Now having fished our discussion of several important types of $L$-functions, we will introduce some famous applications and conjectures. This chapter is meant to be less formally instructive and more of a ``looking glass'' into how $L$-functions connect to other parts of number theory. As such, we will use (and cite) some deep results that will not be discussed in detail here. Although some results and conjectures will be diretly about the nature of $L$-functions, their consequences have drastic implications to many other parts of number theory.
 
-  We first discuss the Lindel\"of hypthesis which is a result about the rate of growth of an $L$-function along the critical line, and show how to obtain classical bounds via the standard convexity argument. We follow this by discussing nonvanishing results of $L$-functions and prove two famous theorems: Dirichlet's theorem on primes in arithmetic progressions and the prime number theorem. These are two crowning gems of analytic number theory, and their proofs both use nonvanishing results in an essential way. If one was still unsure that $L$-functions contain deep information about the arithmetric of $\Z$, these results will dispel all doubt. \todo{Following the exact formula, we discuss the Riemann hypothesis and expanding upon this we prove the classical zero-free region for the zeta function and Dirichlet $L$-functions. Lastly, we dicuss some smaller additional results of interest like the exact value of Dirichlet $L$-functions at $s = 1$.} Throughout we will use results about the $L$-functions discussed in \cref{cha:Standard_Class_L-functions} so repeatedly we will omit the references.
+  We first discuss the Lindel\"of hypthesis which is a result about the rate of growth of an $L$-function along the critical line, and show how to obtain classical bounds via the standard convexity argument. We follow this by discussing nonvanishing results of $L$-functions and prove two famous theorems: Dirichlet's theorem on primes in arithmetic progressions and the prime number theorem. These are two crowning gems of analytic number theory, and their proofs both use nonvanishing results in an essential way. If one was still unsure that $L$-functions contain deep information about the arithmetric of $\Z$, these results will dispel all doubt. Following these nonvanishing results, we discuss the Riemann hypothesis and progress towards it, namely, the classical zero-free region. We end our discussion of zero-free regions with Siegel zeros. Lastly, we dicuss some smaller additional results of interest like the exact value of Dirichlet $L$-functions at $s = 1$. Throughout we will use results about the $L$-functions discussed in \cref{cha:Standard_Class_L-functions} so repeatedly we will omit the references.
   \section{The Lindel\"of Hypothesis \& Convexity Arguments}
     In 1908 Lindel\"of made a conjecture about the rate of growth of the zeta function on the critical line (see \cite{lindelof1908quelques}). This is now known as the \textbf{classical Lindel\"of hypothesis}\index{classical Lindel\"of hypothesis}:
 
@@ -3580,8 +3580,83 @@
     \end{conjecture}
 
     The Selberg class Riemann hypothesis also implies other interesting results, but we will not discuss them here.
-  \section{\todo{Zero-free Regions}}
-  \section{\todo{Additional Results}}
+  \section{Zero-free Regions \& Siegel Zeros}
+    While the Riemann hypothesis, and its generalizations, are currently out of reach of standard methods we can still make progress. In particular, we want to establish regions inside the critial strip where $L$-functions do not vanish. These regions are commonly known as \textbf{zero-free regions}\index{zero-free regions}. For many of the zero-free region results we will state, it will be convenient to set $\tau = 4+|t|$ provided $t \in \R$ ($t$ will correspond to the height of some point on the critical line). The \textbf{classical zero-free}\index{classical zero-free} region for the Riemann zeta function is due to de la Vall\'ee Poussin (see \cite{montgomery2007multiplicative}):
+
+    \begin{theorem}[The classical zero-free region]
+      There is an absolute constant $c > 0$ such that $\z(s)$ contains no zeros in the region
+      \[
+        R_{\z} = \left\{s = \s+it \in \C:\s \ge 1-\frac{c}{\log(\tau)}\right\}.
+      \]
+    \end{theorem}
+ 
+    \begin{figure}[ht]
+      \centering
+      \begin{tikzpicture}[scale=3]
+        \def\xmin{-0.5} \def\xmax{3}
+        \def\ymin{-0.5} \def\ymax{2}
+        \draw[thick] (\xmin,0) -- (\xmax,0);
+        \draw[very thick] (0,\ymin) -- (0,\ymax);
+        \draw[very thick] (2,\ymin) -- (2,\ymax);
+        \draw[dashed] (1,\ymin) -- (1,\ymax);
+
+        \node at (0,0) [below left] {\tiny{$0$}};
+        \node at (1,0) [below left] {\tiny{$\frac{1}{2}$}};
+        \node at (2,0) [below left] {\tiny{$1$}};
+
+        \draw[domain=-0.5:2,variable=\y] plot({1.5-((0.3)/ln(4+abs(\y)))},\y);
+        \draw[domain=-0.5:2,variable=\y] plot({0.5+((0.3)/ln(4+abs(\y)))},\y);
+
+        \fill [gray,opacity=0.3,domain=-0.5:2,variable=\y]
+        (1.5, 2)
+        -- (2,2) 
+        -- (2,-0.5)
+        -- (1.5,-0.5)
+        -- plot({1.5-((0.3)/ln(4+abs(\y)))},\y);
+        -- cycle;
+
+        \fill [gray,opacity=0.3,domain=-0.5:2,variable=\y]
+        (0.5, 2)
+        -- (0,2) 
+        -- (0,-0.5)
+        -- (0,-0.5)
+        -- plot({0.5+((0.3)/ln(4+abs(\y)))},\y);
+        -- cycle;
+        \end{tikzpicture}
+      \caption{The classical zero-free region for the Riemann zeta function.}
+      \label{fig:classical_zero-free_region}
+    \end{figure}
+
+     The classical zero-free region describes a zero-free region for the Riemann zeta function in the right-half of the critial strip. As the zeros are symmetric about the critial line, we immediately obtain a zero-free region symmetric about the critial line (see \cref{fig:classical_zero-free_region}). There have been improvements on the general structure of the bound as well as the value of the constant $c$ (see \cite{chudakov1938functions,littlewood1922researches,vinogradov1958new}). There are also zero-free region results for other Selberg class $L$-functions. One of the most well-known, is a zero-free region result for Dirichlet $L$-functions (see \cite{montgomery2007multiplicative}):
+
+    \begin{theorem}\label{thm:zero_free_region_Dirichlet_L-functions}
+      There is an absolute constant $c > 0$ such that for any Dirichlet character $\chi$ modulo $m > 1$, $L(s,\chi)$ contains no zeros in the region
+      \[
+        R_{m} = \left\{s = \s+it \in \C:\s > 1-\frac{c}{\log(m\tau)}\right\},
+      \]
+      unless $\chi$ is quadratic in which case $L(s,\chi)$ has at most one, necessarily real, zero $\b$ in this region.
+    \end{theorem}
+
+    Notice that \cref{thm:zero_free_region_Dirichlet_L-functions} is almost an exact analog to the classical zero-free region. Unfortunately, if $\chi$ is qudratic of modulus $m > 1$, then this result does not guarantee that $L(s,\chi)$ is nonvanishing. Of course, the Selberg class Riemann hypothesis implies that such zeros do not exist. These hypothetical zeros are referred to as \textbf{Siegel zeros}\index{Siegel zeros} or \textbf{exceptional zeros}\index{exceptional zeros}. No Siegel zero has been shown to exist. Now the constant $c$ in \cref{thm:zero_free_region_Dirichlet_L-functions} is absolute and hence is independent of every quadratic character $\chi$. So for any fixed modulus, we can choose a smaller constant to make the region zero-free for all characters of that modulus. Unfortunately, Siegel zeros may accumulate towards zero along the real line as $m \to \infty$. Therefore we cannot guarantee that there exists a single positive $c$ such that the region is genuinely zero-free for all characters of all moduli. While it has not been shown that Siegel zeros do not exist, some progress has been made towards showing that they are exceptionally rare (see \cite{montgomery2007multiplicative}):
+
+    \begin{proposition}\label{prop:at_most_one_Siegel_zero_per_modulus}
+      For every integer $m > 1$, there is at most one Dirichlet character $\chi$ modulo $m$ such that $L(s,\chi)$ has a Siegel zero.
+    \end{proposition}
+
+    A natural question to ask after \cref{prop:at_most_one_Siegel_zero_per_modulus} is the following: how small can the distance between the moduli of two quadratic characters whose Dirichlet $L$-functions posess Siegel zeros be? This has been answered (see \cite{montgomery2007multiplicative} for a proof):
+
+    \begin{proposition}\label{prop:modulus_distance_Siegel_zeros}
+      For any positive $A > 0$ there exists a $c_{A} > 0$ such that if $\{m_{i}\}_{1 \le i \le n}$ is a strictly increasing sequence of positive integers with $m_{1} > 1$ and such that there exist Dirichlet characters $\chi_{i}$ of modulus $m_{i}$ whose Dirichlet $L$-series $L(s,\chi_{m_{i}})$ posses Siegel zeros $\b_{i}$ such that
+      \[
+        \b_{i} > 1-\frac{c_{A}}{\log(m_{i})},
+      \]
+      for $1 \le i \le n$, then
+      \[
+        m_{i+1} > m_{i}^{A},
+      \]
+      for $1 \le i \le n-1$.
+    \end{proposition}
+  \section{Additional Results}
     \subsection*{The Value of Dirichlet \texorpdfstring{$L$}{L}-functions at \texorpdfstring{$s = 1$}{s = 1}}
       Let $\chi$ be a primitive Dirichlet character with conductor $q > 1$. We know from \cref{thm:nonvanishing_of_Dirichlet_L-functions_at_s=1} that $L(1,\chi) \neq 0$. It is interesting to know whether or not this value is computable in general. Indeed it is. The computation is fairly straightforward and only requires some basic properties of Gauss sums that we have already devloped. The idea is to rewrite the character values $\chi(n)$ so that we can collapse the infinite series into a Taylor series. To this end, we make the following computation:
       \begin{align*}

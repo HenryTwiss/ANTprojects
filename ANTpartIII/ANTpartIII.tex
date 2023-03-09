@@ -208,10 +208,10 @@
     If $L(s,f)$ is a Selberg class $L$-function then the \textbf{approximate functional equation}\index{approximate functional equation} is a compromise between the functional equation for $L(s,f)$ and expressing $L(s,f)$ as a Dirichlet series which is valid inside the cirital strip:
 
     \begin{theorem}[The approximate functional equation]
-      Let $L(s)$ be a Selberg class $L$-function and $g(u)$ be any even holomorphic function bounded on the strip $|\Re(u)| < 4$ and such that $g(0) = 1$. Let $X > 0$. Then for $s$ in the critial strip,
+      Let $L(s,f)$ be a Selberg class $L$-function and $g(u)$ be any even holomorphic function bounded on the strip $|\Re(u)| < 4$ and such that $g(0) = 1$. Let $X > 0$. Then for $s$ in the critial strip,
       \[
-        L(s,f) = \sum_{n \ge 1}\frac{a_{f}(n)}{n^{s}}V_{s}\left(\frac{n}{X\sqrt{q(f)}}\right)+\e(f,s)\sum_{n \ge 1}\frac{a_{\cong{f}}(n)}{n^{1-s}}V_{1-s}\left(\frac{nX}{\sqrt{q(f)}}\right)+R
-      \],
+        L(s,f) = \sum_{n \ge 1}\frac{a_{f}(n)}{n^{s}}V_{s}\left(\frac{n}{X\sqrt{q(f)}}\right)+\e(f,s)\sum_{n \ge 1}\frac{a_{\conj{f}}(n)}{n^{1-s}}V_{1-s}\left(\frac{nX}{\sqrt{q(f)}}\right)+R,
+      \]
       where $V_{s}(y)$ is a smooth function defined by
       \[
         V_{s}(y) = \frac{1}{2\pi i}\int_{\Re(u) = 3}y^{-u}g(u)\frac{\g(f,s+u)}{\g(f,s)}\frac{du}{u},
@@ -226,7 +226,7 @@
       \]
     \end{theorem}
 
-    The $g(u)$ is a test function which so that $V_{s}(y)$ has the effect of smoothing out the two sums on the right-hand side. Alternatively, it can be a cutoff function by choosing \todo{$g(u) = ...$}. This technique was first introduced by Hardy and Littlewood in \todo{year} (see \todo{cite}) to obtain asymptotics for the second moment of the zeta function.
+    The function $g(u)$ is a test function so that $V_{s}(y)$ has the effect of smoothing out the two sums on the right-hand side of the approximate functional equation. In fact, $V_{s}(y)$ is a bump function by choosing \todo{$g(u) = ...$}. This technique was first introduced by Hardy and Littlewood in \todo{year} (see \todo{cite}) to obtain asymptotics for the second moment of the zeta function.
 
 \chapter{Philosophies}
   \section{The Katz-Sarnak Philosophy}

@@ -837,7 +837,7 @@
     \[
       \G(z) = \int_{0}^{\infty}e^{-x}x^{z-1}\,dx,
     \]
-    for $\Re(z) > 0$. The integral is absolutely uniformly bounded on compacta in this region. Indeed, if $K$ is a compact subset in the half-plane $\Re(z) > 0$, then upon splitting the integral we have
+    for $\Re(z) > 0$. The integral is absolutely uniformly bounded on compacta in this region. Indeed, if $K$ is a compact subset in the region $\Re(z) > 0$, then upon splitting the integral we have
     \[
       \G(z) = \int_{0}^{1}e^{-x}x^{z-1}\,dx+\int_{1}^{\infty}e^{-x}x^{z-1}\,dx.
     \]
@@ -865,7 +865,7 @@
       \]
     \end{proof}
 
-    From \cref{prop:Factorial_properties_of_gamma_function} we see that for $z = n$ a poitive integer, $\G(n) = (n-1)!$. So $\G(z)$ can be thought of as an extension of the factorial function to a holomorphic function in a half-plane. We can actually use property (ii) to extended $\G(z)$ to a meromorphic function on all of $\C$:
+    From \cref{prop:Factorial_properties_of_gamma_function} we see that for $z = n$ a poitive integer, $\G(n) = (n-1)!$. So $\G(z)$ can be thought of as a holomorphic extension of the factorial function. We can actually use property (ii) to extended $\G(z)$ to a meromorphic function on all of $\C$:
 
     \begin{theorem}\label{thm:continuation_of_gamma_function}
       $\G(z)$ has continuation to a meromorphic function on $\C$ with poles at $0,-1,-2,\ldots$. All of these poles are simple and with residue $\frac{(-1)^{n}}{n!}$ at $z = -n$.
@@ -1749,7 +1749,7 @@
       \[
         D(s) = \sum_{n \ge 1}\frac{a(n)}{n^{s}},
       \]
-      with $a(n) \in \C$. We exclude the case $a(n) = 0$ for all $n \ge 1$ so that $D(s)$ is not identically zero. We would first like to understand where this series converges. It does not take much for $D(s)$ to converge absolutely uniformly on compacta on some half-plane:
+      with $a(n) \in \C$. We exclude the case $a(n) = 0$ for all $n \ge 1$ so that $D(s)$ is not identically zero. We would first like to understand where this series converges. It does not take much for $D(s)$ to converge absolutely uniformly on compacta in some half-plane:
 
       \begin{proposition}\label{prop:Dirichlet_series_holomorphic}
         Suppose $D(s)$ is a Dirichlet series whose coefficients $a(n)$ satisfy $|a(n)| \ll n^{\a}$ for some real $\a \ge 0$. Then $D(s)$ is absolutely uniformly convergent on compacta for $\Re(s) > 1+\a$.
@@ -1762,7 +1762,7 @@
         The latter series converges by the integral test because $\b-\a > 1$. Therefore the absolute partial sums of $D(s)$ are bounded by the partial sums of this last series, and thus $D(s)$ is absolutely uniformly convergent on $K$ by the Weierstrass $M$-test. Since $K$ was arbitrary, $D(s)$ is absolutely uniformly convergent on compacta.
       \end{proof}
 
-      Since each term of $D(s)$ is holomorphic, it follows from \cref{prop:Dirichlet_series_holomorphic} that $D(s)$ is holomorphic on the half-plane $\Re(s) > 1+\a$. Obtaining polynomial bounds on coefficients of Dirichlet series are, in most cases, not hard to establish. So the assumption in \cref{prop:Dirichlet_series_holomorphic} is mild. However, the question of a sharp polynomial bound can be a very deep question. When we come across Dirichlet series whose coefficients are polynomially bounded, we will invoke \cref{prop:Dirichlet_series_holomorphic} without mention as this is also common practice in the literature.
+      Since each term of $D(s)$ is holomorphic, it follows from \cref{prop:Dirichlet_series_holomorphic} that $D(s)$ is holomorphic in the region $\Re(s) > 1+\a$. Obtaining polynomial bounds on coefficients of Dirichlet series are, in most cases, not hard to establish. So the assumption in \cref{prop:Dirichlet_series_holomorphic} is mild. However, the question of a sharp polynomial bound can be a very deep question. When we come across Dirichlet series whose coefficients are polynomially bounded, we will invoke \cref{prop:Dirichlet_series_holomorphic} without mention as this is also common practice in the literature.
 
       If the coefficients $a(n)$ are chosen at random, $D(s)$ will not usually posses any good properties outside of convergence in some region (it might not even posess that). However, the Dirichlet series we will encounter, and a fair few in the wild, will have multiplicitive coefficients. In this case, the Dirichlet series admits an infinite product expression:
 
@@ -1919,7 +1919,7 @@
         is absolutely uniformly convergent on compacta with degree $1$ Euler product.
       \end{theorem}
     \subsection*{The Integral Representation of \texorpdfstring{$\z$}{z}(s): Part I}
-      Riemann's ingenious insight was to analytically continue $\z(s)$. By this, he meant to find a representation of $\z(s)$ that is defined on a larger region that $\Re(s) > 1$. This is the approach we will take, and the argument follows the same line of reasoning as that of Riemann. We consider the gamma function $\G\left(\frac{s}{2}\right)$:
+      Riemann's ingenious insight was to analytically continue $\z(s)$. By this, he sought to find a representation of $\z(s)$ defined on a larger region than $\Re(s) > 1$. This is the approach we will take, and the argument follows the same line of reasoning as that of Riemann. We consider the gamma function $\G\left(\frac{s}{2}\right)$:
       \[
         \G\left(\frac{s}{2}\right) = \int_{0}^{\infty}e^{-x}x^{\frac{s}{2}}\,\frac{dx}{x}.
       \]
@@ -2098,7 +2098,7 @@
       \[
         (s-1)\z(s) \ll_{\e} e^{|s|^{1+\e}}.
       \]
-      So $(s-1)\z(s)$ is of order $1$, and then $\z(s)$ is as well after removing the polar factor. Having shown the analytic continuation of $\z(s)$, and verified that it belongs to the Selberg class, there is only one thing left to do. This is to compute the residue of $\z(s)$ at $s = 1$:
+      So $(s-1)\z(s)$ is of order $1$, and thus $\z(s)$ is as well after removing the polar factor. Having shown the analytic continuation of $\z(s)$, and verified that it belongs to the Selberg class, there is only one thing left to do. This is to compute the residue of $\z(s)$ at $s = 1$:
 
       \begin{proposition}\label{prop:zeta_residue}
         \[
@@ -2162,7 +2162,7 @@
         is absolutely uniformly convergent on compacta with degree $1$ Euler product.
       \end{theorem}
     \subsection*{The Integral Representation of \texorpdfstring{$L(s,\chi)$}{L(s,x)}: Part I}
-      To find the integral representation for $L(s,\chi)$ we proceed similarly to $\z(s)$. However, the following will depend if $\chi$ is even or odd, so to handle both cases simultaneously set $\d_{\chi}$ so that $\chi(-1) = (-1)^{\d_{\chi}}$. That is, $\d_{\chi} = 0,1$ according to whether $\chi$ is even or odd. Note that $\d_{\cchi} = \d_{\chi}$. Making the substitution $s \to s+\d_{\chi}$ in \cref{equ:gamma_integral_substitution} and multiplying by $\chi(n)$ yields
+      To find the integral representation for $L(s,\chi)$, we argue in a manner similar to $\z(s)$. However, the following will depend if $\chi$ is even or odd, so to handle both cases simultaneously set $\d_{\chi}$ so that $\chi(-1) = (-1)^{\d_{\chi}}$. That is, $\d_{\chi} = 0,1$ according to whether $\chi$ is even or odd. Note that $\d_{\cchi} = \d_{\chi}$. Making the substitution $s \to s+\d_{\chi}$ in \cref{equ:gamma_integral_substitution} and multiplying by $\chi(n)$ yields
       \[
         \chi(n)\G\left(\frac{s+\d_{\chi}}{2}\right) = \pi^{\frac{s+\d_{\chi}}{2}} n^{s}\int_{0}^{\infty}\chi(n)n^{\d_{\chi}}e^{-\pi n^{2}x}x^{\frac{s+\d_{\chi}}{2}}\,\frac{dx}{x},
       \]
@@ -2378,9 +2378,9 @@
         Setting $y = 1/n$ and taking absolute values implies $a_{\infty}(n) \ll n^{\frac{k}{2}}$.
       \end{method}
 
-      From Hecke's trick it follows immediately that $L(s,f)$ is absolutely uniformly convergent on compacta in the half-plane $\Re(s) > \frac{3}{2}$. We will soon see that we can improve this to $\Re(s) > 1$, although this is a very deep result.
+      From Hecke's trick it follows immediately that $L(s,f)$ is absolutely uniformly convergent on compacta in the region $\Re(s) > \frac{3}{2}$. We will soon see that we can improve this to $\Re(s) > 1$, although this is a very deep result.
     \subsection*{The Euler Product of \texorpdfstring{$L(s,f)$}{L(s,f)}}
-      The $L$-function will have an Euler product because $f$ is an eigenform. First observe that the Fourier coefficients $a_{f}(n)$ are multiplicative because the $a_{\infty}(n)$ are. Since $L(s,f)$ converges absolutely in the half-plane $\Re(s) > \frac{3}{2}$, multiplicativity of the Fourier coefficients implies
+      The $L$-function will have an Euler product because $f$ is an eigenform. First observe that the Fourier coefficients $a_{f}(n)$ are multiplicative because the $a_{\infty}(n)$ are. Since $L(s,f)$ converges absolutely in the region $\Re(s) > \frac{3}{2}$, multiplicativity of the Fourier coefficients implies
       \[
         L(s,f) = \prod_{p}\left(\sum_{n \ge 0}\frac{a_{f}(p^{n})}{p^{ns}}\right),
       \]
@@ -2588,7 +2588,7 @@
       \]
       Because the zeta function is scaled, it is not immediately clear that $L(s,f \ox g)$ can be written as a Dirichlet series. So for the moment we define $L(s,f \ox g)$ by the product expression above. Our main goal is to show that $L(s,f \ox g)$ is actually the Rankin-Selberg $L$-function of $L(s,f)$ and $L(s,g)$. The first step is to prove absolute uniform convergence on compacta for $\Re(s) > 1$. This follows immediately upon noticing that $\z(2s)$ does and $|a_{\infty}(n)\conj{b_{\infty}(n)}| \ll n^{k-1}$ by the Ramanujan conjecture.
     \subsection*{The Euler Product of \texorpdfstring{$L(s,f \ox g)$}{L(s,fxg)}}
-      The $L$-function will have an Euler product since both $f$ and $g$ are eigenforms. In this case, let $\a_{1}(p)$, $\a_{2}(p)$, $\b_{1}(p)$, and $\b_{2}(p)$ be the local roots of $f$ and $g$ respectively. Since $L(s,f \ox g)$ converges absolutely in the half-plane $\Re(s) > 1$, for $s$ in this region, multiplicativity of the Fourier coefficients implies
+      The $L$-function will have an Euler product since both $f$ and $g$ are eigenforms. In this case, let $\a_{1}(p)$, $\a_{2}(p)$, $\b_{1}(p)$, and $\b_{2}(p)$ be the local roots of $f$ and $g$ respectively. Since $L(s,f \ox g)$ converges absolutely in the region $\Re(s) > 1$, for $s$ in this region, multiplicativity of the Fourier coefficients implies
       \[
         L(s,f \ox g) = \z(2s)L(s,f \x g) = \prod_{p}(1-p^{-2s})^{-1}\prod_{p}\left(\sum_{n \ge 0}\frac{a_{f}(p^{n})\conj{b_{g}(p^{n})}}{p^{ns}}\right).
       \]
@@ -2708,7 +2708,7 @@
         Appealing to \cref{append:Special_Integrals} for this last integral and substiuting the result back into \cref{equ:real-analytic_Eisenstein_fourier_coefficient_definition} finishes the proof.
       \end{proof}
     \subsection*{The Completed Real-analytic Eisenstein Series \texorpdfstring{$E^{\ast}(z,s)$}{E*(z,s)}}
-      We would like to analytically continue $E(z,s)$ in $s$ past the half-plane $\Re(s) > 1$. From the computation of the Fourier coefficients we will possibly have poles at the zeros of $\z(2s)$ and this will be difficult to analyze. To remove this difficultly, we will multiply by a factor to clear the poles. In turn, this will give us a functional equation of shape $s \to 1-s$. The factor will be the completed zeta function $\L(2s,\z) = \pi^{-s}\G(s)\z(2s)$ (scaled by $2$). We define the the \textbf{completed real-analytic Eisenstein series}\index{completed real-analytic Eisenstein series} $E^{\ast}(z,s)$ by
+      We would like to analytically continue $E(z,s)$ in $s$ past the region $\Re(s) > 1$. From the computation of the Fourier coefficients we will possibly have poles at the zeros of $\z(2s)$ and this will be difficult to analyze. To remove this difficultly, we will multiply by a factor to clear the poles. In turn, this will give us a functional equation of shape $s \to 1-s$. The factor will be the completed zeta function $\L(2s,\z) = \pi^{-s}\G(s)\z(2s)$ (scaled by $2$). We define the the \textbf{completed real-analytic Eisenstein series}\index{completed real-analytic Eisenstein series} $E^{\ast}(z,s)$ by
       \[
         E^{\ast}(z,s) = \L(2s,\z)E(z,s) = \pi^{-s}\G(s)\z(2s)E(z,s).
       \]
@@ -2929,7 +2929,7 @@
       \[
         \{\mc{M}f\}(s) = \int_{0}^{\frac{1}{\sqrt{c}}}f(x)x^{s}\,\frac{dx}{x}+\int_{\frac{1}{\sqrt{c}}}^{\infty}f(x)x^{s}\,\frac{dx}{x},
       \]
-      Upon making the change of variables $x \to \frac{1}{cx}$ to the first integral, we were able to symmetrize the integral representations and from it derive the analytic continuations and functional equations for our $L$-functions. The most difficult part of all of these arguments was cooking up the theta function that corresponds to the $L$-function solely from its representation as a Dirichlet series in the region of absolute convergence. For $\z(s)$ this was essentially ``Riemann's insight'': start with the Gamma function, apply a change of variables, and sum over all $n \ge 1$ to obtain the Mellin transform of the corresponding theta function. For $L(s,\chi)$, the argument is adapted from that of Riemann although is somewhat more complicated since the associated theta function depends on if the character $\chi$ is even or odd (odd being the more difficult case). On the other hand, $L(s,f)$ has the advantage that the theta function is easy to guess outright. It's the Fourier series of $f$ at the $\infty$ cusp along the upper-half imaginary axis. Moreover, it comes equip with the necessary transformation law via the modularity of $f$. In more general settings, we need to know something algebraic or geometric about a given theta function in order to deduce a transformation law that can be used to prove analytic continuation and a functional equation for its associated $L$-function.
+      Upon making the change of variables $x \to \frac{1}{cx}$ to the first integral, we were able to symmetrize the integral representations and from it derive the analytic continuations and functional equations for our $L$-functions. The most difficult part of all of these arguments was cooking up the theta function that corresponds to the $L$-function solely from its representation as a Dirichlet series in the region of absolute convergence. For the Riemann zeta function this was essentially ``Riemann's insight'': start with the Gamma function, apply a change of variables, and sum over all $n \ge 1$ to obtain the Mellin transform of the corresponding theta function. For $L(s,\chi)$, the argument is adapted from that of Riemann although is somewhat more complicated since the associated theta function depends on if the character $\chi$ is even or odd (odd being the more difficult case). On the other hand, $L(s,f)$ has the advantage that the theta function is easy to guess outright. It's the Fourier series of $f$ at the $\infty$ cusp along the upper-half imaginary axis. Moreover, it comes equip with the necessary transformation law via the modularity of $f$. In more general settings, we need to know something algebraic or geometric about a given theta function in order to deduce a transformation law that can be used to prove analytic continuation and a functional equation for its associated $L$-function.
 \chapter{Selected Topics in \texorpdfstring{$L$}{L}-functions}
   Now having fished our discussion of several important types of $L$-functions, we will introduce some famous applications and conjectures. This chapter is meant to be less formally instructive and more of a ``looking glass'' into how $L$-functions connect to other parts of number theory. As such, we will use (and cite) some deep results that will not be discussed in detail here. Although some results and conjectures will be diretly about the nature of $L$-functions, their consequences have drastic implications to many other parts of number theory.
 
@@ -2946,7 +2946,7 @@
 
     This conjecture still remains wide open today, but over the years there have been some advances toward proving this conjecture. These advances go by the name of subconvexity arguments. This motivates the question: what is a convexity argument anways? A \textbf{convexity argument}\index{convexity argument} is one where estimates about the growth of an $L$-function on the critical line is dervied from \textbf{trivial bounds}\index{trivial bounds}, that is bounds given by absolute convergence, via the functional equation. Usually this is achieved by methods of complex analysis and Sirling's formula.
 
-    We will demonstrate a standard convexity argument, also referred to as the \textbf{Lindel\"of convexity argument}\index{Lindel\"of convexity argument} for $\z(s)$. The first step is to guarantee the Phragm\'en-Lindel\"of convexity principal in a region containing the critical strip. The zeta function being order $1$ implies this immediately (see \cref{append:The_Phragmen_Lindelof_Convexity_principal}). Therefore, we are reduced to estimating the growth of $\z(\s+it,f)$ for $\s$ to the left of $0$ and to the right of $1$. That is, just outside the edges of the critical strip. The right edge is easy. Letting $\e > 0$ and setting $\s = 1+\e$, we have that the zeta function is absolutely convergent in this region giving the trivial bound
+    We will demonstrate a standard convexity argument, also referred to as the \textbf{Lindel\"of convexity argument}\index{Lindel\"of convexity argument} for the Riemann zeta function. The first step is to guarantee the Phragm\'en-Lindel\"of convexity principal in a region containing the critical strip. The zeta function being order $1$ implies this immediately (see \cref{append:The_Phragmen_Lindelof_Convexity_principal}). Therefore, we are reduced to estimating the growth of $\z(\s+it,f)$ for $\s$ to the left of $0$ and to the right of $1$. That is, just outside the edges of the critical strip. The right edge is easy. Letting $\e > 0$ and setting $\s = 1+\e$, we have that the zeta function is absolutely convergent in this region giving the trivial bound
     \begin{equation}\label{equ:convexity_bound_1}
       \z((1+\e)+it,f) \ll_{\e} 1.
     \end{equation}
@@ -3525,7 +3525,7 @@
 
       So in addition, \cref{thm:Littlewood_Li_approximation_theorem} implies that $\Li(x)$ never underestimates or overestimates $\pi(x)$ continuously. On the other hand, the exact error $\pi(x)-\frac{x}{\log(x)}$ is positive provided $x \ge 17$ (see \cite{rosser1962approximate}).
   \section{The Riemann Hypothesis}
-    Along with nonvanishing results, it turns out that the zeros of $L$-functions are also extremely important but this requires some level of discussion to be convincing. Let's start with our prototypical $L$-function $\z(s)$. We would like to understand its zeros. Reall that for $\Re(s) > 1$, $\z(s)$ admits an Euler product:
+    Along with nonvanishing results, it turns out that the zeros of $L$-functions are also extremely important but this requires some level of discussion to be convincing. Let's start with our prototypical $L$-function the Riemann zeta function. We would like to understand its zeros. Reall that for $\Re(s) > 1$, $\z(s)$ admits an Euler product:
     \[
       \z(s) = \prod_{p}(1-p^{-s})^{-1}.
     \]
@@ -3541,13 +3541,13 @@
 
     For a general Selberg class $L$-function $L(s)$, the situation is similar. From the Euler product of $L(s)$, it will have no zeros in the region $\Re(s) > 1$. The functional equation then shows that the zeros $L(s)$ in the region $\Re(s) < 0$ come from the the poles of the gamma factors. These zeros of $L(s)$ are called the \textbf{trivial zeros}\index{trivial zeros}. The other zeros are called the \textbf{nontrivial zeros}\index{nontrivial zeros}, and they all lie inside the critical strip.
 
-    Returning to $\z(s)$, the trivial zeros of $\z(s)$ are $-2,-4,-6,\ldots$ and all of the nontrivial zeros lie inside the critical strip. Actually, we can say a little more. If $s_{0}$ is a nontrivial zero, then $s_{0} \neq 1$ since $\z(s)$ has a simple pole there. Moreover, $s_{0} \neq 0$ because the simple zero of $\G\left(\frac{1-s}{2}\right)$ at $s = 1$ cancels the simple pole of $\z(s)$ there. Since $s_{0} \neq 0,1$ the gamma factors in the functional equation are nonzero and holomorphic there so that the functional equation implies $1-s_{0}$ is a zero too. In other words, the nontrivial zeros of $\z(s)$ are symmetric about the critical line. The imfamous \textbf{Riemann hypothesis}\index{Riemann hypothesis} conjectured by Riemann in his 1859 manuscript (see \cite{riemann1859ueber}) says that the situation is as simple as could be:
+    Returning to the Riemann zeta function, the trivial zeros are $-2,-4,-6,\ldots$ and all of the nontrivial zeros lie inside the critical strip. Actually, we can say a little more. If $s_{0}$ is a nontrivial zero, then $s_{0} \neq 1$ since $\z(s)$ has a simple pole there. Moreover, $s_{0} \neq 0$ because the simple zero of $\G\left(\frac{1-s}{2}\right)$ at $s = 1$ cancels the simple pole of $\z(s)$. Since $s_{0} \neq 0,1$, the gamma factors in the functional equation are nonzero and holomorphic at $s_{0}$ so that the functional equation implies $1-s_{0}$ is a zero too. In other words, the nontrivial zeros of Riemann zeta function are symmetric about the critical line. The imfamous \textbf{Riemann hypothesis}\index{Riemann hypothesis} conjectured by Riemann in his 1859 manuscript (see \cite{riemann1859ueber}) says that the situation is as simple as could be:
 
     \begin{theorem}[Riemann hypothesis]
       All of the nontrivial zeros of $\z(s)$ lie on the line $\Re(s) = \frac{1}{2}$.
     \end{theorem}
 
-    This is one of, if not the most, famous and important open problems in mathematics. It has resisted all atempts of a proof by ever great mathematician over the last century and a half. The Clay Mathematics Institute has also named it one of the millennium pize problems which means that anyone who can give a proof (or disproof) will recieve \$1 million cash prize. Riemann's original motivation for the conjecture came from looking for an explicit formula for $\pi(x)$ which is the purpose of his 1859 manuscript (see \cite{riemann1859ueber}). This explicit formula for $\pi(x)$ involves the nontrivial zeros of $\z(s)$. Riemann computing a few of them, found that they were on the critical line, and conjectured that it is very likely that all of them lie on the critical line.
+    This is one of, if not the most, famous and important open problems in mathematics. It has resisted all atempts of a proof by ever great mathematician over the last century and a half. The Clay Mathematics Institute has also named it one of the millennium pize problems which means that anyone who can give a proof (or disproof) will recieve \$1 million cash prize. Riemann's original motivation for the conjecture came from looking for an explicit formula for $\pi(x)$ which is the purpose of his 1859 manuscript (see \cite{riemann1859ueber}). This explicit formula for $\pi(x)$ involves the nontrivial zeros of Riemann zeta function. Riemann computing a few of them, found that they were on the critical line, and conjectured that it is very likely that all of them lie on the critical line.
 
     The Riemann hypothesis is important because, if true, it tells us a lot of information about how the primes are distributed among the positive integers. In particular, Koch in 1901 showed that the Riemann hypothesis implies an asymptotic estimate for the exact error between $\pi(x)$ and $\Li(x)$ (see \cite{von1901distribution}):
 
@@ -4037,7 +4037,7 @@
       \]
       where the integral is understood to be a complex integral.
     \end{proposition}
-    From this integral representation it does not take much to show that $K_{\nu}(x)$ has exponential decay in the half-plane $\Re(x) > 0$:
+    From this integral representation it does not take much to show that $K_{\nu}(x)$ has exponential decay in the region $\Re(x) > 0$:
     \begin{lemma}\label{lem:exponential_decay_K-Bessel_function}
       For any $\nu \in \C$ and $\Re(x) > 0$,
       \[

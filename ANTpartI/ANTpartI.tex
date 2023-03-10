@@ -3513,15 +3513,20 @@
       \[
         \pi(x) = \frac{x}{\log(x)}+O\left(\frac{x}{\log(x)}\right),
       \]
-      which says that the extact error between $\pi(x)$ and $\frac{x}{\log(x)}$ grows no faster than $\frac{x}{\log(x)}$. However, a result of de la Vall\'ee Poussin says (see \cite{poussin1899fonction})
-      \[
-        \pi(x) = \Li(x)+O\left(xe^{-a\sqrt{\log(x)}}\right),
-      \]
-      for some positive constant $a$. Since $xe^{-a\sqrt{\log(x)}} \to 0$ as $x \to \infty$ and $\frac{x}{\log^{2}(x)} \to \infty$ as $x \to \infty$, for sufficiently large $x$ we have $xe^{-a\sqrt{\log(x)}} < \frac{x}{\log^{2}(x)}$. Therefore these results together imply that the extact error $\pi(x)-\Li(x)$ grows slower than $\pi(x)-\frac{x}{\log{x}}$ for sufficiently large $x$. This is what we mean when we say $\Li(x)$ is a better numerical approximation to $\pi(x)$ than $\frac{x}{\log(x)}$. There is also the following result due to Littlewood (see \cite{littlewood1914distribution}):
+      which says that the extact error between $\pi(x)$ and $\frac{x}{\log(x)}$ grows no faster than $\frac{x}{\log(x)}$. However, there is the following result of de la Vall\'ee Poussin (see \cite{poussin1899fonction}):
 
-      \begin{theorem}\label{thm:Littlewood_Li_approximation_theorem}
+      \begin{proposition}
+        For some $a > 0$,
+        \[
+          \pi(x) = \Li(x)+O\left(xe^{-a\sqrt{\log(x)}}\right),
+        \]
+      \end{proposition}
+      
+      Since $xe^{-a\sqrt{\log(x)}} \to 0$ as $x \to \infty$ and $\frac{x}{\log(x)} \to \infty$ as $x \to \infty$, $xe^{-a\sqrt{\log(x)}} < \frac{x}{\log(x)}$ for sufficiently large $x$. Therefore the extact error $\pi(x)-\Li(x)$ grows slower than $\pi(x)-\frac{x}{\log{x}}$ for sufficiently large $x$. This is what we mean when we say $\Li(x)$ is a better numerical approximation to $\pi(x)$ than $\frac{x}{\log(x)}$. There is also the following result due to Littlewood (see \cite{littlewood1914distribution}):
+
+      \begin{proposition}\label{thm:Littlewood_Li_approximation_theorem}
         $\pi(x)-\Li(x)$ changes sign infinitely often as $x \to \infty$.
-      \end{theorem}
+      \end{proposition}
 
       So in addition, \cref{thm:Littlewood_Li_approximation_theorem} implies that $\Li(x)$ never underestimates or overestimates $\pi(x)$ continuously. On the other hand, the exact error $\pi(x)-\frac{x}{\log(x)}$ is positive provided $x \ge 17$ (see \cite{rosser1962approximate}).
   \section{The Riemann Hypothesis}

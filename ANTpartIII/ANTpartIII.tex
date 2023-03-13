@@ -369,11 +369,11 @@
       \[
         \L_{A}(s) = 1+\sum_{n \le N}a_{n}s^{n},
       \]
-      for some coefficients $a_{n}$. This is the analogue to a the Dirichlet series representation of an $L$-function. Of course, as $\L_{A}(s)$ is a polynomial it admits analytic continuation to $\C$. It also has a functional equation of shape $s \to \frac{1}{s}$. To see this, since $A$ is unitary
+      for some coefficients $a_{n}$. This is the analogue to a the Dirichlet series representation of an $L$-function. Of course, as $\L_{A}(s)$ is a polynomial it admits analytic continuation to $\C$. It also has a functional equation of shape $s \to \frac{1}{s}$. To see this, first observe
       \[
         \L_{A}(s) = (-1)^{N}\det(A)s^{N}\det(I-s^{-1}A^{-1}).
       \]
-      But $\L_{A^{-1}}(s) = \L_{A^{\ast}}(s) = \conj{\L_{A}(s)}$, so the above equation can be expressed as
+      But since $A$ is unitary, $\L_{A^{-1}}(s) = \L_{A^{\ast}}(s) = \conj{\L_{A}(s)}$. So the above equation can be expressed as
       \[
         \L_{A}(s) = (-1)^{N}\det(A)s^{N}\conj{\L_{A}\left(\frac{1}{s}\right)}.
       \]

@@ -1,18 +1,18 @@
 # Fdb version 3
-["bibtex ANTpartIII"] 1678292710 "ANTpartIII.aux" "ANTpartIII.bbl" "ANTpartIII" 1678730005
+["bibtex ANTpartIII"] 1678292710 "ANTpartIII.aux" "ANTpartIII.bbl" "ANTpartIII" 1678750601
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "ANTpartIII.aux" 1678730005 3579 c1730786abdd86228550f0394ce62ea1 "pdflatex"
+  "ANTpartIII.aux" 1678750601 3579 c1730786abdd86228550f0394ce62ea1 "pdflatex"
   "referenceANTpartIII.bib" 1678292707 516 3661ae3ed089599ce9be819eb8da9c5d ""
   (generated)
   "ANTpartIII.bbl"
   "ANTpartIII.blg"
-["makeindex ANTpartIII.idx"] 1678292440 "ANTpartIII.idx" "ANTpartIII.ind" "ANTpartIII" 1678730005
-  "ANTpartIII.idx" 1678730005 523 83db43222eb0a5205ed27b60f876dde1 "pdflatex"
+["makeindex ANTpartIII.idx"] 1678292440 "ANTpartIII.idx" "ANTpartIII.ind" "ANTpartIII" 1678750601
+  "ANTpartIII.idx" 1678750601 523 83db43222eb0a5205ed27b60f876dde1 "pdflatex"
   (generated)
   "ANTpartIII.ilg"
   "ANTpartIII.ind"
-["pdflatex"] 1678730004 "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartIII/ANTpartIII.tex" "ANTpartIII.pdf" "ANTpartIII" 1678730005
-  "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartIII/ANTpartIII.tex" 1678730003 26023 5b95e0ff8119fe21f7e9fa93a8afc341 ""
+["pdflatex"] 1678750600 "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartIII/ANTpartIII.tex" "ANTpartIII.pdf" "ANTpartIII" 1678750601
+  "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartIII/ANTpartIII.tex" 1678750600 26038 6daaaa3d6c24c61114f396e847700bb4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -211,12 +211,12 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1651053080 2826447 333659af56a38286fbbf3f5177a8ca36 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "ANTpartIII.aux" 1678730005 3579 c1730786abdd86228550f0394ce62ea1 "pdflatex"
+  "ANTpartIII.aux" 1678750601 3579 c1730786abdd86228550f0394ce62ea1 "pdflatex"
   "ANTpartIII.bbl" 1678292710 435 bd4b70e1452eea23431117f40ff0601c "bibtex ANTpartIII"
-  "ANTpartIII.ind" 1678730005 668 3234a3e033809ca7eb5513b233ca7c0b "makeindex ANTpartIII.idx"
-  "ANTpartIII.out" 1678730005 1214 4bac1cff36238e3ebfbea25e9efeb4b5 "pdflatex"
-  "ANTpartIII.tex" 1678730003 26023 5b95e0ff8119fe21f7e9fa93a8afc341 ""
-  "ANTpartIII.toc" 1678730005 661 d6892c6c305684baa71b26e511de4679 "pdflatex"
+  "ANTpartIII.ind" 1678750601 668 3234a3e033809ca7eb5513b233ca7c0b "makeindex ANTpartIII.idx"
+  "ANTpartIII.out" 1678750601 1214 4bac1cff36238e3ebfbea25e9efeb4b5 "pdflatex"
+  "ANTpartIII.tex" 1678750600 26038 6daaaa3d6c24c61114f396e847700bb4 ""
+  "ANTpartIII.toc" 1678750601 661 d6892c6c305684baa71b26e511de4679 "pdflatex"
   (generated)
   "ANTpartIII.aux"
   "ANTpartIII.idx"

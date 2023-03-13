@@ -249,7 +249,7 @@
 
       We interpret \cref{thm:zeros_of_zeta_are_log_dense} as saying that the zeros of $\z(s)$ are logarithmically dense on the critial line. That is, they tend to accumulate as one moves up the crtitical line. The purpose of using the unfolding the zeros is to dispense with this clustering. The effect is that the unfolded zeros have unit spacing between each other on average since the limit in the theorem is $1$. Now we can consider the \textbf{two-point correlation function}\index{two-point correlation function}
       \[
-        F_{\z}(\a,\b;W) = \frac{1}{W}\#\{w_{n},w_{m} \in [0,W]:\a \le w_{n}-w_{m} \le \b\},
+        F_{\z}(\a,\b;W) = \frac{1}{W}\#\{w_{n},w_{m} \le W: w_{n}-w_{m} \in [\a,\b]\},
       \]
       for any real $\a < \b$ and $W > 0$. What this function measures is the probability of how close pairs of zeros tend to be with respect to some fixed distance ($\b-\a$) be up to some height ($W$). That is, the correlation be distances of zeros. We want to understand if the limiting distribution
       \[
@@ -266,7 +266,7 @@
       \end{conjecture}        
         Suprisingly, \cref{conj:Montgomery_distribution_of_zeros_of_zeta} mimics a similar situation in random matrix theory. One can consider and $N \x N$ unitary matrix $A \in U(N)$ with eigenvalues $e^{i\t_{n}}$ for $1 \le n \le N$ on the unit circle. The average density is cleary $\frac{N}{2\pi}$, but we can construct a two-point correlation function with resct to the eigenphases $\t_{n}$:
       \[
-        F(\a,\b;A,N) = \frac{1}{N}\#\{\t_{n},\t_{m} \in [0,W]:\a \le \t_{n}-t_{m} \le \b\}.
+        F_{U}(\a,\b;A,N) = \frac{1}{N}\#\{\t_{n},\t_{m}:\a \le \t_{n}-t_{m} \le \b\}.
       \]
       Since $U(N)$ has a natrual Haar measure $dA$ we can compute the average of $F(\a,\b;A,N)$ over the group:
       \[
@@ -303,7 +303,7 @@
           \hline
         \end{stabular}
       \end{center}
-      Now let $G(N)$ be any of the first three compact matrix groups: $\U(N)$, $\SO(N)$, or $\mathrm{USp}(2N+1)$. Let $dA$ denote the Haar measure and for any $A \in G(N)$ lable the eigenphases as $\t_{n}$ for $1 \le n \le N$ in increasing order. One of the statistics that Katz and Sarnak investigated was the \textbf{$k$-th consecutive spacing}\index{$k$-th consecutive spacing}:
+      Now let $G(N)$ be any of the ensembles. Let $dA$ denote the Haar measure and for any $A \in G(N)$ lable the eigenphases as $\t_{n}$ for $1 \le n \le N$ in increasing order. One of the statistics that Katz and Sarnak investigated was the \textbf{$k$-th consecutive spacing}\index{$k$-th consecutive spacing}:
       \[
         \mu_{k}(A)[a,b] = \frac{1}{N}\#\left\{1 \le j \le N:\frac{N}{2\pi}(\t_{j+k}-\t_{j}) \in [a,b]\right\},
       \]
@@ -316,13 +316,13 @@
         \]
       \end{theorem}
 
-      That is, the average of $\mu_{k}(A)[a,b]$ for any of the matrix ensembles, in the limit of the size of the matrices, always resembles $\mu_{k}(\mathrm{CUE})[a,b]$ (it turns out that this is the same as $\mu_{k}(\mathrm{COE})[a,b]$ too so they all agree). On the other hand, there are statistics that depend on the particular ensemble chosen. For example we can define the distribution of the $k$-th eigenphase over $G(N)$ as follows:
+      That is, the average of $\mu_{k}(A)[a,b]$ for any of the matrix ensembles, in the limit of the size of the matrices, always resembles $\mu_{k}(\mathrm{CUE})[a,b]$. On the other hand, there are statistics that depend on the particular ensemble chosen. For example we can define the distribution of the $k$-th eigenphase over $G(N)$ as follows:
       \[
         \nu_{k}(G(N))[a,b] = dA\left(\left\{A \in G(N):\frac{\t_{k}(A)N}{2\pi} \in [a,b]\right\}\right),
       \]
-      where $\t_{k}(A)$ is the $k$-th eigenphase of $A$. Katz and Sarnak showed that
+      where $\t_{k}(A)$ is the $k$-th eigenphase of $A$. Katz and Sarnak showed that 
       \[
-        \nu_{k}(G) = \lim_{N \to \infty}\nu_{k}(G(N))[a,b],
+        \nu_{k}(G)[a,b] = \lim_{N \to \infty}\nu_{k}(G(N))[a,b],
       \]
       exists for all $a < b$ but that $\nu_{k}$ depends upon the particular ensemble chosen (see \todo{cite}).
 
@@ -363,17 +363,17 @@
 
       As a first insight to the model, the characteristic polynomial of unitary matrices have strikingly similar resemblance to $L$-functions. If $A \in U(N)$, then $A$ is diagionalizable with eigenvalues $e^{i\t_{n}}$ and eigenphases $\t_{n}$ for $1 \le n \le N$. Let
       \[
-        \L_{A}(s) = A\det(I-sA) = \prod_{n \le N}(1-se^{i\t_{n}}),
+        \L_{A}(s) = \det(I-sA) = \prod_{n \le N}(1-se^{i\t_{n}}),
       \]
       be the characteristic polynomial of $A$. It turns out that $\L_{A}(s)$ has strikingly similar properties to an $L$-function. Indeed, if we exapand the product expression, we obtain
       \[
-        \L_{A}(s) = \sum_{0 \le n \le N}a_{n}s^{n},
+        \L_{A}(s) = 1+\sum_{n \le N}a_{n}s^{n},
       \]
-      for some coefficients $a_{n}$. This is the analogue to a the Dirichlet series representation of an $L$-function. Of course, as $\L_{A}(s)$ is a polynomial it admits analytic continuation to $\C$. It also has a functional equation of shape $s \to \frac{1}{s}$. To see this, the characteristic polynomial of $A^{-1}$ is the conjugate reciprocial polynomial of $\L_{A}(s)$ up to the constant term so that
+      for some coefficients $a_{n}$. This is the analogue to a the Dirichlet series representation of an $L$-function. Of course, as $\L_{A}(s)$ is a polynomial it admits analytic continuation to $\C$. It also has a functional equation of shape $s \to \frac{1}{s}$. To see this, since $A$ is unitary
       \[
-        \L_{A^{-1}}(s) = \frac{s^{N}}{\L_{A}(0)}\L_{A}\left(\frac{1}{s}\right).
+        \L_{A}(s) = (-1)^{N}\det(A)s^{N}\det(I-s^{-1}A^{-1}).
       \]
-      But since $\L_{A}(0) = (-1)^{N}\det(A)$ and $A$ is unitary so that $\L_{A^{-1}}(s) = \L_{A^{\ast}}(s) = \conj{\L_{A}(s)}$, upon sending $s \to \frac{1}{s}$, we can write the previous expression by isolating the right-hand side as
+      But $\L_{A^{-1}}(s) = \L_{A^{\ast}}(s) = \conj{\L_{A}(s)}$, so the above equation can be expressed as
       \[
         \L_{A}(s) = (-1)^{N}\det(A)s^{N}\conj{\L_{A}\left(\frac{1}{s}\right)}.
       \]

@@ -1,18 +1,18 @@
 # Fdb version 3
-["bibtex ANTpartI"] 1678458477 "ANTpartI.aux" "ANTpartI.bbl" "ANTpartI" 1678545317
+["bibtex ANTpartI"] 1678458477 "ANTpartI.aux" "ANTpartI.bbl" "ANTpartI" 1678666290
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "ANTpartI.aux" 1678545317 54887 e721e8b85894e68045be0fd8926a415e "pdflatex"
+  "ANTpartI.aux" 1678666290 54887 e721e8b85894e68045be0fd8926a415e "pdflatex"
   "referenceANTpartI.bib" 1678389356 9261 793c007d84273424a7b9db8e8223ac4e ""
   (generated)
   "ANTpartI.bbl"
   "ANTpartI.blg"
-["makeindex ANTpartI.idx"] 1678388449 "ANTpartI.idx" "ANTpartI.ind" "ANTpartI" 1678545317
-  "ANTpartI.idx" 1678545317 9202 fb57d4796f04d5cb3792a91cb2307294 "pdflatex"
+["makeindex ANTpartI.idx"] 1678388449 "ANTpartI.idx" "ANTpartI.ind" "ANTpartI" 1678666290
+  "ANTpartI.idx" 1678666290 9202 fb57d4796f04d5cb3792a91cb2307294 "pdflatex"
   (generated)
   "ANTpartI.ilg"
   "ANTpartI.ind"
-["pdflatex"] 1678545312 "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartI/ANTpartI.tex" "ANTpartI.pdf" "ANTpartI" 1678545317
-  "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartI/ANTpartI.tex" 1678545312 371400 b002ecdc0a049218540abefcb7ea4b93 ""
+["pdflatex"] 1678666285 "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartI/ANTpartI.tex" "ANTpartI.pdf" "ANTpartI" 1678666290
+  "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartI/ANTpartI.tex" 1678666285 371407 4e98674b40624baddd81b9085f2e88f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -231,12 +231,12 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1651053080 2826447 333659af56a38286fbbf3f5177a8ca36 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "ANTpartI.aux" 1678545317 54887 e721e8b85894e68045be0fd8926a415e "pdflatex"
+  "ANTpartI.aux" 1678666290 54887 e721e8b85894e68045be0fd8926a415e "pdflatex"
   "ANTpartI.bbl" 1678458477 6315 ef05b62402fcc93711a938f44f3787b2 "bibtex ANTpartI"
-  "ANTpartI.ind" 1678545317 8756 62a103c80be3ca0d61fe54b6c2eeb442 "makeindex ANTpartI.idx"
-  "ANTpartI.out" 1678545317 7506 ff8e9cc87604b070b14ea30dcff7b3b8 "pdflatex"
-  "ANTpartI.tex" 1678545312 371400 b002ecdc0a049218540abefcb7ea4b93 ""
-  "ANTpartI.toc" 1678545317 3412 080c0bc2bf28f5d69944ca01aa7516f9 "pdflatex"
+  "ANTpartI.ind" 1678666290 8756 62a103c80be3ca0d61fe54b6c2eeb442 "makeindex ANTpartI.idx"
+  "ANTpartI.out" 1678666290 7506 ff8e9cc87604b070b14ea30dcff7b3b8 "pdflatex"
+  "ANTpartI.tex" 1678666285 371407 4e98674b40624baddd81b9085f2e88f4 ""
+  "ANTpartI.toc" 1678666290 3412 080c0bc2bf28f5d69944ca01aa7516f9 "pdflatex"
   (generated)
   "ANTpartI.aux"
   "ANTpartI.idx"

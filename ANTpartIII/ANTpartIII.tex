@@ -195,7 +195,6 @@
     \item \todo{XXX}
   \end{itemize}
   Many of these topis are not directly mentioned in classical number theory, so in the interest of not being too overwhelming, this chapter is dedicated to the basics of these topics. Anyone well-versed in these topics is still encouraged to read through this chapter thoroughly. We will use the results presented here without reference in the following chapters unless it is a matter of clarity.
-  \section{\todo{XXX}}
 \chapter{Well-known Results}
   \section{Stastical Information About \texorpdfstring{$\z(s)$}{z(s)}}
     We collect some important statistical information about the Riemann zeta function $\z(s)$ with citations whenever possible:
@@ -228,7 +227,7 @@
 
     The function $g(u)$ is a test function so that $V_{s}(y)$ has the effect of smoothing out the two sums on the right-hand side of the approximate functional equation. In fact, $V_{s}(y)$ is a bump function by choosing \todo{$g(u) = ...$}. This technique was first introduced by Hardy and Littlewood in \todo{year} (see \todo{cite}) to obtain asymptotics for the second moment of the zeta function.
 
-\chapter{Philosophies}
+\chapter{Theories \& Philosophies}
   \section{The Katz-Sarnak Philosophy}
     The \textbf{Katz-Sarnak philosophy}\index{Katz-Sarnak philosophy} is the idea that statistics of various kinds of $L$-functions should, in the limit, match statistics for random matrices coming from some particular classical compact group. One starts with some class of zeros to look at, say high zeros of an individal $L$-function or low zeros for some family (this notion of family will become more precise) of related $L$-functions. Next, one normalizes the nontrivial zeros being inspected. For example, the high zeros of an individual $L$-function on the critial line tend to cluster so a normalization is chosen such that the average spacing is $1$. It is this rescaled zeros that one works with when estimating the statistics. Then some class of test functions are introduced in order to carry out the statistical calculations in order to reveal similarity with some class of random matrices.
 
@@ -285,21 +284,21 @@
     \subsection*{Families of \texorpdfstring{$L$}{L}-functions}
       Katz and Sarnak generalized the connection between statistical information of the zeros of $\z(s)$ and random unitary matrices to other $L$-functions. Moreover, they established a connection between specific families of similar $L$-functions and other compact matrix groups. The following expands upon this relationship.
 
-      To each family of $L$-functions, yet to be explained, there is an associated \textbf{symmetry type}\index{symmetry type} coming from a group or quotient of matrices. In this setting, these groups (not the quotients) are refered to as \textbf{matrix ensembles}\index{matrix ensembles}:
+      To each family of $L$-functions, yet to be explained, there is an associated \textbf{symmetry type}\index{symmetry type} coming from a compact group (or compact quotient) of matrices. In this setting, these groups (not the quotients) are refered to as \textbf{matrix ensembles}\index{matrix ensembles}:
       \begin{center}
         \begin{stabular}[1.5]{|c|c|c|}
           \hline
           Symmetry Type & Matrix Ensemble \\
           \hline
-          Unitary & $U(N)$ the compact group of $N \x N$ unitary matrices \\
+          $\U$ Unitary & $\U(N)$ the group of $N \x N$ unitary matrices \\
           \hline
-          Orthgonal & $SO(N)$ the compact group of $N \x N$ special orthogonal matrices \\
+          $\SO$ Orthgonal & $\SO(N)$ the group of $N \x N$ special orthogonal matrices \\
           \hline
-          Symplectic & $\mathrm{USp}(2N)$ the compact group of $2N \x 2N$ unitary symplectic matrices \\
+          $\mathrm{USp}$ Symplectic & $\mathrm{USp}(2N)$ the group of $2N \x 2N$ unitary symplectic matrices \\
           \hline
-          $\mathrm{COE}$ & $\U(N)/\O(N)$ \\
+          $\mathrm{COE}$ Circular Orthgonal Ensemble & $\U(N)/\O(N)$ \\
           \hline
-          $\mathrm{CSE}$ & $\U(2N)/\mathrm{USp}(2N)$ \\
+          $\mathrm{CSE}$ Circular Symplectic Ensemble & $\U(2N)/\mathrm{USp}(2N)$ \\
           \hline
         \end{stabular}
       \end{center}
@@ -312,11 +311,11 @@
       \begin{theorem}
         For any $a < b$ and $k \ge 1$,
         \[
-          \lim_{N \to \infty}\int_{G(N)}\mu_{k}(A)[a,b]\,dA = \mu_{k}(\mathrm{CUE})[a,b].
+          \lim_{N \to \infty}\int_{G(N)}\mu_{k}(A)[a,b]\,dA = \mu_{k}[a,b].
         \]
       \end{theorem}
 
-      That is, the average of $\mu_{k}(A)[a,b]$ for any of the matrix ensembles, in the limit of the size of the matrices, always resembles $\mu_{k}(\mathrm{CUE})[a,b]$. On the other hand, there are statistics that depend on the particular ensemble chosen. For example we can define the distribution of the $k$-th eigenphase over $G(N)$ as follows:
+      That is, the average of $\mu_{k}(A)[a,b]$ for any of the matrix ensembles, in the limit of the size of the matrices, is independent of the particular ensemble chosen. On the other hand, there are statistics that depend on the particular ensemble chosen. For example we can define the distribution of the $k$-th eigenphase over $G(N)$ as follows:
       \[
         \nu_{k}(G(N))[a,b] = dA\left(\left\{A \in G(N):\frac{\t_{k}(A)N}{2\pi} \in [a,b]\right\}\right),
       \]
@@ -332,11 +331,11 @@
           \hline
           Symmetry Type & Family \\
           \hline
-          \multirow{2}{*}{Unitary} & $\{L(s+iy):y \ge 0\}$ ordered by $y$ where $L(s)$ is any Selberg class $L$-function \\& $\{L(s,\chi):\chi\}$ ordered by $q$ where $\chi$ is a Dirichlet character modulo $q \ge 1$ \\
+          \multirow{2}{*}{$\U$ Unitary} & $\{L(s+iy):y \ge 0\}$ ordered by $y$ where $L(s)$ is any Selberg class $L$-function \\& $\{L(s,\chi):\chi\}$ ordered by $q$ where $\chi$ is a Dirichlet character modulo $q \ge 1$ \\
           \hline
-          \multirow{2}{*}{Orthgonal} & $\{L(s,f):f \in \mc{S}_{k}(\G_{0}(N)), k \ge 4\}$ ordered by $k$ where $N \ge 1$ is fixed \\& $\{L(s,f):f \in \mc{S}_{k}(\G_{0}(N)), N \ge 1\}$ ordered by $N$ where $k \ge 4$ is fixed \\
+          \multirow{2}{*}{$\SO$ Orthgonal} & $\{L(s,f):f \in \mc{S}_{k}(\G_{0}(N)), k \ge 4\}$ ordered by $k$ where $N \ge 1$ is fixed \\& $\{L(s,f):f \in \mc{S}_{k}(\G_{0}(N)), N \ge 1\}$ ordered by $N$ where $k \ge 4$ is fixed \\
           \hline
-          \multirow{2}{*}{Symplectic} & $\{L(s,\chi_{d}):\text{$d$ a fundamental discriminant}\}$ ordered by $|d|$ where $\chi_{d}(n) = \legendre{d}{n}$ \\& $\{L(s,\mathrm{sym}^{2}f):f \in \mc{S}_{k}(\G_{0}(1))\}$ ordered by $k \ge 4$ \\
+          \multirow{2}{*}{$\mathrm{USp}$ Symplectic} & $\{L(s,\chi_{d}):\text{$d$ a fundamental discriminant}\}$ ordered by $|d|$ where $\chi_{d}(n) = \legendre{d}{n}$ \\& $\{L(s,\mathrm{sym}^{2}f):f \in \mc{S}_{k}(\G_{0}(1))\}$ ordered by $k \ge 4$ \\
           \hline
         \end{stabular}
       \end{center}
@@ -354,9 +353,8 @@
       \begin{theorem}[Selberg's central limit theorem]
         For any rectangle $B \in \C$,
         \[
-          \lim_{T \to \infty}\frac{1}{T}\mu\left(\left\{t:t \in [T,2T],\frac{\log\z(\frac{1}{2}+it)}{\sqrt{\frac{1}{2}\log\log(T)}} \in B\right\}\right) = \frac{1}{2\pi}\iint_{B}e^{-\frac{1}{2}(x^{2}+y^{2})}\,dx\,dy,
+          \lim_{T \to \infty}\frac{1}{T}\mc{L}\left(\left\{t:t \in [T,2T],\frac{\log\z(\frac{1}{2}+it)}{\sqrt{\frac{1}{2}\log\log(T)}} \in B\right\}\right) = \frac{1}{2\pi}\iint_{B}e^{-\frac{1}{2}(x^{2}+y^{2})}\,dx\,dy.
         \]
-        where $\mu$ is the Lebesgue measure.
       \end{theorem}
 
       We interpret the left-hand side in Selberg's central limit theorem as the limiting value distribution, and the right-hand side as two independent Gaussian distributions with unit variance and zero mean. So as we move up the critical line, the real and imagnary parts of $\frac{\log\z(\frac{1}{2}+it)}{\sqrt{\frac{1}{2}\log\log(T)}}$ both independently tend to normal distributions. Interestingly, numerical computations show that when $T \sim t_{10^{20}}$ the computed values are still quite far from the Gaussian distributions. So the convergence in Selberg's central limit theorem is very slow. This does, however, beg the question of how $\log\z(\frac{1}{2}+it)$ should be modeled by random matrices when $t$ is large but finite. The answer is quite natural. Since the zeros (unfolded) of $\z(s)$ are distributed like the eigenvalues (eigenphases) of a random unitary matrix, we might expect that $\z(s)$ is modeled by a function whose zeros are those eigenvalues. That is, $\z(s)$ should be modeled by the characteristic polynomial of a unitary matrix (see \todo{cite} for details). This should work for any single $L$-function since they all exhibit the same distribution of zeros in the limit as we move up the critical line.
@@ -400,10 +398,10 @@
       \begin{theorem}
         Let $|s| = 1$. For any rectangle $B \in \C$,
         \[
-          \lim_{N \to \infty}\frac{1}{T}dA\left(\left\{A:A \in U(N),\frac{\log\L_{A}(s)}{\sqrt{\frac{1}{2}\log(N)}} \in B\right\}\right) = \frac{1}{2\pi}\iint_{B}e^{-\frac{1}{2}(x^{2}+y^{2})}\,dx\,dy,
+          \lim_{N \to \infty}\frac{1}{T}dA\left(\left\{A:A \in U(N),\frac{\log\L_{A}(s)}{\sqrt{\frac{1}{2}\log(N)}} \in B\right\}\right) = \frac{1}{2\pi}\iint_{B}e^{-\frac{1}{2}(x^{2}+y^{2})}\,dx\,dy.
         \]
-        where $\mu$ is the Lebesgue measure.
       \end{theorem}
+  \section{Moments of \texorpdfstring{$L$}{L}-functions}
 %============%
 %  Appendix  %
 %============%

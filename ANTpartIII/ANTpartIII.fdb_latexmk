@@ -1,18 +1,18 @@
 # Fdb version 3
-["bibtex ANTpartIII"] 1678292710 "ANTpartIII.aux" "ANTpartIII.bbl" "ANTpartIII" 1678750601
+["bibtex ANTpartIII"] 1678833800 "ANTpartIII.aux" "ANTpartIII.bbl" "ANTpartIII" 1678833845
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "ANTpartIII.aux" 1678750601 3579 c1730786abdd86228550f0394ce62ea1 "pdflatex"
-  "referenceANTpartIII.bib" 1678292707 516 3661ae3ed089599ce9be819eb8da9c5d ""
+  "ANTpartIII.aux" 1678833845 3573 00b869e8dbbf938aa625f8ecd348e063 "pdflatex"
+  "referenceANTpartIII.bib" 1678833799 563 a6a7a5a06f7cc96fea2a632017c27a81 ""
   (generated)
   "ANTpartIII.bbl"
   "ANTpartIII.blg"
-["makeindex ANTpartIII.idx"] 1678292440 "ANTpartIII.idx" "ANTpartIII.ind" "ANTpartIII" 1678750601
-  "ANTpartIII.idx" 1678750601 523 83db43222eb0a5205ed27b60f876dde1 "pdflatex"
+["makeindex ANTpartIII.idx"] 1678833778 "ANTpartIII.idx" "ANTpartIII.ind" "ANTpartIII" 1678833845
+  "ANTpartIII.idx" 1678833845 523 83db43222eb0a5205ed27b60f876dde1 "pdflatex"
   (generated)
   "ANTpartIII.ilg"
   "ANTpartIII.ind"
-["pdflatex"] 1678750600 "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartIII/ANTpartIII.tex" "ANTpartIII.pdf" "ANTpartIII" 1678750601
-  "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartIII/ANTpartIII.tex" 1678750600 26038 6daaaa3d6c24c61114f396e847700bb4 ""
+["pdflatex"] 1678833844 "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartIII/ANTpartIII.tex" "ANTpartIII.pdf" "ANTpartIII" 1678833845
+  "/Users/henrytwiss/Documents/LaTeX/ANTprojects/ANTpartIII/ANTpartIII.tex" 1678833844 26091 720858c4c2a63b2ed88393842773465b ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -34,7 +34,6 @@
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1136768653 1300 b62933e007d01cfd073f79b963c01526 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1136768653 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
-  "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmss17.tfm" 1136768653 1320 ed93d62c5f2c16343826001f03341dbc ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
@@ -52,7 +51,6 @@
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb" 1248133631 24393 3b7eb51a67a0a62aec5849271bdb9c2e ""
-  "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb" 1248133631 24416 36515493f76659302880e2604105b074 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
@@ -211,12 +209,12 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1651053080 2826447 333659af56a38286fbbf3f5177a8ca36 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "ANTpartIII.aux" 1678750601 3579 c1730786abdd86228550f0394ce62ea1 "pdflatex"
-  "ANTpartIII.bbl" 1678292710 435 bd4b70e1452eea23431117f40ff0601c "bibtex ANTpartIII"
-  "ANTpartIII.ind" 1678750601 668 3234a3e033809ca7eb5513b233ca7c0b "makeindex ANTpartIII.idx"
-  "ANTpartIII.out" 1678750601 1214 4bac1cff36238e3ebfbea25e9efeb4b5 "pdflatex"
-  "ANTpartIII.tex" 1678750600 26038 6daaaa3d6c24c61114f396e847700bb4 ""
-  "ANTpartIII.toc" 1678750601 661 d6892c6c305684baa71b26e511de4679 "pdflatex"
+  "ANTpartIII.aux" 1678833845 3573 00b869e8dbbf938aa625f8ecd348e063 "pdflatex"
+  "ANTpartIII.bbl" 1678833800 476 6f4d691e7b56a70d96d195cb8cd2a355 "bibtex ANTpartIII"
+  "ANTpartIII.ind" 1678833845 668 3234a3e033809ca7eb5513b233ca7c0b "makeindex ANTpartIII.idx"
+  "ANTpartIII.out" 1678833845 1336 c64ff4e02c2588fffbbf1e63c13e1f06 "pdflatex"
+  "ANTpartIII.tex" 1678833844 26091 720858c4c2a63b2ed88393842773465b ""
+  "ANTpartIII.toc" 1678833845 657 0f86c2926c75a8799ede32874f14b278 "pdflatex"
   (generated)
   "ANTpartIII.aux"
   "ANTpartIII.idx"

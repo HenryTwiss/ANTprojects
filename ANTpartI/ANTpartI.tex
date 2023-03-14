@@ -2957,11 +2957,11 @@
     \end{equation}
     We now need an estimate for the ratio of the gamma factors. From Stirling's formula,
     \[
-      \G(\s+it) = \sqrt{2\pi}(it)^{\s-\frac{1}{2}}e^{-\frac{\pi}{2}|t|}\left(\frac{|t|}{e}\right)^{it}\left(1+O\left(\frac{1}{|t|}\right)\right).
+      \G(\s+it) = \sqrt{2\pi}(it)^{\s-\frac{1}{2}}e^{-\frac{\pi}{2}|t|}\left(\frac{t}{e}\right)^{it}\left(1+O\left(\frac{1}{|t|}\right)\right).
     \]
     Then
     \begin{align*}
-      \left|\frac{\G\left(\frac{1-(\s+it)}{2}\right)}{\G\left(\frac{\s+it}{2}\right)}\right| &= \left|\frac{\sqrt{2\pi}\left(-\frac{it}{2}\right)^{-\frac{\s}{2}}e^{-\frac{\pi}{4}|t|}\left(\frac{|t|}{2e}\right)^{-\frac{it}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right)}{\sqrt{2\pi}\left(\frac{it}{2}\right)^{\frac{\s-1}{2}}e^{-\frac{\pi}{4}|t|}\left(\frac{|t|}{2e}\right)^{\frac{it}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right)}\right| \\
+      \left|\frac{\G\left(\frac{1-(\s+it)}{2}\right)}{\G\left(\frac{\s+it}{2}\right)}\right| &= \left|\frac{\sqrt{2\pi}\left(-\frac{it}{2}\right)^{-\frac{\s}{2}}e^{-\frac{\pi}{4}|t|}\left(\frac{t}{2e}\right)^{-\frac{it}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right)}{\sqrt{2\pi}\left(\frac{it}{2}\right)^{\frac{\s-1}{2}}e^{-\frac{\pi}{4}|t|}\left(\frac{t}{2e}\right)^{\frac{it}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right)}\right| \\
       &= (it)^{\frac{1-2\s}{2}}\frac{\left(1+O\left(\frac{2}{|t|}\right)\right)}{\left(1+O\left(\frac{2}{|t|}\right)\right)} \\
       &= (it)^{\frac{1-2\s}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right)^{2} \\
       &= (it)^{\frac{1-2\s}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right) \\

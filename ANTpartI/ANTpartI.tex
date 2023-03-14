@@ -908,7 +908,7 @@
 
     \begin{theorem}[Stirling's formula]
       \[
-        \G(z) = \left(\frac{2\pi}{z}\right)^{\frac{1}{2}}\left(\frac{z}{e}\right)^{z}\left(1+O\left(\frac{1}{|z|}\right)\right),
+        \G(z) = \left(\frac{2\pi}{z}\right)^{\frac{1}{2}}\left(\frac{z}{e}\right)^{z}\left(1+O\left(\frac{1}{z}\right)\right),
       \]
       where we take the principal branch of the square root.
     \end{theorem}
@@ -2957,7 +2957,7 @@
     \end{equation}
     We now need an estimate for the ratio of the gamma factors. From Stirling's formula,
     \[
-      \G(\s+it) = \left(\frac{2\pi}{\s+it}\right)^{\frac{1}{2}}\left(\frac{\s+it}{e}\right)^{\s+it}\left(1+O\left(\frac{1}{|\s+it|}\right)\right).
+      \G(\s+it) = \left(\frac{2\pi}{\s+it}\right)^{\frac{1}{2}}\left(\frac{\s+it}{e}\right)^{\s+it}\left(1+O\left(\frac{1}{\s+it}\right)\right).
     \]
     Now we simplify this expression. Since $(\s+it) \asymp_{\s} t$ (which is stronger than an $O$-esimate), we can replace $\s+it$ with $|t|$ (because our estimate implies $(\s+it) \asymp_{\s} |t|$), except for the exponenet, provided we let the implicit constant depend upon $\s$. For the exponent, we can reaplce $\s+it$ with $\s$ because any complex number raised to a purely imaginary power has absolute value $1$. Altogether,
     \[

@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {3.6}The Mellin Transform \& Theta Functions}{86}{section.3.6}%
 \contentsline {chapter}{\numberline {4}Selected Topics in $L$-functions}{89}{chapter.4}%
 \contentsline {section}{\numberline {4.1}The Lindel\"of Hypothesis \& Convexity Arguments}{89}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Nonvanishing Results}{91}{section.4.2}%
+\contentsline {section}{\numberline {4.2}Nonvanishing Results}{92}{section.4.2}%
 \contentsline {section}{\numberline {4.3}The Riemann Hypothesis}{106}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Zero-free Regions \& Siegel Zeros}{107}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Additional Results}{109}{section.4.5}%

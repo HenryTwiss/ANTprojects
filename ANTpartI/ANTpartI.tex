@@ -2957,19 +2957,23 @@
     \end{equation}
     We now need an estimate for the ratio of the gamma factors. From Stirling's formula,
     \[
-      \G(\s+it) = \sqrt{2\pi}(it)^{\s-\frac{1}{2}}e^{-\frac{\pi}{2}|t|}\left(\frac{t}{e}\right)^{it}\left(1+O\left(\frac{1}{|t|}\right)\right).
+      \G(\s+it) = \left(\frac{2\pi}{\s+it}\right)^{\frac{1}{2}}\left(\frac{\s+it}{e}\right)^{\s+it}\left(1+O\left(\frac{1}{|\s+it|}\right)\right).
     \]
-    Then
+    Now we simplify this expression. Since $(\s+it) \asymp_{\s} t$ (which is stronger than an $O$-esimate), we can replace $\s+it$ with $|t|$ (because our estimate implies $(\s+it) \asymp_{\s} |t|$), except for the exponenet, provided we let the implicit constant depend upon $\s$. For the exponent, we can reaplce $\s+it$ with $\s$ because any complex number raised to a purely imaginary power has absolute value $1$. Altogether,
+    \[
+      \G(\s+it) = \left(\frac{2\pi}{|t|}\right)^{\frac{1}{2}}\left(\frac{|t|}{e}\right)^{\s}\left(1+O_{\s}\left(\frac{1}{|t|}\right)\right).
+    \]
+    We can now estimate the ratio of gamma factors as follows:
     \begin{align*}
-      \left|\frac{\G\left(\frac{1-(\s+it)}{2}\right)}{\G\left(\frac{\s+it}{2}\right)}\right| &= \left|\frac{\sqrt{2\pi}\left(-\frac{it}{2}\right)^{-\frac{\s}{2}}e^{-\frac{\pi}{4}|t|}\left(\frac{t}{2e}\right)^{-\frac{it}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right)}{\sqrt{2\pi}\left(\frac{it}{2}\right)^{\frac{\s-1}{2}}e^{-\frac{\pi}{4}|t|}\left(\frac{t}{2e}\right)^{\frac{it}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right)}\right| \\
-      &= (it)^{\frac{1-2\s}{2}}\frac{\left(1+O\left(\frac{2}{|t|}\right)\right)}{\left(1+O\left(\frac{2}{|t|}\right)\right)} \\
-      &= (it)^{\frac{1-2\s}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right)^{2} \\
-      &= (it)^{\frac{1-2\s}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right) \\
-      &= (it)^{\frac{1-2\s}{2}}\left(1+O\left(\frac{1}{|t|}\right)\right).
+      \frac{\G\left(\frac{1-(\s+it)}{2}\right)}{\G\left(\frac{\s+it}{2}\right)} &= \frac{\left(\frac{4\pi}{|t|}\right)^{\frac{1}{2}}\left(\frac{|t|}{2e}\right)^{\frac{1-\s}{2}}\left(1+O_{\s}\left(\frac{2}{|t|}\right)\right)}{\left(\frac{4\pi}{|t|}\right)^{\frac{1}{2}}\left(\frac{|t|}{2e}\right)^{\frac{\s}{2}}\left(1+O_{\s}\left(\frac{2}{|t|}\right)\right)} \\
+      &= |t|^{\frac{1-2\s}{2}}\frac{\left(1+O_{\s}\left(\frac{2}{|t|}\right)\right)}{\left(1+O_{\s}\left(\frac{2}{|t|}\right)\right)} \\
+      &= |t|^{\frac{1-2\s}{2}}\left(1+O_{\s}\left(\frac{2}{|t|}\right)\right)^{2} \\
+      &= |t|^{\frac{1-2\s}{2}}\left(1+O_{\s}\left(\frac{2}{|t|}\right)\right) \\
+      &= |t|^{\frac{1-2\s}{2}}\left(1+O_{\s}\left(\frac{1}{|t|}\right)\right).
     \end{align*}
     Writing in terms of Vinogradov's symbol, this means
     \[
-      \frac{\G\left(\frac{1-(\s+it)}{2}\right)}{\G\left(\frac{\s+it}{2}\right)} \ll_{\s} \left(\frac{1}{|t|}+1\right)(it)^{\frac{1-2\s}{2}} \ll_{\s} (1+|t|^{\frac{1-2\s}{2}}) \ll_{\s} (1+|t|)^{\frac{1-2\s}{2}}.
+      \frac{\G\left(\frac{1-(\s+it)}{2}\right)}{\G\left(\frac{\s+it}{2}\right)} \ll_{\s} \left(1+\frac{1}{|t|}\right)|t|^{\frac{1-2\s}{2}} \ll_{\s} (1+|t|^{\frac{1-2\s}{2}}) \ll_{\s} (1+|t|)^{\frac{1-2\s}{2}}.
     \]
     Now from the definition of the gamma factors, it follows immediately that
     \[

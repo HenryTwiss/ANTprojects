@@ -2952,7 +2952,7 @@
     \end{equation}
     The left edge is more difficult, but only slightly. The functional equation, implies
     \begin{equation}\label{equ:convexity_bound_left_edge}
-      |\z(\s+it,f)| \le \left|\frac{\g((1-\s)-it,f)}{\g(\s+it,f)}\right||\z((1-\s)-it,f)|.
+      |\z(\s+it,f)| \le \left|\frac{\g(1-(\s+it),f)}{\g(\s+it,f)}\right||\z(1-(\s+it),f)|.
     \end{equation}
     We now need an estimate for the ratio of the gamma factors. From Stirling's formula,
     \[
@@ -2960,7 +2960,7 @@
     \]
     Then
     \begin{align*}
-      \left|\frac{\G\left(\frac{(1-\s)-it}{2}\right)}{\G\left(\frac{\s+it}{2}\right)}\right| &= \left|\frac{\sqrt{2\pi}\left(-\frac{it}{2}\right)^{-\frac{\s}{2}}e^{-\frac{\pi}{4}|t|}\left(\frac{|t|}{2e}\right)^{-\frac{it}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right)}{\sqrt{2\pi}\left(\frac{it}{2}\right)^{\frac{\s-1}{2}}e^{-\frac{\pi}{4}|t|}\left(\frac{|t|}{2e}\right)^{\frac{it}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right)}\right| \\
+      \left|\frac{\G\left(\frac{1-(\s+it)}{2}\right)}{\G\left(\frac{\s+it}{2}\right)}\right| &= \left|\frac{\sqrt{2\pi}\left(-\frac{it}{2}\right)^{-\frac{\s}{2}}e^{-\frac{\pi}{4}|t|}\left(\frac{|t|}{2e}\right)^{-\frac{it}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right)}{\sqrt{2\pi}\left(\frac{it}{2}\right)^{\frac{\s-1}{2}}e^{-\frac{\pi}{4}|t|}\left(\frac{|t|}{2e}\right)^{\frac{it}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right)}\right| \\
       &= (it)^{\frac{1-2\s}{2}}\frac{\left(1+O\left(\frac{2}{|t|}\right)\right)}{\left(1+O\left(\frac{2}{|t|}\right)\right)} \\
       &= (it)^{\frac{1-2\s}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right)^{2} \\
       &= (it)^{\frac{1-2\s}{2}}\left(1+O\left(\frac{2}{|t|}\right)\right) \\
@@ -2968,11 +2968,11 @@
     \end{align*}
     Writing in terms of Vinogradov's symbol, this means
     \[
-      \frac{\G\left(\frac{(1-\s)-it}{2}\right)}{\G\left(\frac{\s+it}{2}\right)} \ll_{\s} \left(\frac{1}{|t|}+1\right)(it)^{\frac{1-2\s}{2}} \ll_{\s} (1+|t|^{\frac{1-2\s}{2}}) \ll_{\s} (1+|t|)^{\frac{1-2\s}{2}}.
+      \frac{\G\left(\frac{1-(\s+it)}{2}\right)}{\G\left(\frac{\s+it}{2}\right)} \ll_{\s} \left(\frac{1}{|t|}+1\right)(it)^{\frac{1-2\s}{2}} \ll_{\s} (1+|t|^{\frac{1-2\s}{2}}) \ll_{\s} (1+|t|)^{\frac{1-2\s}{2}}.
     \]
     Now from the definition of the gamma factors, it follows immediately that
     \[
-     \frac{\g((1-\s)-it,f)}{\g(\s+it,f)} \ll_{\s} (1+|t|)^{\frac{1-2\s}{2}}.
+     \frac{\g(1-(\s+it),f)}{\g(\s+it,f)} \ll_{\s} (1+|t|)^{\frac{1-2\s}{2}}.
     \]
     Let $\e > 0$ and set $\s = -\e$. Then plugging our estimate above into \cref{equ:convexity_bound_left_edge} and using the trivial bound $|\z((1+e)+it)| \ll_{e} 1$ gives
     \begin{equation}\label{equ:convexity_bound_2}
